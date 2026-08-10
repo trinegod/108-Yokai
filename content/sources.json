@@ -1,0 +1,93 @@
+[
+  {
+    "id": "jpsearch-kintaro",
+    "title": "Kintaro",
+    "institution": "Japan Search / National Diet Library",
+    "kind": "institutional-exhibition",
+    "url": "https://jpsearch.go.jp/en/gallery/ndl-4glxolOP6zk",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Metadata and exhibition text used as a research pathway; individual image conditions must be checked separately."
+  },
+  {
+    "id": "ndl-kintaro-authority",
+    "title": "金太郎 — Web NDL Authorities",
+    "institution": "National Diet Library",
+    "kind": "authority-record",
+    "url": "https://id.ndl.go.jp/auth/ndlna/001125259",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Authority metadata used for name and transcription checking."
+  },
+  {
+    "id": "met-yamauba-kintaro",
+    "title": "Yamauba and Kintarō",
+    "institution": "The Metropolitan Museum of Art",
+    "kind": "institutional-collection",
+    "url": "https://www.metmuseum.org/art/collection/search/45100",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Collection metadata and curatorial description; the listed artwork is public domain."
+  },
+  {
+    "id": "british-hoju",
+    "title": "Sixty-four lucky jewels (hōju)",
+    "institution": "The British Museum",
+    "kind": "institutional-collection",
+    "url": "https://www.britishmuseum.org/collection/object/A_2018-3037-1-1-2",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Collection metadata used for the historical object record; no museum image is bundled."
+  },
+  {
+    "id": "jpsearch-oni",
+    "title": "Oni (Demons)",
+    "institution": "Japan Search / National Diet Library",
+    "kind": "institutional-exhibition",
+    "url": "https://jpsearch.go.jp/en/gallery/ndl-qWkKW3E12gw",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Exhibition text used as a research pathway; linked item rights vary."
+  },
+  {
+    "id": "tnm-shuten-doji",
+    "title": "Demon Slayers of the Heian Period: The Tale of Demon King Shuten Dōji",
+    "institution": "Tokyo National Museum",
+    "kind": "institutional-exhibition",
+    "url": "https://www.tnm.jp/modules/r_free_page/index.php?id=2725&lang=en",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Exhibition context used for the tale record; no museum image is bundled."
+  },
+  {
+    "id": "british-ibuki-doji",
+    "title": "Ibuki-dōji emaki",
+    "institution": "The British Museum",
+    "kind": "institutional-collection",
+    "url": "https://www.britishmuseum.org/collection/object/A_1881-1210-0-270",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Collection metadata used to acknowledge the Mount Ibuki variant; no museum image is bundled."
+  },
+  {
+    "id": "jpsearch-supernatural",
+    "title": "Japanese legends of the supernatural world",
+    "institution": "Japan Search / National Diet Library / Ritsumeikan University ARC",
+    "kind": "institutional-exhibition",
+    "url": "https://jpsearch.go.jp/en/gallery/ndl-9DnAAqljpV6",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "CC BY-NC-SA exhibition text except where individual image rights state otherwise; no linked images are bundled."
+  },
+  {
+    "id": "jpsearch-tsuchigumo",
+    "title": "The Illustrated Tale of the Earth Spider (Tsuchigumo)",
+    "institution": "Japan Search / ColBase / National Institutes for Cultural Heritage",
+    "kind": "institutional-collection",
+    "url": "https://jpsearch.go.jp/en/item/cobas-37628",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "CC BY collection metadata; no collection image is bundled."
+  },
+  {
+    "id": "jpsearch-watanabe",
+    "title": "The Illustrated Tale of the Samurai Watanabe no Tsuna",
+    "institution": "Japan Search / Tokyo National Museum",
+    "kind": "institutional-collection",
+    "url": "https://jpsearch.go.jp/en/gallery/ndl-14J962qEkjE",
+    "accessedAt": "2026-08-10",
+    "rightsNote": "Collection and exhibition text used as a research pathway; no linked image is bundled."
+  }
+]
+

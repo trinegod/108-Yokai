@@ -1,0 +1,33 @@
+[
+  {
+    "id": "ashigara-region",
+    "name": "Ashigara mountain region",
+    "japanese": "足柄山",
+    "kind": "traditional",
+    "region": "Kanagawa–Shizuoka border region",
+    "note": "A traditional, broad mountain setting associated with Kintarō; the archive does not reduce it to one precise coordinate.",
+    "sourceIds": ["jpsearch-kintaro"],
+    "mapPosition": { "x": 31, "y": 63 }
+  },
+  {
+    "id": "mount-oe",
+    "name": "Mount Ōe",
+    "japanese": "大江山",
+    "kind": "traditional",
+    "region": "Kyoto Prefecture tradition",
+    "note": "A principal traditional setting for the Shuten-dōji cycle; versions differ in setting and narrative detail.",
+    "sourceIds": ["tnm-shuten-doji", "british-ibuki-doji"],
+    "mapPosition": { "x": 62, "y": 36 }
+  },
+  {
+    "id": "mount-ibuki",
+    "name": "Mount Ibuki",
+    "japanese": "伊吹山",
+    "kind": "traditional",
+    "region": "Shiga–Gifu border region",
+    "note": "A variant setting in the Ibuki-dōji narrative preserved by the British Museum handscroll record.",
+    "sourceIds": ["british-ibuki-doji"],
+    "mapPosition": { "x": 51, "y": 48 }
+  }
+]
+

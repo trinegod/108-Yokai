@@ -1,0 +1,17 @@
+{
+  "siteTitle": "ASHIGARA — THE LIVING ARCHIVE",
+  "siteKicker": "A living folklore archive at the threshold of Mount Ashigara",
+  "enter": "ENTER ASHIGARA",
+  "ascend": "PRESS TO ASCEND",
+  "soundOn": "Sound on",
+  "soundOff": "Sound off",
+  "skipTransition": "Skip transition",
+  "nav": {
+    "threshold": "Threshold",
+    "archive": "Archive",
+    "atlas": "Atlas",
+    "chronicles": "Chronicles",
+    "about": "About"
+  }
+}
+
