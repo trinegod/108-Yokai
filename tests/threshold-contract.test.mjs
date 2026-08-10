@@ -9,6 +9,8 @@ test("threshold preserves locked responsive masters and required controls", asyn
   const component = await readFile(componentUrl, "utf8");
   assert.match(component, /ashigara-threshold-desktop/);
   assert.match(component, /ashigara-threshold-mobile/);
+  assert.match(component, /ashigara-threshold-desktop-actorless/);
+  assert.match(component, /ashigara-threshold-mobile-actorless/);
   assert.match(component, /locale\.enter/);
   assert.match(component, /locale\.ascend/);
   assert.match(component, /threshold__kintaro/);
@@ -31,10 +33,12 @@ test("motion is progressive and has a reduced-motion path", async () => {
   assert.match(css, /animation:\s*guardianSpark/);
   assert.match(css, /animation:\s*hojuHover/);
   assert.match(css, /animation:\s*hojuHoverMobile/);
+  assert.match(css, /animation:\s*hojuOpenMobile/);
   assert.match(css, /threshold__hoju-depth/);
   assert.match(css, /mask-image:\s*radial-gradient/);
   assert.match(css, /animation:\s*energyTravel/);
   assert.match(css, /animation:\s*thresholdFade/);
   assert.doesNotMatch(css, /@keyframes\s+aperture/);
   assert.match(css, /threshold\[data-ascending="true"\]/);
+  assert.match(css, /\.skip-transition\s*\{[\s\S]*?display:\s*none/);
 });

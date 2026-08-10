@@ -65,6 +65,10 @@ test("all canonical source masters and optimized runtime assets exist separately
   await Promise.all([
     access(new URL("../public/assets/backgrounds/threshold/ashigara-threshold-desktop-960.avif", import.meta.url)),
     access(new URL("../public/assets/backgrounds/threshold/ashigara-threshold-mobile-640.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-960.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/threshold/ashigara-threshold-mobile-actorless-640.avif", import.meta.url)),
+    access(new URL("../derived-art/clean-plates/ashigara-threshold-desktop-actorless-v1.png", import.meta.url)),
+    access(new URL("../derived-art/clean-plates/ashigara-threshold-mobile-actorless-v1.png", import.meta.url)),
     access(new URL("../public/assets/relics/hoju-concept-480.webp", import.meta.url)),
     access(new URL("../public/assets/sprites/characters/kintaro-character-480.webp", import.meta.url)),
   ]);

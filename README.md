@@ -43,16 +43,16 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 - Art-directed desktop and 9:16 mobile masters using responsive `<picture>` sources.
 - Approved empty-handed Kintarō pose and mobile upward gaze preserved.
 - Full-height planted axe retained as a separate stationary interaction mask with a crater pulse.
-- Hōju identity preserved through feathered compositing, five shallow CSS depth planes, irregular hover, controlled internal light, and water/flame/ink phase.
+- Hōju identity preserved as one moving masked relic over a nondestructive actorless clean-plate derivative, with five shallow CSS depth planes, irregular hover, controlled internal light, and water/flame/ink phase.
 - Pointer, keyboard focus, and touch can awaken the Hōju without blocking the primary entry path; motion is clamped and returns to the locked composition.
-- Restrained stepped Kintarō breathing is anchored at his planted feet, with minute chest/shoulder lift and weight shift from the approved still; no bounce and no fabricated sprite frames.
+- Continuous Kintarō breathing is anchored at his planted feet, with a readable chest/shoulder rise-and-fall from the approved still; no fabricated sprite frames.
 - Rare motes, slow mist, tiny pointer parallax, and no continuous camera drift.
-- Desktop title and archive line occupy a centered right-side lockup clear of the axe; the entry command is grouped at the lower center, with a tighter safe-area-aware mobile position.
+- Desktop title and archive line occupy an upper-center lockup clear of the axe; mobile uses a centered title/subtitle lockup above the lowered Hōju, plus a compact safe-area-aware entry button.
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
 - Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
 - Kintarō activation aura and embers, axe flash, ground-to-Hōju energy pulse, garment response, spatial push, and seamless full-frame fade into the archive.
 - Fine-print creator credit on desktop, mobile, and internal archive pages, with compact sound controls positioned outside the principal composition.
-- Reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
+- The short mobile transition omits the desktop skip control; reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
 
 ### Living archive
 
@@ -101,13 +101,14 @@ content/
 └── locales/                    English UI + provisional Japanese seam
 
 source-art/                     untouched canonical source PNGs
+derived-art/clean-plates/       versioned AI-assisted actorless working derivatives
 public/assets/                  generated AVIF/WebP derivatives
 scripts/process-assets.mjs      nondestructive derivative pipeline
 tests/                          content, threshold-contract, and SSR checks
 docs/                           creative, editorial, performance, decisions
 ```
 
-The Hōju enhancement uses perspective-aware DOM/CSS compositing rather than a generic Three.js/WebGL object. Its illustrated art, core light, and front/rear wave planes occupy separate shallow transform depths and react to pointer/touch/focus. This implements the planned 2.5D behavior while preserving the opaque locked art and keeping the semantic site independent from a canvas.
+The Hōju enhancement uses perspective-aware DOM/CSS compositing rather than a generic Three.js/WebGL object. Its illustrated art, core light, and front/rear wave planes occupy separate shallow transform depths and react to pointer/touch/focus. An actorless working plate prevents the old static-plus-moving double image while the displayed relic still comes from the locked master. This implements the planned 2.5D behavior while keeping the semantic site independent from a canvas.
 
 ## Setup
 
@@ -155,7 +156,7 @@ The current sample uses institutional pathways from Japan Search / National Diet
 
 ## Asset workflow
 
-The six owner-supplied PNG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). Runtime assets are separately generated at conservative sizes.
+The six owner-supplied PNG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so a single masked layer can move over the scene. Runtime AVIF/WebP assets are generated separately at conservative sizes.
 
 The current Kintarō and Hōju reference sheets are opaque and not production atlases. Phase One deliberately does not extract or invent final frames from them. A transparent 6–8 frame idle, separate planted-axe/crater matte, and layered Hōju energy planes remain in the asset backlog.
 
@@ -190,11 +191,11 @@ Measured local production artifacts:
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold component | 8.9 KB | 2.9 KB |
+| Threshold component | 9.0 KB | 2.9 KB |
 | Archive index component | 29.5 KB | 8.7 KB |
-| Global CSS | 52.4 KB | 12.3 KB |
-| Desktop 1440px threshold AVIF | 152.8 KB | — |
-| Mobile 941px threshold AVIF | 173.9 KB | — |
+| Global CSS | 53.3 KB | 12.5 KB |
+| Desktop 1440px actorless threshold AVIF | 103.7 KB | — |
+| Mobile 941px actorless threshold AVIF | 127.1 KB | — |
 
 These are build/file measurements, not Lighthouse or Core Web Vitals claims. See [`docs/PERFORMANCE_BUDGET.md`](docs/PERFORMANCE_BUDGET.md) and [`docs/VALIDATION.md`](docs/VALIDATION.md) for the complete evidence and remaining checks.
 
@@ -203,7 +204,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 - The local folder remains `108 YOKAI`; the owner-created GitHub repository is `108-Yokai`.
 - A public preview and public source repository now exist. A custom production domain, analytics, CMS, database, and authentication do not.
 - No claim is made about users, traffic, conversion, research completeness, or field performance.
-- True separated threshold layers and final Kintarō/Hōju animation sheets are not supplied.
+- Final source-approved transparent Kintarō/Hōju layers and animation sheets are not supplied; the implemented separation uses versioned clean-plate derivatives plus masked pixels from the locked masters.
 - Kintarō uses a restrained still-based treatment, not a claimed production frame animation.
 - Record artwork beyond Kintarō/Hōju uses controlled geometric sigils.
 - Japanese localization is not exposed as complete and awaits fluent editorial review.
@@ -227,7 +228,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 **Original ASHIGARA concept, world, and supplied visual direction:** Steven / ASHIGARA project  
 **Institutional research pathways:** linked individually in the source registry and record chambers
 
-AI-assisted implementation supported frontend engineering, responsive styling, asset optimization, schema/test scaffolding, documentation, and initial structured prose under Steven’s explicit direction and locked-art constraints. AI output is not treated as a folklore source. Factual archive claims link to external institutional records and remain subject to ongoing human editorial review.
+AI-assisted implementation supported frontend engineering, responsive styling, nondestructive actorless clean-plate inpainting, asset optimization, schema/test scaffolding, documentation, and initial structured prose under Steven’s explicit direction and locked-art constraints. Supplied masters remain preserved separately and unchanged. AI output is not treated as a folklore source. Factual archive claims link to external institutional records and remain subject to ongoing human editorial review.
 
 ## Rights and publication
 

@@ -23,6 +23,7 @@ Production preview, 1440 × 900 viewport:
 - The title/archive lockup clears the axe, the two entry labels form one lower-center command, the creator credit stays unobtrusive, and the compact sound control does not cover a principal subject.
 - Sound-enabled entry exposed `aria-pressed=true` and `data-ascending=true`, ran the Kintarō aura/energy sequence, and routed once to `/archive` after the approximately one-second start cue and transition.
 - Continuous Kintarō and Hōju transforms changed across three idle samples without pointer input. The entry overlay covered the full viewport with opacity only and no scaled rectangular bounds.
+- The actorless clean-plate derivative removed the previous static Hōju/Kintarō copies; the visible guardian and relic each render from one moving masked master layer with no duplicate image or rectangular edge in the captured frame.
 - Rebuilt production preview logs contained no warnings/errors for the tested threshold/archive flow.
 - Archive renders 10 records, grid/list controls, entity filter, and tolerant Japanese-name search.
 - Search for `宝珠` returned the Hōju record.
@@ -37,6 +38,8 @@ Production preview, 390 × 844 viewport:
 - Kintarō's approved upward mobile gaze, separately planted full axe, Hōju, mountain, title, sound control, and entry action remained visible.
 - The Hōju control responded to touch/click and reported its pressed state accessibly.
 - Mobile used dedicated, more readable Kintarō breathing and Hōju sway loops; the sound control moved above the entry command, clear of the title and relic.
+- The centered ASHIGARA / THE LIVING ARCHIVE lockup remained clear at the top, the Hōju hovered lower around the mountain peak, and the compact `ENTER ASHIGARA` border stayed centered.
+- During entry, the Kintarō ring/glow reached approximately 0.90 computed opacity in the sampled frame. The mobile skip control computed to `display: none`, and the sound-control bounds remained fixed above the entry region.
 - The mobile full-frame fade reached 0.947 opacity across the exact 390 × 844 viewport before routing, with no transform or rectangular edge.
 - A real idle phone screenshot was captured from the final production build.
 - The first archive phone capture exposed a clipped final navigation label. After changing the mobile header to a five-column grid with smaller centered labels, the final capture showed all five labels—Threshold, Archive, Atlas, Chronicles, and About—with no overflow.

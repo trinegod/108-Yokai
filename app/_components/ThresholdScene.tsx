@@ -182,23 +182,23 @@ export function ThresholdScene() {
           <source
             media="(max-width: 699px)"
             type="image/avif"
-            srcSet="/assets/backgrounds/threshold/ashigara-threshold-mobile-640.avif 640w, /assets/backgrounds/threshold/ashigara-threshold-mobile-941.avif 941w"
+            srcSet="/assets/backgrounds/threshold/ashigara-threshold-mobile-actorless-640.avif 640w, /assets/backgrounds/threshold/ashigara-threshold-mobile-actorless-941.avif 941w"
             sizes="100vw"
           />
           <source
             media="(max-width: 699px)"
             type="image/webp"
-            srcSet="/assets/backgrounds/threshold/ashigara-threshold-mobile-640.webp 640w, /assets/backgrounds/threshold/ashigara-threshold-mobile-941.webp 941w"
+            srcSet="/assets/backgrounds/threshold/ashigara-threshold-mobile-actorless-640.webp 640w, /assets/backgrounds/threshold/ashigara-threshold-mobile-actorless-941.webp 941w"
             sizes="100vw"
           />
           <source
             type="image/avif"
-            srcSet="/assets/backgrounds/threshold/ashigara-threshold-desktop-960.avif 960w, /assets/backgrounds/threshold/ashigara-threshold-desktop-1440.avif 1440w, /assets/backgrounds/threshold/ashigara-threshold-desktop-1672.avif 1672w"
+            srcSet="/assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-960.avif 960w, /assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-1440.avif 1440w, /assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-1672.avif 1672w"
             sizes="100vw"
           />
           <img
-            src="/assets/backgrounds/threshold/ashigara-threshold-desktop-1440.webp"
-            srcSet="/assets/backgrounds/threshold/ashigara-threshold-desktop-960.webp 960w, /assets/backgrounds/threshold/ashigara-threshold-desktop-1440.webp 1440w, /assets/backgrounds/threshold/ashigara-threshold-desktop-1672.webp 1672w"
+            src="/assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-1440.webp"
+            srcSet="/assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-960.webp 960w, /assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-1440.webp 1440w, /assets/backgrounds/threshold/ashigara-threshold-desktop-actorless-1672.webp 1672w"
             sizes="100vw"
             alt=""
             width="1672"

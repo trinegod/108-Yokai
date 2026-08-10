@@ -4,6 +4,7 @@ import sharp from "sharp";
 
 const root = process.cwd();
 const source = (name) => path.join(root, "source-art", name);
+const derived = (name) => path.join(root, "derived-art", "clean-plates", name);
 const output = (...parts) => path.join(root, "public", "assets", ...parts);
 
 async function ensureDirectories() {
@@ -42,9 +43,39 @@ async function responsiveIllustration({
   }
 }
 
+async function responsiveCleanPlate({ sourceName, stem, widths, aspect }) {
+  for (const width of widths) {
+    const height = Math.round((width * aspect.height) / aspect.width);
+    const base = sharp(derived(sourceName)).resize({ width, height, fit: "fill" });
+
+    await Promise.all([
+      base
+        .clone()
+        .webp({ quality: 84, effort: 5, smartSubsample: true })
+        .toFile(output("backgrounds", "threshold", `${stem}-${width}.webp`)),
+      base
+        .clone()
+        .avif({ quality: 56, effort: 5, chromaSubsampling: "4:4:4" })
+        .toFile(output("backgrounds", "threshold", `${stem}-${width}.avif`)),
+    ]);
+  }
+}
+
 await ensureDirectories();
 
 await Promise.all([
+  responsiveCleanPlate({
+    sourceName: "ashigara-threshold-desktop-actorless-v1.png",
+    stem: "ashigara-threshold-desktop-actorless",
+    widths: [960, 1440, 1672],
+    aspect: { width: 1672, height: 941 },
+  }),
+  responsiveCleanPlate({
+    sourceName: "ashigara-threshold-mobile-actorless-v1.png",
+    stem: "ashigara-threshold-mobile-actorless",
+    widths: [640, 941],
+    aspect: { width: 941, height: 1672 },
+  }),
   responsiveIllustration({
     sourceName: "ashigara-threshold-desktop-master.png",
     directory: path.join("backgrounds", "threshold"),
