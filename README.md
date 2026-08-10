@@ -45,13 +45,13 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 - Full-height planted axe retained as a separate stationary interaction mask with a crater pulse.
 - Hōju identity preserved as one moving masked relic over a nondestructive actorless clean-plate derivative, with five shallow CSS depth planes, a smooth elliptical sway, controlled internal light, and water/flame/ink phase.
 - Pointer, keyboard focus, and touch can awaken the Hōju without blocking the primary entry path or pausing its continuous sway; motion is clamped to the locked composition.
-- Kintarō's full figure, legs, feet, and ledge stay planted in a static layer while a small feathered shoulder/upper-torso overlay expands by roughly one percent on a restrained breathing loop; no fabricated sprite frames.
+- Kintarō's full figure, legs, feet, and ledge stay planted in a static layer while a small feathered shoulder/upper-torso overlay expands by roughly two percent on a readable breathing loop; no fabricated sprite frames.
 - Rare motes, slow mist, tiny pointer parallax, and no continuous camera drift.
 - Desktop title and archive line occupy an upper-center lockup clear of the axe; mobile uses a centered title/subtitle lockup above the lowered Hōju, plus a compact safe-area-aware entry button.
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
 - Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
 - A transparent body-adjacent Kintarō aura with sparse embers, axe flash, ground-to-Hōju energy pulse, shoulder response, spatial push, and seamless full-frame fade into the archive.
-- Fine-print creator credit on desktop, mobile, and internal archive pages, with compact sound controls positioned outside the principal composition.
+- Fine-print creator credit on desktop, the upper-left mobile safe area, and internal archive pages, with compact sound controls positioned outside the principal composition.
 - The short mobile transition omits the desktop skip control; reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
 
 ### Living archive

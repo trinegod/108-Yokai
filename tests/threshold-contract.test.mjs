@@ -31,6 +31,8 @@ test("motion is progressive and has a reduced-motion path", async () => {
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
   assert.match(css, /animation:\s*kintaroShoulderBreath/);
   assert.match(css, /animation:\s*kintaroShoulderBreathMobile/);
+  assert.match(css, /scaleX\(1\.018\)/);
+  assert.match(css, /scaleX\(1\.021\)/);
   const staticGuardian = css.match(/\.threshold__kintaro\s*\{([^}]*)\}/)?.[1] ?? "";
   assert.match(staticGuardian, /animation:\s*none/);
   assert.match(staticGuardian, /transform:\s*none/);
@@ -47,4 +49,5 @@ test("motion is progressive and has a reduced-motion path", async () => {
   assert.doesNotMatch(css, /@keyframes\s+aperture/);
   assert.match(css, /threshold\[data-ascending="true"\]/);
   assert.match(css, /\.skip-transition\s*\{[\s\S]*?display:\s*none/);
+  assert.match(css, /\.threshold__edition\s*\{[\s\S]*?top:\s*max\(0\.45rem,[\s\S]*?bottom:\s*auto/);
 });

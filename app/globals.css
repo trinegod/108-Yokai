@@ -820,8 +820,8 @@ a {
 
 @keyframes kintaroShoulderBreath {
   0%, 100% { transform: scaleX(1) scaleY(1); filter: brightness(1.012); }
-  46% { transform: scaleX(1.011) scaleY(1.002); filter: brightness(1.026); }
-  58% { transform: scaleX(1.009) scaleY(1.0015); filter: brightness(1.022); }
+  46% { transform: scaleX(1.018) scaleY(1.003); filter: brightness(1.03); }
+  58% { transform: scaleX(1.0145) scaleY(1.0024); filter: brightness(1.025); }
 }
 
 @keyframes guardianAura {
@@ -2251,14 +2251,15 @@ a {
   }
 
   .threshold__edition {
-    left: max(0.75rem, env(safe-area-inset-left));
-    bottom: max(6.95rem, calc(env(safe-area-inset-bottom) + 6.45rem));
+    top: max(0.45rem, calc(env(safe-area-inset-top) + 0.25rem));
+    left: max(0.55rem, env(safe-area-inset-left));
+    bottom: auto;
     display: block;
-    width: 15rem;
+    width: 8.5rem;
     color: rgba(231, 221, 200, 0.46);
-    font-size: 0.47rem;
-    letter-spacing: 0.1em;
-    line-height: 1.45;
+    font-size: 0.41rem;
+    letter-spacing: 0.075em;
+    line-height: 1.35;
   }
 
   .threshold__edition span:first-child { display: none; }
@@ -2314,8 +2315,8 @@ a {
 
 @keyframes kintaroShoulderBreathMobile {
   0%, 100% { transform: scaleX(1) scaleY(1); filter: brightness(1.012); }
-  46% { transform: scaleX(1.013) scaleY(1.0025); filter: brightness(1.028); }
-  58% { transform: scaleX(1.0105) scaleY(1.002); filter: brightness(1.023); }
+  46% { transform: scaleX(1.021) scaleY(1.0035); filter: brightness(1.032); }
+  58% { transform: scaleX(1.017) scaleY(1.0028); filter: brightness(1.026); }
 }
 
 @keyframes hojuHoverMobile {

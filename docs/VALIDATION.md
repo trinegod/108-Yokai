@@ -38,7 +38,8 @@ Production preview, 390 × 844 viewport:
 - Threshold selected the independent 941 × 1672 portrait master and rendered at exactly 390 × 844 with no horizontal or vertical overflow.
 - Kintarō's approved upward mobile gaze, separately planted full axe, Hōju, mountain, title, sound control, and entry action remained visible.
 - The Hōju control responded to touch/click and reported its pressed state accessibly.
-- Mobile uses a dedicated shoulder-only Kintarō loop and a smooth eight-point Hōju orbit with linear segment timing; the sound control stays above the entry command, clear of the title and relic.
+- Mobile uses a dedicated shoulder-only Kintarō loop with approximately two-percent peak horizontal expansion and a smooth eight-point Hōju orbit with linear segment timing; the sound control stays above the entry command, clear of the title and relic.
+- The creator credit occupies the extreme upper-left safe area at phone size and remains clear of the centered title.
 - The centered ASHIGARA / THE LIVING ARCHIVE lockup remained clear at the top, the Hōju hovered lower around the mountain peak, and the compact `ENTER ASHIGARA` border stayed centered.
 - During entry, the Kintarō effect remains a semi-transparent body-adjacent glow with sparse sparks rather than an opaque orange circle. The mobile skip control computes to `display: none`, and the sound-control bounds remain fixed above the entry region.
 - The mobile full-frame fade reached 0.947 opacity across the exact 390 × 844 viewport before routing, with no transform or rectangular edge.
