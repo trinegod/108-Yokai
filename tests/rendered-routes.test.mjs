@@ -31,6 +31,7 @@ for (const [pathname, heading, content] of routes) {
     const html = await response.text();
     assert.match(html, heading);
     assert.match(html, content);
+    if (pathname !== "/") assert.match(html, /Return to (?:the )?threshold/i);
     assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
   });
 }

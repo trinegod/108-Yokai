@@ -21,11 +21,11 @@ The visual contradiction is intentional:
 
 ## Motion grammar
 
-- Kintarō: held, stepped micro-breathing anchored at the planted feet; minute chest/shoulder lift, never bounce or puppet interpolation. A broken red-gold aura and sparse embers appear only during entry.
+- Kintarō: continuous breathing anchored at the planted feet; readable chest/shoulder lift without bounce or puppet interpolation. A broken red-gold aura and sparse embers appear only during entry.
 - Axe: no idle movement; one flash and ground pulse during entry.
 - Hōju: irregular few-pixel hover, feathered integration, pointer/touch/focus attraction, five shallow transform-depth planes, and controlled core light; no showroom spin.
 - Environment: rare motes, slow mist, no continuous camera drift.
-- Entry: seal/button depression, optional post-gesture impact and ascending game-start strobe, Kintarō aura, ground-to-Hōju pulse, shallow push, aperture.
+- Entry: seal/button depression, optional post-gesture impact and ascending game-start strobe, Kintarō aura, ground-to-Hōju pulse, shallow push, and a seamless full-frame fade into the archive.
 
 Reduced motion removes parallax, idle loops, mist, motes, and long camera motion while preserving immediate entry feedback.
 

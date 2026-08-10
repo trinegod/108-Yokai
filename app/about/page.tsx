@@ -74,7 +74,7 @@ export default function AboutPage() {
         <article>
           <p className="eyebrow">Current status</p>
           <h2>Phase One vertical slice</h2>
-          <p>The threshold, five-route shell, search and detail pattern, narrative atlas, first chronicle, reduced-motion behavior, optional procedural impact sound, and content pipeline are implemented locally. Deployment, Japanese review, a CMS, final layered art, and expanded records are planned—not complete.</p>
+          <p>The threshold, five-route shell, search and detail pattern, narrative atlas, first chronicle, reduced-motion behavior, optional procedural impact sound, and content pipeline are implemented and available as an owner-authorized public preview. Japanese review, a CMS, final layered art, and expanded records are planned—not complete.</p>
         </article>
       </section>
     </ArchiveShell>

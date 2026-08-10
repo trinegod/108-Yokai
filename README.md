@@ -2,9 +2,9 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-`108Yokai` is the intended repository and future collection identity. The product remains **ASHIGARA — The Living Archive**.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and future collection identity. The product remains **ASHIGARA — The Living Archive**.
 
-> Status: Phase One vertical slice implemented locally. Not deployed. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and public rights language remain open.
+> Status: Phase One vertical slice is live as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site). Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
 ## Screenshots
 
@@ -50,7 +50,7 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 - Desktop title and archive line occupy a centered right-side lockup clear of the axe; the entry command is grouped at the lower center, with a tighter safe-area-aware mobile position.
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
 - Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
-- Kintarō activation aura and embers, axe flash, ground-to-Hōju energy pulse, garment response, spatial push, and aperture transition.
+- Kintarō activation aura and embers, axe flash, ground-to-Hōju energy pulse, garment response, spatial push, and seamless full-frame fade into the archive.
 - Small on-threshold creator credit and a compact desktop sound control positioned outside the principal composition.
 - Reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
 
@@ -192,7 +192,7 @@ Measured local production artifacts:
 |---|---:|---:|
 | Threshold component | 8.9 KB | 2.9 KB |
 | Archive index component | 29.5 KB | 8.7 KB |
-| Global CSS | 50.9 KB | 11.9 KB |
+| Global CSS | 52.1 KB | 12.2 KB |
 | Desktop 1440px threshold AVIF | 152.8 KB | — |
 | Mobile 941px threshold AVIF | 173.9 KB | — |
 
@@ -200,8 +200,8 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 
 ## Current limitations
 
-- Existing local folder is `108 YOKAI`, not exact `108Yokai`; it was not renamed because owner approval is required.
-- No Git remote, public repository, deployment, domain, analytics, CMS, database, or authentication exists.
+- The local folder remains `108 YOKAI`; the owner-created GitHub repository is `108-Yokai`.
+- A public preview and public source repository now exist. A custom production domain, analytics, CMS, database, and authentication do not.
 - No claim is made about users, traffic, conversion, research completeness, or field performance.
 - True separated threshold layers and final Kintarō/Hōju animation sheets are not supplied.
 - Kintarō uses a restrained still-based treatment, not a claimed production frame animation.
@@ -213,13 +213,13 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 ## Roadmap
 
 1. Complete the broader phone/tablet matrix and assistive-technology validation.
-2. Approve repository-folder rename and public rights/credit language.
+2. Approve final public license and artwork credit language.
 3. Replace still/composite masks with layered threshold art and approved transparent idle frames.
 4. Expand records in reviewed batches and add production character art.
 5. Introduce optional `108 Yōkai` collections and richer atlas relationships.
 6. Evaluate an isolated GPU Hōju model only if owner-approved layered/model assets arrive and profiling demonstrates a material visual benefit over the current interactive 2.5D planes.
 7. Resolve compatible Sites/Vinext toolchain upgrades, then run Lighthouse/mobile hardware tests.
-8. Choose hosting/domain and publish only with explicit owner authorization.
+8. Choose a custom production domain and publication release criteria when the preview is ready to graduate.
 
 ## Credits and AI-assistance disclosure
 
@@ -231,4 +231,4 @@ AI-assisted implementation supported frontend engineering, responsive styling, a
 
 ## Rights and publication
 
-The supplied ASHIGARA artwork is included for this owner-directed local project. Final public license and credit wording is pending. No repository remote or public deployment has been created. Do not publish, redistribute source masters, or represent the project as publicly launched without owner authorization.
+The supplied ASHIGARA artwork is included in the public preview and repository at the project owner's direction. Final public license and credit wording is still pending; preview availability is not a declaration that the source masters have been released under an open-content license.

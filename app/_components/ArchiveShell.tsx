@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Link from "next/link";
 import { ArchiveNav } from "./ArchiveNav";
 
 type ArchiveShellProps = {
@@ -22,10 +23,10 @@ export function ArchiveShell({ eyebrow, title, introduction, children }: Archive
         {children}
       </main>
       <footer className="archive-footer">
+        <Link className="archive-footer__threshold" href="/" prefetch={false}>← Return to the threshold</Link>
         <span>ASHIGARA — The Living Archive</span>
-        <span>Phase One · Local vertical slice</span>
+        <span>Phase One · Evolving vertical slice</span>
       </footer>
     </div>
   );
 }
-

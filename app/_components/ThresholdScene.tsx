@@ -236,8 +236,9 @@ export function ThresholdScene() {
           {Array.from({ length: 9 }, (_, index) => <i key={index} />)}
         </div>
         <div className="threshold__grain" />
-        <div className="threshold__aperture" />
       </div>
+
+      <div className="threshold__fade" aria-hidden="true" />
 
       <button
         type="button"

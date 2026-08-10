@@ -38,6 +38,6 @@ Archive details use `?record=slug`. Opening and closing records updates browser 
 
 Ten Phase One records, sources, places, chronicles, assets, and locale status live in versioned JSON. TypeScript defines the contract and Node tests validate references. A CMS can replace storage later without rewriting routes.
 
-## ADR-010 — no deployment without authorization
+## ADR-010 — publication only with authorization
 
-The app has been built and served locally only. `.openai/hosting.json` retains null D1/R2 declarations. No Git remote, hosting project, public URL, analytics service, or external write was created.
+The app remained local until the owner explicitly authorized a public preview and GitHub repository on 2026-08-10. `.openai/hosting.json` retains null D1/R2 declarations. No analytics service, CMS, database, authentication system, or custom production domain was added.

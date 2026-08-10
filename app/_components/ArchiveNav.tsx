@@ -22,6 +22,7 @@ export function ArchiveNav() {
         <span>
           <strong>ASHIGARA</strong>
           <small>The Living Archive</small>
+          <small className="archive-brand__return">← Return to threshold</small>
         </span>
       </Link>
       <nav aria-label="Primary archive navigation">

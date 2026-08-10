@@ -6,7 +6,7 @@ The threshold should render a lightweight responsive poster immediately, then ad
 
 ## Quality ladder
 
-- Tier A: responsive poster, shallow parallax, stepped Kintarō breathing, entry-only aura/embers, layered Hōju phase/glow, mist, motes, transition, and optional procedural sound.
+- Tier A: responsive poster, shallow parallax, continuous Kintarō breathing, entry-only aura/embers, layered Hōju phase/glow, mist, motes, transition, and optional procedural sound.
 - Tier B: reduced visual effects under reduced-motion preference or future capability heuristics.
 - Tier C: static responsive poster with entry, audio preference, and full navigation.
 - Tier D: semantic DOM content and five usable routes even if visual effects or audio APIs are unavailable.
@@ -28,12 +28,12 @@ Measurements are from the successful production build on Node.js 24.18.0. They a
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold route component | 8,921 B | 2,936 B |
-| Archive index component | 29,504 B | 8,702 B |
-| Archive navigation component | 1,224 B | 578 B |
+| Threshold route component | 8,938 B | 2,935 B |
+| Archive index component | 29,504 B | 8,703 B |
+| Archive navigation component | 1,314 B | 601 B |
 | Shared framework chunk | 190,152 B | 59,106 B |
 | Shared application/runtime chunk | 169,627 B | 49,102 B |
-| Global CSS | 50,916 B | 11,948 B |
+| Global CSS | 52,130 B | 12,203 B |
 
 | Responsive visual | File size |
 |---|---:|
@@ -47,7 +47,7 @@ Additional measured totals:
 
 - Preserved source masters: 14 MB on disk.
 - All optimized public art derivatives: 4.2 MB on disk; they are not all loaded on one route.
-- Complete production output: 6.6 MB on disk.
+- Complete production output: 6.9 MB on disk.
 - Production build stages completed in roughly four seconds in the local workspace during the final implementation pass.
 
 ## Evidence not yet collected
@@ -57,4 +57,4 @@ Additional measured totals:
 - Representative mid-range Android trace, memory, and energy profile.
 - Real network waterfall under throttling.
 
-Those belong to the pre-publication performance pass. No scores are inferred or invented here.
+Those belong to the release-hardening performance pass. No scores are inferred or invented here.
