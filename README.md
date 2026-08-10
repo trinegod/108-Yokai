@@ -51,7 +51,7 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
 - Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
 - Kintarō activation aura and embers, axe flash, ground-to-Hōju energy pulse, garment response, spatial push, and seamless full-frame fade into the archive.
-- Small on-threshold creator credit and a compact desktop sound control positioned outside the principal composition.
+- Fine-print creator credit on desktop, mobile, and internal archive pages, with compact sound controls positioned outside the principal composition.
 - Reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
 
 ### Living archive
@@ -192,7 +192,7 @@ Measured local production artifacts:
 |---|---:|---:|
 | Threshold component | 8.9 KB | 2.9 KB |
 | Archive index component | 29.5 KB | 8.7 KB |
-| Global CSS | 52.1 KB | 12.2 KB |
+| Global CSS | 52.4 KB | 12.3 KB |
 | Desktop 1440px threshold AVIF | 152.8 KB | — |
 | Mobile 941px threshold AVIF | 173.9 KB | — |
 

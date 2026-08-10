@@ -25,6 +25,7 @@ export function ArchiveShell({ eyebrow, title, introduction, children }: Archive
       <footer className="archive-footer">
         <Link className="archive-footer__threshold" href="/" prefetch={false}>← Return to the threshold</Link>
         <span>ASHIGARA — The Living Archive</span>
+        <span>Website created by Steven Adkins</span>
         <span>Phase One · Evolving vertical slice</span>
       </footer>
     </div>

@@ -28,12 +28,12 @@ Measurements are from the successful production build on Node.js 24.18.0. They a
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold route component | 8,938 B | 2,935 B |
-| Archive index component | 29,504 B | 8,703 B |
-| Archive navigation component | 1,314 B | 601 B |
+| Threshold route component | 8,938 B | 2,933 B |
+| Archive index component | 29,504 B | 8,700 B |
+| Archive navigation component | 1,314 B | 600 B |
 | Shared framework chunk | 190,152 B | 59,106 B |
 | Shared application/runtime chunk | 169,627 B | 49,102 B |
-| Global CSS | 52,130 B | 12,203 B |
+| Global CSS | 52,439 B | 12,259 B |
 
 | Responsive visual | File size |
 |---|---:|
