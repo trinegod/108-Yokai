@@ -14,11 +14,13 @@ test("threshold preserves locked responsive masters and required controls", asyn
   assert.match(component, /locale\.enter/);
   assert.match(component, /locale\.ascend/);
   assert.match(component, /threshold__kintaro/);
+  assert.match(component, /threshold__kintaro-breath/);
   assert.match(component, /threshold__kintaro-aura/);
   assert.match(component, /threshold__fade/);
   assert.match(component, /threshold__axe/);
   assert.match(component, /threshold__hoju/);
   assert.match(component, /threshold__relic-hotspot/);
+  assert.doesNotMatch(component, /HŌJU · RELIC FOCUS/);
   assert.match(component, /data-relic-active/);
   assert.match(component, /new AudioContext\(\)/);
   assert.doesNotMatch(component, /autoplay/i);
@@ -27,14 +29,18 @@ test("threshold preserves locked responsive masters and required controls", asyn
 test("motion is progressive and has a reduced-motion path", async () => {
   const css = await readFile(cssUrl, "utf8");
   assert.match(css, /prefers-reduced-motion:\s*reduce/);
-  assert.match(css, /animation:\s*kintaroBreath/);
-  assert.match(css, /animation:\s*kintaroBreathMobile/);
+  assert.match(css, /animation:\s*kintaroShoulderBreath/);
+  assert.match(css, /animation:\s*kintaroShoulderBreathMobile/);
+  const staticGuardian = css.match(/\.threshold__kintaro\s*\{([^}]*)\}/)?.[1] ?? "";
+  assert.match(staticGuardian, /animation:\s*none/);
+  assert.match(staticGuardian, /transform:\s*none/);
   assert.match(css, /animation:\s*guardianAura/);
   assert.match(css, /animation:\s*guardianSpark/);
   assert.match(css, /animation:\s*hojuHover/);
   assert.match(css, /animation:\s*hojuHoverMobile/);
   assert.match(css, /animation:\s*hojuOpenMobile/);
   assert.match(css, /threshold__hoju-depth/);
+  assert.doesNotMatch(css, /threshold\[data-relic-active="true"\]\s+\.threshold__hoju\s*\{/);
   assert.match(css, /mask-image:\s*radial-gradient/);
   assert.match(css, /animation:\s*energyTravel/);
   assert.match(css, /animation:\s*thresholdFade/);

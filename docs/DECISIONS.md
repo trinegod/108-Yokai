@@ -22,7 +22,7 @@ All six source PNGs are copied to canonical names in `source-art/` and hashed. `
 
 ## ADR-006 — still-based actor treatment is explicit
 
-The provided Kintarō turnaround is an opaque multi-figure reference, not a 6–8 frame empty-handed threshold idle. The threshold therefore uses a minute stepped mask/brightness treatment over the approved composite. Documentation labels the true idle sheet as backlog rather than claiming fabricated animation frames.
+The provided Kintarō turnaround is an opaque multi-figure reference, not a 6–8 frame empty-handed threshold idle. The threshold therefore keeps the approved full figure completely static and applies minute horizontal expansion only to a separately feathered shoulder/upper-torso overlay. The legs, feet, ledge, and background never receive the breathing transform. Documentation labels the true idle sheet as backlog rather than claiming fabricated animation frames.
 
 The typed `content/threshold-scene.ts` manifest exposes that status to the implementation: one approved still proxy is active, the target remains 6–8 discrete frames at 6–10 displayed frames per second, and reduced motion pins the approved still.
 

@@ -214,6 +214,7 @@ export function ThresholdScene() {
             data-sprite-mode={thresholdSceneManifest.guardian.idle.mode}
             data-frame-count={thresholdSceneManifest.guardian.idle.approvedFrameCount}
           />
+          <div className="threshold__kintaro-breath" aria-hidden="true" />
         </div>
         <div className="threshold__kintaro-aura">
           {Array.from({ length: 6 }, (_, index) => <i key={index} />)}
@@ -251,9 +252,7 @@ export function ThresholdScene() {
         onClick={awakenRelic}
         onFocus={focusRelic}
         onBlur={blurRelic}
-      >
-        <span aria-hidden="true">HŌJU · RELIC FOCUS</span>
-      </button>
+      />
 
       <p className="sr-only">
         At blue hour beneath Mount Ashigara, Kintarō stands empty-handed beside a separately planted legendary axe. A Hōju relic floats above the mountain.
