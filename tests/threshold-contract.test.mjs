@@ -15,7 +15,7 @@ test("threshold preserves locked responsive masters and required controls", asyn
   assert.match(component, /locale\.ascend/);
   assert.match(component, /threshold__kintaro/);
   assert.match(component, /threshold__kintaro-breath/);
-  assert.match(component, /threshold__kintaro-aura/);
+  assert.doesNotMatch(component, /threshold__kintaro-aura/);
   assert.match(component, /threshold__fade/);
   assert.match(component, /threshold__axe/);
   assert.match(component, /threshold__hoju/);
@@ -36,8 +36,7 @@ test("motion is progressive and has a reduced-motion path", async () => {
   const staticGuardian = css.match(/\.threshold__kintaro\s*\{([^}]*)\}/)?.[1] ?? "";
   assert.match(staticGuardian, /animation:\s*none/);
   assert.match(staticGuardian, /transform:\s*none/);
-  assert.match(css, /animation:\s*guardianAura/);
-  assert.match(css, /animation:\s*guardianSpark/);
+  assert.doesNotMatch(css, /guardianAura|guardianGlow|guardianSpark|threshold__kintaro-aura/);
   assert.match(css, /animation:\s*hojuHover/);
   assert.match(css, /animation:\s*hojuHoverMobile/);
   assert.match(css, /animation:\s*hojuOpenMobile/);

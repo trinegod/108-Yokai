@@ -6,7 +6,7 @@ The threshold should render a lightweight responsive poster immediately, then ad
 
 ## Quality ladder
 
-- Tier A: responsive poster, shallow parallax, shoulder-only Kintarō breathing, entry-only transparent aura/embers, continuously orbiting layered Hōju phase/glow, mist, motes, transition, and optional procedural sound.
+- Tier A: responsive poster, shallow parallax, shoulder-only Kintarō breathing, continuously orbiting layered Hōju phase/glow, mist, motes, transition, and optional procedural sound.
 - Tier B: reduced visual effects under reduced-motion preference or future capability heuristics.
 - Tier C: static responsive poster with entry, audio preference, and full navigation.
 - Tier D: semantic DOM content and five usable routes even if visual effects or audio APIs are unavailable.

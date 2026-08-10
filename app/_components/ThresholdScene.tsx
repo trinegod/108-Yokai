@@ -216,9 +216,6 @@ export function ThresholdScene() {
           />
           <div className="threshold__kintaro-breath" aria-hidden="true" />
         </div>
-        <div className="threshold__kintaro-aura">
-          {Array.from({ length: 6 }, (_, index) => <i key={index} />)}
-        </div>
         <div className="threshold__axe" />
         <div className="threshold__hoju-depth">
           <div className="threshold__hoju">

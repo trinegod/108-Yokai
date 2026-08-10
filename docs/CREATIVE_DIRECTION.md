@@ -21,11 +21,11 @@ The visual contradiction is intentional:
 
 ## Motion grammar
 
-- Kintarō: the full figure remains planted and still; only a feathered shoulder/upper-torso overlay expands slightly to imply breathing, with no rock, leg, or whole-body movement. A transparent red-gold aura and sparse embers appear only during entry.
+- Kintarō: the full figure remains planted and still; only a feathered shoulder/upper-torso overlay expands slightly to imply breathing, with no rock, leg, or whole-body movement. No character aura is present in the current release.
 - Axe: no idle movement; one flash and ground pulse during entry.
 - Hōju: a smooth few-pixel elliptical sway, feathered integration, pointer/touch/focus highlight that does not pause the orbit, five shallow transform-depth planes, and controlled core light; no showroom spin.
 - Environment: rare motes, slow mist, no continuous camera drift.
-- Entry: seal/button depression, optional post-gesture impact and ascending game-start strobe, Kintarō aura, ground-to-Hōju pulse, shallow push, and a seamless full-frame fade into the archive.
+- Entry: seal/button depression, optional post-gesture impact and ascending game-start strobe, ground-to-Hōju pulse, shallow push, and a seamless full-frame fade into the archive.
 
 Reduced motion removes parallax, idle loops, mist, motes, and long camera motion while preserving immediate entry feedback.
 
