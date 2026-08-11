@@ -2135,7 +2135,18 @@ a {
   }
 
   .threshold__kicker {
-    display: none;
+    display: block;
+    width: min(100%, 11rem);
+    margin-bottom: 0.55rem;
+    padding-inline: 2.15rem;
+    font-size: 0.54rem;
+    letter-spacing: 0.16em;
+  }
+
+  .threshold__kicker::before,
+  .threshold__kicker::after {
+    top: 0.46em;
+    width: 1.25rem;
   }
 
   .threshold h1 {

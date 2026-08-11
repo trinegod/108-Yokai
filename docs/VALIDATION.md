@@ -21,6 +21,7 @@ The full dependency tree audit initially reported 17 vulnerabilities. A non-brea
 - The nine supplied experimental JPEG frames remain preserved under `source-art/` with an explicit rejected-integration note; they are not claimed as a production website sequence.
 - Desktop and mobile render the compact centered `GATE 01 / ASHIGARA / THE LIVING ARCHIVE` lockup without changing either locked composition master.
 - Internal pages expose one explicit `Gate 01` return control, four content-route navigation items, and a responsive four-column phone navigation grid.
+- The header Gate 01 and ASHIGARA return links force a fresh threshold document load instead of depending on client-side route state.
 - The archive route introduction uses a restrained shared surface treatment and visible Gate 01 context; factual content and route structure are unchanged.
 - TypeScript, ESLint, content integrity, the production build, ten Node tests, and all five server-rendered routes passed after the refinement.
 - Owner visual acceptance of the newly published typography and shell treatment remains pending; no screenshot is claimed for this pass.

@@ -1,5 +1,6 @@
 "use client";
 
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import locale from "@/content/locales/en.json";
@@ -14,14 +15,19 @@ const links = [
 export function ArchiveNav() {
   const pathname = usePathname();
 
+  function returnToGate(event: MouseEvent<HTMLAnchorElement>) {
+    event.preventDefault();
+    window.location.assign("/");
+  }
+
   return (
     <header className="archive-header">
       <div className="archive-identity">
-        <Link className="archive-back" href="/" prefetch={false} aria-label="Return to Gate 01, Ashigara">
+        <Link className="archive-back" href="/" prefetch={false} onClick={returnToGate} aria-label="Return to Gate 01, Ashigara">
           <span aria-hidden="true">←</span>
           Gate 01
         </Link>
-        <Link className="archive-brand" href="/" prefetch={false} aria-label="Ashigara — The Living Archive">
+        <Link className="archive-brand" href="/" prefetch={false} onClick={returnToGate} aria-label="Ashigara — The Living Archive">
           <span className="archive-brand__seal" aria-hidden="true">足</span>
           <span>
             <strong>ASHIGARA</strong>
