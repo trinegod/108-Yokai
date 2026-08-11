@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArchiveShell } from "../_components/ArchiveShell";
 
 export const metadata: Metadata = {
@@ -152,14 +151,14 @@ export default function AboutPage() {
             <ul>
               {implemented.map((item) => <li key={item}>{item}</li>)}
             </ul>
-            <Link href="/archive" prefetch={false}>Inspect the living index</Link>
+            <a href="/archive">Inspect the living index</a>
           </article>
           <article>
             <p className="eyebrow">In progress / planned</p>
             <ul>
               {planned.map((item) => <li key={item}>{item}</li>)}
             </ul>
-            <Link href="/chronicles" prefetch={false}>Enter the first chronicle</Link>
+            <a href="/chronicles">Enter the first chronicle</a>
           </article>
         </div>
       </section>

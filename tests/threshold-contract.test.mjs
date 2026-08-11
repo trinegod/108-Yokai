@@ -4,6 +4,8 @@ import test from "node:test";
 
 const componentUrl = new URL("../app/_components/ThresholdScene.tsx", import.meta.url);
 const cssUrl = new URL("../app/globals.css", import.meta.url);
+const archiveNavUrl = new URL("../app/_components/ArchiveNav.tsx", import.meta.url);
+const archiveShellUrl = new URL("../app/_components/ArchiveShell.tsx", import.meta.url);
 
 test("threshold preserves locked responsive masters and required controls", async () => {
   const component = await readFile(componentUrl, "utf8");
@@ -49,4 +51,16 @@ test("motion is progressive and has a reduced-motion path", async () => {
   assert.match(css, /threshold\[data-ascending="true"\]/);
   assert.match(css, /\.skip-transition\s*\{[\s\S]*?display:\s*none/);
   assert.match(css, /\.threshold__edition\s*\{[\s\S]*?top:\s*max\(0\.45rem,[\s\S]*?bottom:\s*auto/);
+});
+
+test("archive navigation uses reliable browser links", async () => {
+  const [navigation, shell] = await Promise.all([
+    readFile(archiveNavUrl, "utf8"),
+    readFile(archiveShellUrl, "utf8"),
+  ]);
+  assert.doesNotMatch(navigation, /next\/link/);
+  assert.doesNotMatch(shell, /next\/link/);
+  assert.match(navigation, /<a href=\{link\.href\}/);
+  assert.match(navigation, /href:\s*"\/about"/);
+  assert.match(shell, /href="\/"/);
 });

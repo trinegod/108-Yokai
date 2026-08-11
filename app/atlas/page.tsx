@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArchiveShell } from "../_components/ArchiveShell";
 import { places, records } from "@/content";
 
@@ -23,17 +22,16 @@ export default function AtlasPage() {
           {places.map((place, index) => {
             const record = records.find((item) => item.places.some((link) => link.placeId === place.id));
             return (
-              <Link
+              <a
                 key={place.id}
                 className="atlas-node"
                 href={record ? `/archive?record=${record.slug}` : "/archive"}
-                prefetch={false}
                 style={{ left: `${place.mapPosition.x}%`, top: `${place.mapPosition.y}%` }}
               >
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{place.name}</strong>
                 <small>{place.kind}</small>
-              </Link>
+              </a>
             );
           })}
           <p className="atlas-map__legend">Approximate narrative placement · not to scale</p>

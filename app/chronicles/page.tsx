@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArchiveShell } from "../_components/ArchiveShell";
 import { chronicles, recordsById, sourcesById } from "@/content";
 
@@ -36,7 +35,7 @@ export default function ChroniclesPage() {
               <p className="eyebrow">{record.entityType}</p>
               <h3>{record.names.primaryEnglish} <small lang="ja">{record.names.japanese}</small></h3>
               <p>{record.summary}</p>
-              <Link href={`/archive?record=${record.slug}`} prefetch={false}>Open archive record <span aria-hidden="true">↗</span></Link>
+              <a href={`/archive?record=${record.slug}`}>Open archive record <span aria-hidden="true">↗</span></a>
             </article>
           </li>
         ) : null)}

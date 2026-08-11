@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-html-link-for-pages -- The deployed Vinext client requires full document navigation back to the threshold. */
 import type { ReactNode } from "react";
-import Link from "next/link";
 import { ArchiveNav } from "./ArchiveNav";
 
 type ArchiveShellProps = {
@@ -23,7 +23,7 @@ export function ArchiveShell({ eyebrow, title, introduction, children }: Archive
         {children}
       </main>
       <footer className="archive-footer">
-        <Link className="archive-footer__threshold" href="/" prefetch={false}>← Return to Gate 01</Link>
+        <a className="archive-footer__threshold" href="/">← Return to Gate 01</a>
         <span>ASHIGARA — The Living Archive</span>
         <span>Website created by Steven Adkins</span>
         <span>Phase One · Evolving vertical slice</span>
