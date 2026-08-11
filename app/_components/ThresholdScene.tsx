@@ -5,6 +5,13 @@ import { useRouter } from "next/navigation";
 import locale from "@/content/locales/en.json";
 import { thresholdSceneManifest } from "@/content/threshold-scene";
 
+const desktopPowerupFrames = Array.from(
+  { length: 9 },
+  (_, index) => `/assets/sprites/characters/kintaro-powerup-desktop/kintaro-powerup-desktop-${String(index).padStart(2, "0")}.webp`,
+);
+
+const desktopPowerupTiming = [0, 90, 180, 270, 360, 450, 560, 675, 785] as const;
+
 function readStoredSoundPreference() {
   try {
     return window.localStorage.getItem("ashigara-sound") === "on";
@@ -21,7 +28,7 @@ function writeStoredSoundPreference(enabled: boolean) {
   }
 }
 
-function playAscendSound() {
+function playAscendSound(includePowerCry = false) {
   const context = new AudioContext();
   const now = context.currentTime;
   const master = context.createGain();
@@ -87,6 +94,42 @@ function playAscendSound() {
   tail.start(now + 0.61);
   tail.stop(now + 1.08);
 
+  if (includePowerCry) {
+    // A deliberately quiet, game-like vocal burst lands after the entry impact,
+    // leaving the button strobe readable while giving Kintarō's peak pose weight.
+    const cryStart = now + 0.54;
+    const cryEnd = cryStart + 0.26;
+    const cryBus = context.createGain();
+    const cryFilter = context.createBiquadFilter();
+    cryBus.gain.setValueAtTime(0.0001, cryStart);
+    cryBus.gain.exponentialRampToValueAtTime(0.12, cryStart + 0.025);
+    cryBus.gain.setValueAtTime(0.09, cryStart + 0.13);
+    cryBus.gain.exponentialRampToValueAtTime(0.0001, cryEnd);
+    cryFilter.type = "bandpass";
+    cryFilter.Q.setValueAtTime(2.4, cryStart);
+    cryFilter.frequency.setValueAtTime(760, cryStart);
+    cryFilter.frequency.exponentialRampToValueAtTime(430, cryEnd);
+    cryBus.connect(cryFilter).connect(master);
+
+    const cryFundamental = context.createOscillator();
+    cryFundamental.type = "sawtooth";
+    cryFundamental.frequency.setValueAtTime(164, cryStart);
+    cryFundamental.frequency.exponentialRampToValueAtTime(108, cryEnd);
+    cryFundamental.connect(cryBus);
+    cryFundamental.start(cryStart);
+    cryFundamental.stop(cryEnd);
+
+    const cryUndertone = context.createOscillator();
+    const cryUndertoneGain = context.createGain();
+    cryUndertone.type = "square";
+    cryUndertone.frequency.setValueAtTime(82, cryStart);
+    cryUndertone.frequency.exponentialRampToValueAtTime(54, cryEnd);
+    cryUndertoneGain.gain.setValueAtTime(0.28, cryStart);
+    cryUndertone.connect(cryUndertoneGain).connect(cryBus);
+    cryUndertone.start(cryStart);
+    cryUndertone.stop(cryEnd);
+  }
+
   window.setTimeout(() => void context.close(), 1350);
 }
 
@@ -95,9 +138,11 @@ export function ThresholdScene() {
   const sceneRef = useRef<HTMLElement>(null);
   const routeTimerRef = useRef<number | null>(null);
   const relicTimerRef = useRef<number | null>(null);
+  const powerFrameTimersRef = useRef<number[]>([]);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [ascending, setAscending] = useState(false);
   const [relicActive, setRelicActive] = useState(false);
+  const [powerFrame, setPowerFrame] = useState(0);
 
   useEffect(() => {
     const preferenceTimer = window.setTimeout(() => setSoundEnabled(readStoredSoundPreference()), 0);
@@ -105,8 +150,43 @@ export function ThresholdScene() {
       window.clearTimeout(preferenceTimer);
       if (routeTimerRef.current) window.clearTimeout(routeTimerRef.current);
       if (relicTimerRef.current) window.clearTimeout(relicTimerRef.current);
+      powerFrameTimersRef.current.forEach((timer) => window.clearTimeout(timer));
     };
   }, []);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desktop = window.matchMedia("(min-width: 700px)").matches;
+    if (reducedMotion || !desktop) return;
+
+    const preloadTimer = window.setTimeout(() => {
+      desktopPowerupFrames.forEach((source) => {
+        const frame = new Image();
+        frame.decoding = "async";
+        frame.src = source;
+      });
+    }, 650);
+
+    return () => window.clearTimeout(preloadTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!ascending) return;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desktop = window.matchMedia("(min-width: 700px)").matches;
+    if (reducedMotion || !desktop) return;
+
+    powerFrameTimersRef.current.forEach((timer) => window.clearTimeout(timer));
+    powerFrameTimersRef.current = desktopPowerupTiming.map((delay, frame) => window.setTimeout(
+      () => setPowerFrame(frame),
+      delay,
+    ));
+
+    return () => {
+      powerFrameTimersRef.current.forEach((timer) => window.clearTimeout(timer));
+      powerFrameTimersRef.current = [];
+    };
+  }, [ascending]);
 
   function toggleSound() {
     const nextValue = !soundEnabled;
@@ -123,9 +203,10 @@ export function ThresholdScene() {
     }
 
     setAscending(true);
-    if (soundEnabled) playAscendSound();
-
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const desktop = window.matchMedia("(min-width: 700px)").matches;
+    if (soundEnabled) playAscendSound(desktop && !reducedMotion);
+
     let hasVisited = false;
     try {
       hasVisited = window.localStorage.getItem("ashigara-entered") === "yes";
@@ -133,7 +214,11 @@ export function ThresholdScene() {
     } catch {
       // Repeat-visit acceleration is optional.
     }
-    const delay = reducedMotion ? 180 : hasVisited ? 980 : 1220;
+    const delay = reducedMotion
+      ? 180
+      : desktop
+        ? hasVisited ? 1280 : 1380
+        : hasVisited ? 980 : 1220;
     routeTimerRef.current = window.setTimeout(() => router.push("/archive"), delay);
   }
 
@@ -172,6 +257,7 @@ export function ThresholdScene() {
       ref={sceneRef}
       className="threshold"
       data-ascending={ascending ? "true" : "false"}
+      data-power-frame={powerFrame}
       data-relic-active={relicActive ? "true" : "false"}
       data-depth-mode={thresholdSceneManifest.relic.dimensionalMode}
       onPointerMove={handlePointerMove}
@@ -209,12 +295,30 @@ export function ThresholdScene() {
         <div className="threshold__far-light" />
         <div className="threshold__mist threshold__mist--rear" />
         <div className="threshold__kintaro-depth">
+          <div className="threshold__kintaro-aura" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
           <div
             className="threshold__kintaro"
             data-sprite-mode={thresholdSceneManifest.guardian.idle.mode}
             data-frame-count={thresholdSceneManifest.guardian.idle.approvedFrameCount}
           />
           <div className="threshold__kintaro-breath" aria-hidden="true" />
+          {/* eslint-disable-next-line @next/next/no-img-element -- Preprocessed local sequence frames must swap without an optimizer wrapper. */}
+          <img
+            className="threshold__kintaro-power-frame"
+            src={desktopPowerupFrames[powerFrame]}
+            alt=""
+            width="530"
+            height="701"
+            decoding="async"
+            data-sprite-mode={thresholdSceneManifest.guardian.activation.mode}
+            data-frame-count={thresholdSceneManifest.guardian.activation.approvedFrameCount}
+          />
         </div>
         <div className="threshold__axe" />
         <div className="threshold__hoju-depth">

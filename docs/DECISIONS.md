@@ -18,13 +18,13 @@ The threshold uses `<picture>` source selection: the portrait master below 700px
 
 ## ADR-005 — nondestructive source pipeline
 
-All six source PNGs are copied to canonical names in `source-art/` and hashed. `scripts/process-assets.mjs` creates AVIF/WebP/JPEG/PNG derivatives only in `public/`. The script never overwrites a source master.
+All six source PNG masters and nine desktop activation JPEGs are copied to canonical names in `source-art/` and hashed. `scripts/process-assets.mjs` creates AVIF/WebP/JPEG/PNG derivatives only in `public/`. The script never overwrites a source master or working source frame.
 
-## ADR-006 — still-based actor treatment is explicit
+## ADR-006 — idle and activation use separate asset truth
 
-The provided Kintarō turnaround is an opaque multi-figure reference, not a 6–8 frame empty-handed threshold idle. The threshold therefore keeps the approved full figure completely static and applies minute horizontal expansion only to a separately feathered shoulder/upper-torso overlay. The legs, feet, ledge, and background never receive the breathing transform. Documentation labels the true idle sheet as backlog rather than claiming fabricated animation frames.
+The provided Kintarō turnaround is an opaque multi-figure reference, not a threshold idle atlas. The resting threshold therefore keeps the approved full figure completely static and applies minute horizontal expansion only to a separately feathered shoulder/upper-torso overlay. The legs, feet, ledge, and background never receive the breathing transform.
 
-The typed `content/threshold-scene.ts` manifest exposes that status to the implementation: one approved still proxy is active, the target remains 6–8 discrete frames at 6–10 displayed frames per second, and reduced motion pins the approved still.
+The owner subsequently directed and approved a separate nine-frame desktop activation sequence. Its received cyan-matte JPEG sources remain unchanged, while the derivative pipeline produces registered alpha WebP frames for the deliberate ENTER ASHIGARA action only. Mobile retains the approved still treatment until an independent portrait sequence is supplied. Reduced motion never plays the activation frames.
 
 ## ADR-007 — original procedural entry audio
 
@@ -41,3 +41,7 @@ Ten Phase One records, sources, places, chronicles, assets, and locale status li
 ## ADR-010 — publication only with authorization
 
 The app remained local until the owner explicitly authorized a public preview and GitHub repository on 2026-08-10. `.openai/hosting.json` retains null D1/R2 declarations. No analytics service, CMS, database, authentication system, or custom production domain was added.
+
+## ADR-011 — reversible aura and layered entry sound
+
+The desktop power-up aura is a restrained CSS contour/wisp/spark enhancement behind Kintarō, never painted into the character frames. The previous no-aura threshold remains recoverable at commit `c030c04`, and the effect can be removed without regenerating or altering artwork. The optional sound path preserves the existing impact/start cue and adds a later, quieter procedural 8-bit vocal-like burst at the bent-arm peak; both remain gesture-triggered, controlled by one visible preference, and silent by default.

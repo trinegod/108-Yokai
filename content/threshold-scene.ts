@@ -1,6 +1,6 @@
 export type SpritePlaybackSpec = {
   assetIds: readonly string[];
-  mode: "approved-still-proxy" | "production-atlas";
+  mode: "approved-still-proxy" | "production-atlas" | "production-sequence";
   approvedFrameCount: number;
   targetFrameCount: { min: number; max: number };
   targetDisplayFps: { min: number; max: number };
@@ -14,6 +14,7 @@ export type ThresholdSceneManifest = {
   guardian: {
     id: "kintaro";
     idle: SpritePlaybackSpec;
+    activation: SpritePlaybackSpec;
   };
   axe: {
     assetId: "threshold-desktop";
@@ -43,6 +44,16 @@ export const thresholdSceneManifest = {
       interpolation: "discrete",
       reducedMotionFrame: 0,
       backlogRequirement: "Transparent empty-handed three-quarter-back idle frames with exact grid and timing metadata.",
+    },
+    activation: {
+      assetIds: ["kintaro-powerup-desktop"],
+      mode: "production-sequence",
+      approvedFrameCount: 9,
+      targetFrameCount: { min: 8, max: 10 },
+      targetDisplayFps: { min: 10, max: 12 },
+      interpolation: "discrete",
+      reducedMotionFrame: 0,
+      backlogRequirement: "Independent owner-approved 9:16 mobile activation frames preserving the upward gaze.",
     },
   },
   axe: {

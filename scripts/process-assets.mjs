@@ -1,18 +1,168 @@
-import { mkdir } from "node:fs/promises";
+import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
 
 const root = process.cwd();
-const source = (name) => path.join(root, "source-art", name);
+const source = (...parts) => path.join(root, "source-art", ...parts);
 const derived = (name) => path.join(root, "derived-art", "clean-plates", name);
 const output = (...parts) => path.join(root, "public", "assets", ...parts);
+
+const desktopPowerupFrames = [
+  "kintaro-powerup-desktop-00.jpg",
+  "kintaro-powerup-desktop-01.jpg",
+  "kintaro-powerup-desktop-02.jpg",
+  "kintaro-powerup-desktop-03.jpg",
+  "kintaro-powerup-desktop-04.jpg",
+  "kintaro-powerup-desktop-05.jpg",
+  "kintaro-powerup-desktop-06.jpg",
+  "kintaro-powerup-desktop-07.jpg",
+  "kintaro-powerup-desktop-08-surge.jpg",
+];
 
 async function ensureDirectories() {
   await Promise.all([
     mkdir(output("backgrounds", "threshold"), { recursive: true }),
     mkdir(output("relics"), { recursive: true }),
     mkdir(output("sprites", "characters"), { recursive: true }),
+    mkdir(output("sprites", "characters", "kintaro-powerup-desktop"), { recursive: true }),
   ]);
+}
+
+function clamp(value, minimum, maximum) {
+  return Math.min(maximum, Math.max(minimum, value));
+}
+
+function smoothstep(edgeStart, edgeEnd, value) {
+  const position = clamp((value - edgeStart) / (edgeEnd - edgeStart), 0, 1);
+  return position * position * (3 - 2 * position);
+}
+
+async function decodeDesktopPowerupFrame(sourceName) {
+  const input = sharp(source("kintaro", "desktop-powerup", sourceName)).removeAlpha();
+  const { data, info } = await input.raw().toBuffer({ resolveWithObject: true });
+  const corners = [
+    0,
+    (info.width - 1) * info.channels,
+    (info.height - 1) * info.width * info.channels,
+    (info.width * info.height - 1) * info.channels,
+  ];
+  const matte = corners.reduce(
+    (total, offset) => ({
+      red: total.red + data[offset],
+      green: total.green + data[offset + 1],
+      blue: total.blue + data[offset + 2],
+    }),
+    { red: 0, green: 0, blue: 0 },
+  );
+  matte.red /= corners.length;
+  matte.green /= corners.length;
+  matte.blue /= corners.length;
+
+  const rgba = Buffer.alloc(info.width * info.height * 4);
+  const bounds = {
+    left: info.width,
+    top: info.height,
+    right: 0,
+    bottom: 0,
+  };
+
+  for (let pixel = 0; pixel < info.width * info.height; pixel += 1) {
+    const inputOffset = pixel * info.channels;
+    const outputOffset = pixel * 4;
+    const red = data[inputOffset];
+    const green = data[inputOffset + 1];
+    const blue = data[inputOffset + 2];
+    const distance = Math.sqrt(
+      (red - matte.red) ** 2 * 1.25
+      + (green - matte.green) ** 2
+      + (blue - matte.blue) ** 2,
+    );
+    const distanceAlpha = smoothstep(10, 68, distance);
+    const cyanExcess = Math.min(green, blue) - red;
+    const cyanSuppression = 1 - smoothstep(10, 52, cyanExcess);
+    const alphaUnit = distanceAlpha * cyanSuppression;
+    const alpha = alphaUnit < 0.015 ? 0 : alphaUnit > 0.985 ? 255 : Math.round(alphaUnit * 255);
+
+    if (alpha > 0) {
+      const safeAlpha = Math.max(alphaUnit, 0.18);
+      const unmattedRed = clamp(Math.round((red - matte.red * (1 - safeAlpha)) / safeAlpha), 0, 255);
+      const unmattedGreen = clamp(Math.round((green - matte.green * (1 - safeAlpha)) / safeAlpha), 0, 255);
+      const unmattedBlue = clamp(Math.round((blue - matte.blue * (1 - safeAlpha)) / safeAlpha), 0, 255);
+      const edgeChannelCap = unmattedRed + 16 + alphaUnit * 48;
+      rgba[outputOffset] = unmattedRed;
+      rgba[outputOffset + 1] = Math.min(unmattedGreen, edgeChannelCap);
+      rgba[outputOffset + 2] = Math.min(unmattedBlue, edgeChannelCap);
+      rgba[outputOffset + 3] = alpha;
+
+      if (alpha > 18) {
+        const x = pixel % info.width;
+        const y = Math.floor(pixel / info.width);
+        bounds.left = Math.min(bounds.left, x);
+        bounds.top = Math.min(bounds.top, y);
+        bounds.right = Math.max(bounds.right, x);
+        bounds.bottom = Math.max(bounds.bottom, y);
+      }
+    }
+  }
+
+  return {
+    sourceName,
+    rgba,
+    width: info.width,
+    height: info.height,
+    bounds,
+  };
+}
+
+async function buildDesktopPowerupSequence() {
+  const decodedFrames = await Promise.all(desktopPowerupFrames.map(decodeDesktopPowerupFrame));
+  const union = decodedFrames.reduce(
+    (bounds, frame) => ({
+      left: Math.min(bounds.left, frame.bounds.left),
+      top: Math.min(bounds.top, frame.bounds.top),
+      right: Math.max(bounds.right, frame.bounds.right),
+      bottom: Math.max(bounds.bottom, frame.bounds.bottom),
+    }),
+    {
+      left: decodedFrames[0].width,
+      top: decodedFrames[0].height,
+      right: 0,
+      bottom: 0,
+    },
+  );
+  const padding = 18;
+  const crop = {
+    left: Math.max(0, union.left - padding),
+    top: Math.max(0, union.top - padding),
+    width: Math.min(decodedFrames[0].width, union.right + padding + 1) - Math.max(0, union.left - padding),
+    height: Math.min(decodedFrames[0].height, union.bottom + padding + 1) - Math.max(0, union.top - padding),
+  };
+
+  await Promise.all(decodedFrames.map(async (frame, index) => {
+    const filename = `kintaro-powerup-desktop-${String(index).padStart(2, "0")}.webp`;
+    await sharp(frame.rgba, {
+      raw: { width: frame.width, height: frame.height, channels: 4 },
+    })
+      .extract(crop)
+      .webp({ quality: 90, alphaQuality: 100, effort: 6, smartSubsample: true })
+      .toFile(output("sprites", "characters", "kintaro-powerup-desktop", filename));
+  }));
+
+  await writeFile(
+    output("sprites", "characters", "kintaro-powerup-desktop", "sequence.json"),
+    `${JSON.stringify({
+      schemaVersion: 1,
+      sourceCanvas: { width: decodedFrames[0].width, height: decodedFrames[0].height },
+      sharedCrop: crop,
+      frameCount: decodedFrames.length,
+      frames: decodedFrames.map((frame, index) => ({
+        index,
+        source: frame.sourceName,
+        runtime: `kintaro-powerup-desktop-${String(index).padStart(2, "0")}.webp`,
+        role: index === 8 ? "optional-maximum-surge" : index === 7 ? "garment-follow-through" : "powerup",
+      })),
+    }, null, 2)}\n`,
+  );
 }
 
 async function responsiveIllustration({
@@ -64,6 +214,7 @@ async function responsiveCleanPlate({ sourceName, stem, widths, aspect }) {
 await ensureDirectories();
 
 await Promise.all([
+  buildDesktopPowerupSequence(),
   responsiveCleanPlate({
     sourceName: "ashigara-threshold-desktop-actorless-v1.png",
     stem: "ashigara-threshold-desktop-actorless",

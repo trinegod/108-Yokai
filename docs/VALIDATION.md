@@ -15,7 +15,23 @@ Validation date: 2026-08-10
 
 The full dependency tree audit initially reported 17 vulnerabilities. A non-breaking `npm audit fix` reduced that to 11 (1 low, 10 high), all in the Vinext/Vite/Cloudflare development and build toolchain. The remaining suggested fixes require breaking/out-of-range changes; they were not force-applied. Re-evaluate the bundled Sites stack before publication.
 
-## Browser checks completed
+## Local desktop activation pass
+
+The newer Kintarō entry sequence passed the required automated checks on 2026-08-10:
+
+- Nine separately preserved 1280 × 720 JPEG working frames resolve through the asset registry and nondestructive derivative pipeline.
+- Nine transparent, despilled WebP derivatives share one crop and total 500,201 bytes including `sequence.json`.
+- Desktop pointer/keyboard entry schedules one frame sequence, prevents double activation, and delays routing until the animation and full-frame fade complete.
+- The optional procedural entry cue adds a low-volume desktop-only power vocal at the pose peak. It remains silent until a deliberate visitor gesture and respects the stored sound preference.
+- Flame wisps and sparse sparks are code-driven, removable enhancement layers. They are absent from the mobile and reduced-motion paths.
+- The Hōju, planted axe, environment plate, and Kintarō activation remain independent layers.
+- All five routes server-rendered successfully after the change, and the threshold contract tests cover the sequence, reduced-motion branch, and desktop breakpoint.
+
+Controlled-browser visual acceptance of this newer sequence is still pending because no in-app browser-control session was available during this pass. No new screenshot was captured or claimed. The local development server is available at `http://localhost:3002/`; the public preview does not yet contain this local change.
+
+## Historical browser acceptance baseline
+
+The checks below document the preceding production-preview baseline. They remain evidence for the idle threshold, responsive composition, and route shell; they are not presented as visual acceptance of the newer desktop activation sequence.
 
 Production preview, 1440 × 900 viewport:
 
@@ -24,7 +40,7 @@ Production preview, 1440 × 900 viewport:
 - Sound-enabled entry exposed `aria-pressed=true` and `data-ascending=true`, ran the energy sequence, and routed once to `/archive` after the approximately one-second start cue and transition.
 - Kintarō's full-figure layer reports no animation and no transform; only the separate feathered shoulder overlay owns the breathing loop. The legs, feet, ledge, and surrounding pixels remain planted.
 - The Hōju keeps its `hojuHover` animation running when its focus/touch state is active. The visible relic has one moving masked master layer and the removed `HŌJU · RELIC FOCUS` text does not appear in the DOM.
-- The entry overlay covers the full viewport with opacity only and no scaled rectangular bounds. The experimental Kintarō aura and spark nodes are absent from both the component and stylesheet.
+- At that captured baseline, the entry overlay covered the full viewport with opacity only and no scaled rectangular bounds, and the earlier experimental Kintarō aura was absent.
 - Rebuilt production preview logs contained no warnings/errors for the tested threshold/archive flow.
 - Archive renders 10 records, grid/list controls, entity filter, and tolerant Japanese-name search.
 - Search for `宝珠` returned the Hōju record.

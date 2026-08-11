@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "sourceCanvas": {
+    "width": 1280,
+    "height": 720
+  },
+  "sharedCrop": {
+    "left": 371,
+    "top": 0,
+    "width": 530,
+    "height": 701
+  },
+  "frameCount": 9,
+  "frames": [
+    {
+      "index": 0,
+      "source": "kintaro-powerup-desktop-00.jpg",
+      "runtime": "kintaro-powerup-desktop-00.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 1,
+      "source": "kintaro-powerup-desktop-01.jpg",
+      "runtime": "kintaro-powerup-desktop-01.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 2,
+      "source": "kintaro-powerup-desktop-02.jpg",
+      "runtime": "kintaro-powerup-desktop-02.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 3,
+      "source": "kintaro-powerup-desktop-03.jpg",
+      "runtime": "kintaro-powerup-desktop-03.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 4,
+      "source": "kintaro-powerup-desktop-04.jpg",
+      "runtime": "kintaro-powerup-desktop-04.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 5,
+      "source": "kintaro-powerup-desktop-05.jpg",
+      "runtime": "kintaro-powerup-desktop-05.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 6,
+      "source": "kintaro-powerup-desktop-06.jpg",
+      "runtime": "kintaro-powerup-desktop-06.webp",
+      "role": "powerup"
+    },
+    {
+      "index": 7,
+      "source": "kintaro-powerup-desktop-07.jpg",
+      "runtime": "kintaro-powerup-desktop-07.webp",
+      "role": "garment-follow-through"
+    },
+    {
+      "index": 8,
+      "source": "kintaro-powerup-desktop-08-surge.jpg",
+      "runtime": "kintaro-powerup-desktop-08.webp",
+      "role": "optional-maximum-surge"
+    }
+  ]
+}
