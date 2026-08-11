@@ -11,7 +11,7 @@ const focusAreas = [
   {
     number: "01",
     title: "Creative direction",
-    copy: "Steven Adkins established the ASHIGARA concept, Gate system, approved visual authorities, composition locks, interaction goals, and portfolio direction. The visual language joins a recovered 32-bit action world with a restrained contemporary archive.",
+    copy: "Steven Adkins established the ASHIGARA concept, Gate system, approved visual authorities, composition locks, interaction goals, and portfolio direction. The visual language joins a recovered 32 bit action world with a restrained contemporary archive.",
   },
   {
     number: "02",
@@ -39,10 +39,10 @@ const technologies = [
 
 const implemented = [
   "Independent desktop and mobile threshold compositions",
-  "Gesture-controlled entry, optional sound, and reduced-motion behavior",
-  "Searchable, source-linked record index and detail chambers",
-  "Narrative atlas, first chronicle, and five-route structural shell",
-  "Nondestructive source-art and optimized derivative workflow",
+  "Gesture controlled entry, optional sound, and reduced motion behavior",
+  "Searchable record index with source links and detail chambers",
+  "Narrative atlas, first chronicle, and five route structural shell",
+  "Nondestructive artwork originals and optimized derivatives",
 ];
 
 const planned = [
@@ -64,8 +64,8 @@ export default function AboutPage() {
         <div className="case-study-summary__lead">
           <p className="eyebrow">Synopsis</p>
           <h2 id="case-study-synopsis">A folklore archive entered like a lost game world.</h2>
-          <p>ASHIGARA — The Living Archive is Gate 01 of the planned 108 Yōkai collection. Built around Mount Ashigara and the evolving traditions of Kintarō and Sakata no Kintoki, it combines a cinematic permanent threshold with source-linked records, a narrative atlas, curated chronicles, and a modular content system.</p>
-          <blockquote>“A lost 32-bit action world, recovered as an interactive museum.”</blockquote>
+          <p>ASHIGARA — The Living Archive is Gate 01 of the planned 108 Yōkai collection. Built around Mount Ashigara and the evolving traditions of Kintarō and Sakata no Kintoki, it combines a cinematic permanent threshold with records linked to sources, a narrative atlas, curated chronicles, and a modular content system.</p>
+          <blockquote>“A lost 32 bit action world, recovered as an interactive museum.”</blockquote>
         </div>
         <dl className="case-study-facts" aria-label="Project facts">
           <div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
           <figure>
             <picture>
               <source type="image/avif" srcSet="/assets/relics/hoju-concept-480.avif 480w, /assets/relics/hoju-concept-720.avif 720w" sizes="(max-width: 700px) 82vw, 34vw" />
-              <img src="/assets/relics/hoju-concept-720.webp" alt="Approved Hōju concept: a pale sacred jewel encircled by red, black, and bone wave-flame calligraphy" width="720" height="1279" loading="lazy" />
+              <img src="/assets/relics/hoju-concept-720.webp" alt="Approved Hōju concept: a pale sacred jewel encircled by red, black, and bone wave and flame calligraphy" width="720" height="1279" loading="lazy" />
             </picture>
             <figcaption><span>Locked relic reference</span> Hōju silhouette, material, palette, and water/flame/ink behavior.</figcaption>
           </figure>
@@ -123,7 +123,7 @@ export default function AboutPage() {
               <source type="image/avif" srcSet="/assets/sprites/characters/kintaro-character-480.avif 480w, /assets/sprites/characters/kintaro-character-720.avif 720w" sizes="(max-width: 700px) 82vw, 34vw" />
               <img src="/assets/sprites/characters/kintaro-character-720.webp" alt="Approved Kintarō identity reference with black hair, checkered garments, beadwork, and legendary axe" width="720" height="1279" loading="lazy" />
             </picture>
-            <figcaption><span>Identity reference</span> Anatomy, costume, material, and facial authority—not the threshold pose.</figcaption>
+            <figcaption><span>Identity reference</span> Anatomy, costume, material, and facial authority. This image does not define the threshold pose.</figcaption>
           </figure>
         </div>
       </section>
@@ -133,7 +133,7 @@ export default function AboutPage() {
           <p className="eyebrow">Implementation</p>
           <h2 id="technology-title">Built for atmosphere. Structured for growth.</h2>
           <p>React and TypeScript components run through Vinext and Vite. Content stays separate from the views in JSON and TypeScript manifests. CSS masks, compositing, and shallow DOM planes create dimensional response without making WebGL a requirement.</p>
-          <p>A Sharp-based asset pipeline generates responsive AVIF and WebP derivatives without overwriting the source artwork. Route rendering, content references, accessibility rules, and types are checked through the project&apos;s validation suite.</p>
+          <p>The Sharp asset pipeline generates responsive AVIF and WebP derivatives without overwriting the source artwork. Route rendering, content references, accessibility rules, and types are checked through the project&apos;s validation suite.</p>
         </div>
         <ul className="technology-stack" aria-label="Technology used">
           {technologies.map((technology) => <li key={technology}>{technology}</li>)}
@@ -143,7 +143,7 @@ export default function AboutPage() {
       <section className="project-status" aria-labelledby="project-status-title">
         <header className="case-study-section__header">
           <p className="eyebrow">Current status</p>
-          <h2 id="project-status-title">A working first gate—not a finished mythology.</h2>
+          <h2 id="project-status-title">A working first gate. The mythology is still growing.</h2>
           <p>Implemented work and future intent stay visibly separate. No unfinished feature is presented as complete.</p>
         </header>
         <div className="project-status__grid">
@@ -171,7 +171,7 @@ export default function AboutPage() {
         </div>
         <div>
           <p>Steven defined the product, story world, approved visual references, interaction goals, composition locks, and portfolio intent.</p>
-          <p>AI-assisted implementation supported frontend engineering, responsive styling, asset optimization, documentation, and structured-content drafting under those constraints. AI output is not treated as a folklore source; factual records link to institutional references and remain subject to human editorial review.</p>
+          <p>AI assisted implementation supported frontend engineering, responsive styling, asset optimization, documentation, and structured content drafting under those constraints. AI output is not treated as a folklore source; factual records link to institutional references and remain subject to human editorial review.</p>
         </div>
       </section>
     </ArchiveShell>
