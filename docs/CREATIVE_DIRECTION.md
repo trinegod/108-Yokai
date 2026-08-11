@@ -2,7 +2,7 @@
 
 ## Thesis
 
-ASHIGARA — The Living Archive is a living folklore knowledge system presented as a recovered 32-bit Japanese action world. It combines a quiet title-screen threshold, dimensional sacred objects, crisp authored imagery, and serious source separation.
+ASHIGARA — The Living Archive is Gate 01 of the planned 108 Yōkai collection: a living folklore knowledge system presented as a recovered 32-bit Japanese action world. It combines a quiet title-screen threshold, dimensional sacred objects, crisp authored imagery, and serious source separation.
 
 The visual contradiction is intentional:
 
@@ -18,6 +18,7 @@ The visual contradiction is intentional:
 - Hōju identity comes from the supplied silhouette and red/bone/ink wave-flame behavior.
 - Mount Ashigara remains the authored world, not a procedural terrain or giant sprite.
 - Typography and controls occupy negative space and remain visually subordinate to the scene.
+- The threshold lockup reads `GATE 01 / ASHIGARA / THE LIVING ARCHIVE` on both breakpoint-specific compositions.
 
 ## Motion grammar
 
@@ -42,6 +43,7 @@ Reduced motion removes parallax, idle loops, mist, motes, and long camera motion
 
 - Use real buttons and links with visible text.
 - Internal navigation resembles a compact archive seal system without hiding labels.
+- Internal pages provide one explicit return to Gate 01; Threshold is not repeated as an archive navigation tab.
 - Record chambers darken and flatten the world, then separate Tradition, Variants, and ASHIGARA Adaptation.
 - Mobile receives independent composition and full-width detail treatment.
 - Geometric sigils are visibly restrained placeholders, not claims of final yōkai art.

@@ -2,9 +2,9 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and future collection identity. The product remains **ASHIGARA — The Living Archive**.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. A global 108 Yōkai portal and later gates are planned, not presented as implemented.
 
-> Status: Phase One is available as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site). A newer desktop-only Kintarō entry sequence is implemented and validated locally but has not been pushed, redeployed, or visually accepted by the owner. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
+> Status: Phase One vertical slice is live as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site). Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
 ## Screenshots
 
@@ -24,8 +24,6 @@ Real deep-linked archive-record capture at 1440 × 900:
 
 ![Kintarō record chamber separating tradition and ASHIGARA adaptation](docs/screenshots/archive-record-desktop-1440x900.png)
 
-These are real baseline captures, not mockups. They document the implemented idle threshold and route shell; they do not purport to show the newer local desktop activation sequence.
-
 ## Creative and product direction
 
 Steven defined the product thesis, ASHIGARA world, approved visual references, permanent-threshold concept, composition locks, interaction sequence, archive intent, and employer-facing case-study goals.
@@ -36,7 +34,7 @@ The experience is built around one durable contradiction:
 - selected relics and actors break the plane through shallow depth, phase, occlusion, light, and limited motion;
 - the archive remains legible, searchable, source-linked, and structurally expandable.
 
-The threshold is a permanent signature, not a disposable landing page. New folklore records, citations, places, exhibitions, locales, sprites, and audio can expand behind it without rebuilding the entrance.
+The threshold is Gate 01's permanent signature, not a disposable landing page. New folklore records, citations, places, exhibitions, locales, sprites, and audio can expand behind it without rebuilding the entrance. Future gates can use distinct UX and technical systems without being inserted into ASHIGARA's internal navigation.
 
 ## Implemented experience
 
@@ -47,18 +45,18 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 - Full-height planted axe retained as a separate stationary interaction mask with a crater pulse.
 - Hōju identity preserved as one moving masked relic over a nondestructive actorless clean-plate derivative, with five shallow CSS depth planes, a smooth elliptical sway, controlled internal light, and water/flame/ink phase.
 - Pointer, keyboard focus, and touch can awaken the Hōju without blocking the primary entry path or pausing its continuous sway; motion is clamped to the locked composition.
-- At rest, Kintarō's full figure, legs, feet, and ledge stay planted in a static layer while a small feathered shoulder/upper-torso overlay provides a restrained breathing loop.
-- On desktop entry only, an owner-supplied nine-frame back-view sequence progressively opens Kintarō's stance into a short power-up before the route transition. The stationary axe, Hōju, and environment remain independent layers; mobile keeps its approved portrait composition and still-based breathing treatment until a separate mobile sequence exists.
+- Kintarō's full figure, legs, feet, and ledge stay planted in a static layer while a small feathered shoulder/upper-torso overlay expands by roughly two percent on a readable breathing loop; no fabricated sprite frames.
 - Rare motes, slow mist, tiny pointer parallax, and no continuous camera drift.
-- Desktop title and archive line occupy an upper-center lockup clear of the axe; mobile uses a centered title/subtitle lockup above the lowered Hōju, plus a compact safe-area-aware entry button.
+- Desktop and mobile use a centered `GATE 01 / ASHIGARA / THE LIVING ARCHIVE` lockup within their independently composed safe areas.
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
-- Optional original 16-bit-inspired impact, rising start strobe, one-second tail, and a quiet desktop-only synthesized power vocal at the pose peak, all beginning only after the visitor’s gesture; sound is off by default and remembered locally.
-- Axe flash, ground-to-Hōju energy pulse, shoulder response, spatial push, and seamless full-frame fade into the archive. The local desktop sequence adds removable CSS flame wisps and sparse sparks instead of an opaque character-covering aura; mobile and reduced-motion paths omit them.
+- Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
+- Axe flash, ground-to-Hōju energy pulse, shoulder response, spatial push, and seamless full-frame fade into the archive. The experimental Kintarō aura is intentionally omitted from the current release.
 - Fine-print creator credit on desktop, the upper-left mobile safe area, and internal archive pages, with compact sound controls positioned outside the principal composition.
 - The short mobile transition omits the desktop skip control; reduced-motion mode removes idle loops, parallax, mist, and long transitions while preserving entry.
 
 ### Living archive
 
+- Internal pages use a dedicated Gate 01 return control and four-route archive navigation without duplicating the threshold as a navigation tab.
 - Ten source-linked Phase One records across hero, spirit, object, oni, creature, and place types.
 - Search across English, Japanese, kana, romanization, alias, region, theme, motif, and summary fields.
 - Entity filter and grid/list views.
@@ -76,7 +74,7 @@ The threshold is a permanent signature, not a disposable landing page. New folkl
 
 | Route | Purpose | Current state |
 |---|---|---|
-| `/` | Permanent Mount Ashigara threshold | Implemented and browser-tested at desktop and phone sizes |
+| `/` | Gate 01 permanent Mount Ashigara threshold | Implemented and browser-tested at desktop and phone sizes |
 | `/archive` | Searchable living index and record chamber | Implemented and browser-tested at desktop and phone sizes |
 | `/atlas` | Narrative place/region index with list alternative | Implemented; server-render tested |
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented; server-render tested |
@@ -159,9 +157,9 @@ The current sample uses institutional pathways from Japan Search / National Diet
 
 ## Asset workflow
 
-The six owner-supplied PNG masters and nine owner-approved working desktop activation JPEGs are retained separately under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated subject layers can be composited over the scene. Runtime AVIF/WebP assets are generated separately and never overwrite the originals.
+The six owner-supplied PNG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated masked subject layers can be composited over the scene. Runtime AVIF/WebP assets are generated separately at conservative sizes.
 
-The desktop activation JPEGs share a cyan working matte. The nondestructive build derives transparent, despilled WebP frames with one shared crop so placement does not jitter, while retaining all nine JPEGs byte-for-byte. The original Kintarō/Hōju reference sheets remain opaque reference material rather than claimed production atlases. A transparent idle set, independent mobile activation set, separate planted-axe/crater matte, and source-layered Hōju energy planes remain in the asset backlog.
+The current Kintarō and Hōju reference sheets are opaque and not production atlases. Phase One deliberately does not extract or invent final frames from them. A transparent 6–8 frame idle, separate planted-axe/crater matte, and layered Hōju energy planes remain in the asset backlog.
 
 ## Accessibility
 
@@ -194,38 +192,38 @@ Measured local production artifacts:
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold component | 16.0 KB | 4.1 KB |
+| Threshold component | 9.0 KB | 2.9 KB |
 | Archive index component | 29.5 KB | 8.7 KB |
-| Global CSS | 59.2 KB | 12.1 KB |
+| Global CSS | 53.3 KB | 12.5 KB |
 | Desktop 1440px actorless threshold AVIF | 103.7 KB | — |
 | Mobile 941px actorless threshold AVIF | 127.1 KB | — |
-| Nine desktop activation WebPs + manifest | 500.2 KB | — |
 
 These are build/file measurements, not Lighthouse or Core Web Vitals claims. See [`docs/PERFORMANCE_BUDGET.md`](docs/PERFORMANCE_BUDGET.md) and [`docs/VALIDATION.md`](docs/VALIDATION.md) for the complete evidence and remaining checks.
 
 ## Current limitations
 
 - The local folder remains `108 YOKAI`; the owner-created GitHub repository is `108-Yokai`.
-- A public preview and public source repository now exist, but the newer desktop activation work is local and unpushed. A custom production domain, analytics, CMS, database, and authentication do not.
+- A public preview and public source repository now exist. A custom production domain, analytics, CMS, database, and authentication do not.
 - No claim is made about users, traffic, conversion, research completeness, or field performance.
-- Final source-layered transparent Kintarō idle and Hōju sheets are not supplied; the implemented separation uses versioned clean-plate derivatives plus masked pixels from the locked masters.
-- Kintarō's resting treatment and mobile entry remain still-based. The local desktop entry uses a real nine-frame working sequence, but owner visual acceptance and a separate mobile sequence are still pending.
+- Final source-approved transparent Kintarō/Hōju layers and animation sheets are not supplied; the implemented separation uses versioned clean-plate derivatives plus masked pixels from the locked masters.
+- Kintarō uses a restrained still-based treatment, not a claimed production frame animation.
 - Record artwork beyond Kintarō/Hōju uses controlled geometric sigils.
 - Japanese localization is not exposed as complete and awaits fluent editorial review.
-- Desktop and 390 × 844 phone acceptance are complete for the preceding idle threshold and archive header. Controlled-browser acceptance of the newer desktop activation plus broader phone/tablet hardware coverage remain open.
+- Desktop and 390 × 844 phone acceptance are complete for the refined threshold and archive header; broader phone/tablet hardware coverage remains open.
 - Full development-toolchain audit still has 11 advisories requiring coordinated breaking upgrades.
 
 ## Roadmap
 
 1. Complete the broader phone/tablet matrix and assistive-technology validation.
 2. Approve final public license and artwork credit language.
-3. Obtain owner visual acceptance for the local desktop activation, then create and approve an independently composed mobile activation sequence.
-4. Replace remaining still/composite masks with source-layered threshold art and approved transparent idle frames.
-5. Expand records in reviewed batches and add production character art.
-6. Introduce optional `108 Yōkai` collections and richer atlas relationships.
-7. Evaluate an isolated GPU Hōju model only if owner-approved layered/model assets arrive and profiling demonstrates a material visual benefit over the current interactive 2.5D planes.
-8. Resolve compatible Sites/Vinext toolchain upgrades, then run Lighthouse/mobile hardware tests.
-9. Choose a custom production domain and publication release criteria when the preview is ready to graduate.
+3. Replace still/composite masks with layered threshold art and approved transparent idle frames.
+4. Expand records in reviewed batches and add production character art.
+5. Complete Gate 01's artwork, records, atlas, chronicles, and interactive-scene foundation.
+6. Design the separate 108 Yōkai portal hub, then develop Gate 02 as an independent UX case study.
+7. Introduce richer atlas relationships and optional future gate collections without claiming a fixed folklore canon.
+8. Evaluate an isolated GPU Hōju model only if owner-approved layered/model assets arrive and profiling demonstrates a material visual benefit over the current interactive 2.5D planes.
+9. Resolve compatible Sites/Vinext toolchain upgrades, then run Lighthouse/mobile hardware tests.
+10. Choose a custom production domain and publication release criteria when the preview is ready to graduate.
 
 ## Credits and AI-assistance disclosure
 

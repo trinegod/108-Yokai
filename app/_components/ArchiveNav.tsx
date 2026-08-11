@@ -5,11 +5,10 @@ import { usePathname } from "next/navigation";
 import locale from "@/content/locales/en.json";
 
 const links = [
-  { href: "/", label: locale.nav.threshold, mark: "一" },
-  { href: "/archive", label: locale.nav.archive, mark: "二" },
-  { href: "/atlas", label: locale.nav.atlas, mark: "三" },
-  { href: "/chronicles", label: locale.nav.chronicles, mark: "四" },
-  { href: "/about", label: locale.nav.about, mark: "五" },
+  { href: "/archive", label: locale.nav.archive, mark: "一" },
+  { href: "/atlas", label: locale.nav.atlas, mark: "二" },
+  { href: "/chronicles", label: locale.nav.chronicles, mark: "三" },
+  { href: "/about", label: locale.nav.about, mark: "四" },
 ];
 
 export function ArchiveNav() {
@@ -17,18 +16,23 @@ export function ArchiveNav() {
 
   return (
     <header className="archive-header">
-      <Link className="archive-brand" href="/" prefetch={false} aria-label="Return to the Ashigara threshold">
-        <span className="archive-brand__seal" aria-hidden="true">足</span>
-        <span>
-          <strong>ASHIGARA</strong>
-          <small>The Living Archive</small>
-          <small className="archive-brand__return">← Return to threshold</small>
-        </span>
-      </Link>
+      <div className="archive-identity">
+        <Link className="archive-back" href="/" prefetch={false} aria-label="Return to Gate 01, Ashigara">
+          <span aria-hidden="true">←</span>
+          Gate 01
+        </Link>
+        <Link className="archive-brand" href="/" prefetch={false} aria-label="Ashigara — The Living Archive">
+          <span className="archive-brand__seal" aria-hidden="true">足</span>
+          <span>
+            <strong>ASHIGARA</strong>
+            <small>The Living Archive</small>
+          </span>
+        </Link>
+      </div>
       <nav aria-label="Primary archive navigation">
         <ul className="archive-nav-list">
           {links.map((link) => {
-            const active = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+            const active = pathname.startsWith(link.href);
             return (
               <li key={link.href}>
                 <Link href={link.href} prefetch={false} aria-current={active ? "page" : undefined}>

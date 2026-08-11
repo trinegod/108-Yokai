@@ -16,7 +16,7 @@ async function render(pathname) {
 }
 
 const routes = [
-  ["/", /ASHIGARA/, /ENTER ASHIGARA/],
+  ["/", /GATE 01[\s\S]*ASHIGARA/, /ENTER ASHIGARA/],
   ["/archive", /The Living Index/, /source-checked[\s\S]*Phase One sample/],
   ["/atlas", /Places, Paths &amp; Regions/, /Approximate narrative placement/],
   ["/chronicles", /Chronicles/, /From Ashigara to the demon road/],
@@ -31,7 +31,10 @@ for (const [pathname, heading, content] of routes) {
     const html = await response.text();
     assert.match(html, heading);
     assert.match(html, content);
-    if (pathname !== "/") assert.match(html, /Return to (?:the )?threshold/i);
+    if (pathname !== "/") {
+      assert.match(html, /Return to Gate 01/i);
+      assert.doesNotMatch(html, />Threshold</i);
+    }
     assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/i);
   });
 }

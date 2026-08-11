@@ -106,23 +106,5 @@
     "missingStates": "None for identity reference; not approved as the threshold pose.",
     "approvalStatus": "identity-reference",
     "runtimeAsset": true
-  },
-  {
-    "id": "kintaro-powerup-desktop",
-    "sourceFilename": "Nine owner-approved ChatGPT Images downloads supplied in conversation order",
-    "canonicalSourceName": "kintaro-powerup-desktop-00.jpg through kintaro-powerup-desktop-08-surge.jpg",
-    "sourcePath": "source-art/kintaro/desktop-powerup/",
-    "type": "sprite-sequence",
-    "association": "Kintarō desktop ENTER ASHIGARA activation",
-    "width": 1280,
-    "height": 720,
-    "frameLayout": "nine separate, equally registered opaque cyan-matte frames; 00–07 primary motion and 08 optional maximum-surge accent",
-    "transparency": "opaque cyan source mattes; derived WebP frames have chroma-keyed alpha",
-    "intendedUse": "Desktop-only threshold power-up after deliberate entry activation",
-    "rightsStatus": "Owner-directed and owner-supplied AI-assisted artwork authorized for this local project; final public license language remains open.",
-    "optimization": "Source JPEGs retained separately; shared-crop alpha WebP derivatives and sequence metadata generated nondestructively.",
-    "missingStates": "Independent mobile activation sequence preserving the final portrait composition and subtle upward gaze.",
-    "approvalStatus": "approved-working-sequence",
-    "runtimeAsset": true
   }
 ]

@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { access, readFile, readdir, stat } from "node:fs/promises";
+import { access, readFile, stat } from "node:fs/promises";
 import test from "node:test";
 
 const root = new URL("../", import.meta.url);
@@ -58,14 +58,8 @@ test("all canonical source masters and optimized runtime assets exist separately
     const sourceUrl = new URL(asset.sourcePath, root);
     await access(sourceUrl);
     const sourceStat = await stat(sourceUrl);
-    if (sourceStat.isDirectory()) {
-      const sourceFrames = (await readdir(sourceUrl)).filter((filename) => filename.endsWith(".jpg"));
-      assert.equal(sourceFrames.length, 9, `${asset.canonicalSourceName} preserves every supplied frame`);
-      assert.match(asset.optimization, /source JPEGs retained separately/i);
-    } else {
-      assert.ok(sourceStat.size > 1_000_000, `${asset.canonicalSourceName} remains a full source master`);
-      assert.match(asset.optimization, /original retained byte-for-byte|no (?:production )?frame extraction/i);
-    }
+    assert.ok(sourceStat.size > 1_000_000, `${asset.canonicalSourceName} remains a full source master`);
+    assert.match(asset.optimization, /original retained byte-for-byte|no (?:production )?frame extraction/i);
   }
 
   await Promise.all([
@@ -77,8 +71,5 @@ test("all canonical source masters and optimized runtime assets exist separately
     access(new URL("../derived-art/clean-plates/ashigara-threshold-mobile-actorless-v1.png", import.meta.url)),
     access(new URL("../public/assets/relics/hoju-concept-480.webp", import.meta.url)),
     access(new URL("../public/assets/sprites/characters/kintaro-character-480.webp", import.meta.url)),
-    access(new URL("../public/assets/sprites/characters/kintaro-powerup-desktop/kintaro-powerup-desktop-00.webp", import.meta.url)),
-    access(new URL("../public/assets/sprites/characters/kintaro-powerup-desktop/kintaro-powerup-desktop-08.webp", import.meta.url)),
-    access(new URL("../public/assets/sprites/characters/kintaro-powerup-desktop/sequence.json", import.meta.url)),
   ]);
 });

@@ -1,6 +1,8 @@
 # Kintarō desktop power-up sources
 
-These nine 1280 × 720 JPEG files are the owner-supplied, owner-approved working sequence generated interactively on 2026-08-10. They are preserved as received. Cyan removal, shared cropping, optimization, and runtime naming happen only in `scripts/process-assets.mjs`.
+These nine 1280 × 720 JPEG files are the owner-supplied, owner-approved working sequence generated interactively on 2026-08-10. They are preserved as received. Any future cyan removal, registration, cropping, or optimization must remain nondestructive and write derivatives outside `source-art/`.
+
+The first direct full-figure replacement implementation did not pass owner visual review because the composited figure appeared clipped and discontinuous during playback. That runtime implementation was rolled back. These files remain preserved as research material and are not claimed as a production-approved website sequence.
 
 | Canonical source | Role | SHA-256 |
 |---|---|---|
