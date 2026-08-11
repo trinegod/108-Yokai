@@ -68,7 +68,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 
 - Narrative atlas with traditional/legendary/approximate certainty labels and a permanent text alternative.
 - One finite six-record chronicle with institutional source trail.
-- About/method route covering art locks, editorial posture, rights status, authorship, AI assistance, and current limits.
+- Focused Gate 01 case study covering the creative brief, experience design, visual authorities, actual technology, authorship, AI assistance, implemented work, and current limits.
 
 ## Routes
 
@@ -78,7 +78,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 | `/archive` | Searchable living index and record chamber | Implemented and browser-tested at desktop and phone sizes |
 | `/atlas` | Narrative place/region index with list alternative | Implemented; server-render tested |
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented; server-render tested |
-| `/about` | Project, method, sources, rights, and status | Implemented; server-render tested |
+| `/about` | Gate 01 creative direction, system, method, and status | Implemented; server-render tested |
 
 ## Architecture
 

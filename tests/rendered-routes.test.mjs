@@ -20,7 +20,7 @@ const routes = [
   ["/archive", /The Living Index/, /source-checked[\s\S]*Phase One sample/],
   ["/atlas", /Places, Paths &amp; Regions/, /Approximate narrative placement/],
   ["/chronicles", /Chronicles/, /From Ashigara to the demon road/],
-  ["/about", /Project, Method &amp; Sources/, /Directed by Steven/],
+  ["/about", /Direction, System &amp; Method/, /Directed by Steven Adkins/],
 ];
 
 for (const [pathname, heading, content] of routes) {
