@@ -4,7 +4,7 @@ An interactive, source-conscious folklore archive presented through the title sc
 
 [`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. A global 108 Yōkai portal and later gates are planned, not presented as implemented.
 
-> Status: Phase One vertical slice is live as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site). Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
+> Status: The current Phase One vertical slice is available as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site), including the expanded illustrated archive and bilingual interface described below. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
 ## Screenshots
 
@@ -16,13 +16,13 @@ Real local production-build capture at 390 × 844 using the independent portrait
 
 ![ASHIGARA phone threshold with Kintarō's upward gaze, full planted axe, Mount Ashigara, and Hōju](docs/screenshots/threshold-mobile-390x844.png)
 
-Real phone acceptance capture of the five-route archive shell:
+Real 390 × 844 browser capture of the rebuilt illustrated archive:
 
-![ASHIGARA living archive on a 390 by 844 phone viewport](docs/screenshots/archive-mobile-390x844.png)
+![ASHIGARA living archive on a 390 by 844 phone viewport](docs/screenshots/archive-mobile-390x844-v2.png)
 
-Real deep-linked archive-record capture at 1440 × 900:
+Real 1440 × 900 browser capture of the new editorial record chamber:
 
-![Kintarō record chamber separating tradition and ASHIGARA adaptation](docs/screenshots/archive-record-desktop-1440x900.png)
+![Yamauba record chamber with face-aware detail framing and separate tradition and ASHIGARA adaptation sections](docs/screenshots/archive-yamauba-record-desktop-1440x900-refined.png)
 
 ## Creative and product direction
 
@@ -47,7 +47,8 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 - Pointer, keyboard focus, and touch can awaken the Hōju without blocking the primary entry path or pausing its continuous sway; motion is clamped to the locked composition.
 - Kintarō's full figure, legs, feet, and ledge stay planted in a static layer while a small feathered shoulder/upper-torso overlay expands by roughly two percent on a readable breathing loop; no fabricated sprite frames.
 - Rare motes, slow mist, tiny pointer parallax, and no continuous camera drift.
-- Desktop and mobile use a centered `GATE 01 / ASHIGARA / THE LIVING ARCHIVE` lockup within their independently composed safe areas.
+- Desktop and mobile use a centered Gate 01, product-title, and archive-subtitle lockup within their independently composed safe areas.
+- In Japanese mode, the threshold promotes `足柄` to the primary wordmark and retains `ASHIGARA` as its romanized brand cue.
 - `ENTER ASHIGARA` and subordinate `PRESS TO ASCEND` with double-activation prevention and repeat-visit acceleration.
 - Optional original 16-bit-inspired impact, rising start strobe, and one-second tail synthesized only after the visitor’s gesture; sound is off by default and remembered locally.
 - Axe flash, ground-to-Hōju energy pulse, shoulder response, spatial push, and seamless full-frame fade into the archive. The experimental Kintarō aura is intentionally omitted from the current release.
@@ -57,17 +58,20 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 ### Living archive
 
 - Internal pages use a dedicated Gate 01 return control and four-route archive navigation without duplicating the threshold as a navigation tab.
-- Ten source-linked Phase One records across hero, spirit, object, oni, creature, and place types.
+- Eleven source-linked Phase One records across hero, spirit, object, oni, creature, and place types.
+- Portrait-led cards and record chambers for Kintarō, Hōju, Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu, with clear notices separating project art from historical evidence.
+- Each illustrated chamber uses separate card, desktop-detail, and phone-detail focal positions so faces remain legible without modifying the approved portrait files.
 - Search across English, Japanese, kana, romanization, alias, region, theme, motif, and summary fields.
 - Entity filter and grid/list views.
 - URL-addressable record chambers using `?record=slug`.
 - Browser-history behavior, Escape dismissal, modal focus, and focus restoration.
 - Visibly separate **Tradition & Sources**, **Variants & Interpretations**, and **ASHIGARA Adaptation** sections.
+- Persistent English and provisional Japanese presentation across the threshold, navigation, all five routes, record prose, controls, and accessibility descriptions.
 
 ### Atlas, Chronicles, and method
 
 - Narrative atlas with traditional/legendary/approximate certainty labels and a permanent text alternative.
-- One finite six-record chronicle with institutional source trail.
+- One finite seven-record chronicle with institutional source trail.
 - Focused Gate 01 case study covering the creative brief, experience design, visual authorities, actual technology, authorship, AI assistance, implemented work, and current limits.
 
 ## Routes
@@ -76,9 +80,9 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 |---|---|---|
 | `/` | Gate 01 permanent Mount Ashigara threshold | Implemented and browser-tested at desktop and phone sizes |
 | `/archive` | Searchable living index and record chamber | Implemented and browser-tested at desktop and phone sizes |
-| `/atlas` | Narrative place/region index with list alternative | Implemented; server-render tested |
-| `/chronicles` | Finite curated exhibitions | First chronicle implemented; server-render tested |
-| `/about` | Gate 01 creative direction, system, method, and status | Implemented; server-render tested |
+| `/atlas` | Narrative place/region index with list alternative | Implemented and browser-tested at desktop and phone sizes |
+| `/chronicles` | Finite curated exhibitions | First chronicle implemented and browser-tested at desktop and phone sizes |
+| `/about` | Gate 01 creative direction, system, method, and status | Implemented and browser-tested at desktop and phone sizes |
 
 ## Architecture
 
@@ -99,7 +103,7 @@ content/
 ├── places.json                 certainty-labelled atlas nodes
 ├── chronicles.json             record-based exhibitions
 ├── assets.json                 machine-readable asset manifest
-└── locales/                    English UI + provisional Japanese seam
+└── locales/                    English UI + complete provisional Japanese draft layer
 
 source-art/                     untouched canonical source PNGs
 derived-art/clean-plates/       versioned AI-assisted actorless working derivatives
@@ -157,7 +161,9 @@ The current sample uses institutional pathways from Japan Search / National Diet
 
 ## Asset workflow
 
-The six owner-supplied PNG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated masked subject layers can be composited over the scene. Runtime AVIF/WebP assets are generated separately at conservative sizes.
+The ten owner-supplied PNG and JPEG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated masked subject layers can be composited over the scene. Runtime AVIF/WebP assets are generated separately at conservative sizes.
+
+The four added archive portraits remain untouched under `source-art/archive/`. Separate 360 and 720-pixel AVIF/WebP versions supply the portrait-led Living Index and detail chambers without modifying the source files.
 
 The current Kintarō and Hōju reference sheets are opaque and not production atlases. Phase One deliberately does not extract or invent final frames from them. A transparent 6–8 frame idle, separate planted-axe/crater matte, and layered Hōju energy planes remain in the asset backlog.
 
@@ -168,6 +174,7 @@ The current Kintarō and Hōju reference sheets are opaque and not production at
 - Keyboard-operable threshold and archive controls.
 - Record-dialog focus entry, Escape dismissal, and trigger focus restoration.
 - Search result updates announced with `aria-live`.
+- Language controls use pressed-state semantics, persist locally, and update the document language between English and Japanese.
 - Map has a complete text/list alternative.
 - No audible autoplay; silence is the default complete experience.
 - `prefers-reduced-motion` removes decorative motion and camera push.
@@ -182,8 +189,8 @@ Final automated results:
 
 - TypeScript: passed.
 - ESLint: passed with zero warnings/errors.
-- Node tests: 10/10 passed.
-- Content integrity: 3/3 passed.
+- Node tests: 13/13 passed.
+- Content integrity: 4/4 passed.
 - Production build: passed; five routes emitted.
 - Production dependency audit: zero vulnerabilities reported.
 - Full development/build dependency audit: 11 remaining advisories after non-breaking fixes (1 low, 10 high), all in the Vinext/Vite/Cloudflare toolchain; breaking force-fixes were not applied.
@@ -192,11 +199,11 @@ Measured local production artifacts:
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold component | 9.0 KB | 2.9 KB |
-| Archive index component | 29.5 KB | 8.7 KB |
-| Global CSS | 53.3 KB | 12.5 KB |
-| Desktop 1440px actorless threshold AVIF | 103.7 KB | — |
-| Mobile 941px actorless threshold AVIF | 127.1 KB | — |
+| Threshold component | 11.7 KB | 3.1 KB |
+| Archive index component | 15.2 KB | 4.0 KB |
+| Global CSS | 69.3 KB | 13.5 KB |
+| Desktop 1440px actorless threshold AVIF | 152.8 KB | — |
+| Mobile 941px actorless threshold AVIF | 173.9 KB | — |
 
 These are build/file measurements, not Lighthouse or Core Web Vitals claims. See [`docs/PERFORMANCE_BUDGET.md`](docs/PERFORMANCE_BUDGET.md) and [`docs/VALIDATION.md`](docs/VALIDATION.md) for the complete evidence and remaining checks.
 
@@ -207,9 +214,9 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 - No claim is made about users, traffic, conversion, research completeness, or field performance.
 - Final source-approved transparent Kintarō/Hōju layers and animation sheets are not supplied; the implemented separation uses versioned clean-plate derivatives plus masked pixels from the locked masters.
 - Kintarō uses a restrained still-based treatment, not a claimed production frame animation.
-- Record artwork beyond Kintarō/Hōju uses controlled geometric sigils.
-- Japanese localization is not exposed as complete and awaits fluent editorial review.
-- Desktop and 390 × 844 phone acceptance are complete for the refined threshold and archive header; broader phone/tablet hardware coverage remains open.
+- Six records now have approved project artwork; records without approved imagery continue to use controlled geometric sigils.
+- Japanese is available across all routes as a visibly provisional draft and still awaits fluent editorial review before it can be described as reviewed or authoritative.
+- Desktop and 390 × 844 browser acceptance are complete for all routes and the expanded Yamauba chamber; broader phone/tablet hardware coverage remains open.
 - Full development-toolchain audit still has 11 advisories requiring coordinated breaking upgrades.
 
 ## Roadmap
@@ -217,7 +224,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 1. Complete the broader phone/tablet matrix and assistive-technology validation.
 2. Approve final public license and artwork credit language.
 3. Replace still/composite masks with layered threshold art and approved transparent idle frames.
-4. Expand records in reviewed batches and add production character art.
+4. Complete fluent editorial review of the provisional Japanese layer, then expand records in reviewed batches and add production character art.
 5. Complete Gate 01's artwork, records, atlas, chronicles, and interactive-scene foundation.
 6. Design the separate 108 Yōkai portal hub, then develop Gate 02 as an independent UX case study.
 7. Introduce richer atlas relationships and optional future gate collections without claiming a fixed folklore canon.
@@ -231,7 +238,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 **Original ASHIGARA concept, world, and supplied visual direction:** Steven / ASHIGARA project  
 **Institutional research pathways:** linked individually in the source registry and record chambers
 
-AI-assisted implementation supported frontend engineering, responsive styling, nondestructive actorless clean-plate inpainting, asset optimization, schema/test scaffolding, documentation, and initial structured prose under Steven’s explicit direction and locked-art constraints. Supplied masters remain preserved separately and unchanged. AI output is not treated as a folklore source. Factual archive claims link to external institutional records and remain subject to ongoing human editorial review.
+AI-assisted implementation supported frontend engineering, responsive styling, nondestructive actorless clean-plate inpainting, asset optimization, schema/test scaffolding, documentation, provisional localization drafting, and initial structured prose under Steven’s explicit direction and locked-art constraints. Supplied masters remain preserved separately and unchanged. AI output is not treated as a folklore source. Factual archive claims link to external institutional records, and the Japanese draft remains subject to fluent human editorial review.
 
 ## Rights and publication
 

@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import { ArchiveIndex } from "../_components/ArchiveIndex";
 import { ArchiveShell } from "../_components/ArchiveShell";
 import { records, sources } from "@/content";
+import en from "@/content/locales/en.json";
+import ja from "@/content/locales/ja.json";
 
 export const metadata: Metadata = {
   title: "Living Index",
@@ -12,9 +14,9 @@ export const metadata: Metadata = {
 export default function ArchivePage() {
   return (
     <ArchiveShell
-      eyebrow="Archive chamber · 01"
-      title="The Living Index"
-      introduction="Ten connected records form a small, source-conscious vertical slice. Search names, places, motifs, or browse by entity class; each record keeps tradition separate from original ASHIGARA canon."
+      eyebrow={{ en: en.archive.eyebrow, ja: ja.archive.eyebrow }}
+      title={{ en: en.archive.title, ja: ja.archive.title }}
+      introduction={{ en: en.archive.introduction, ja: ja.archive.introduction }}
     >
       <Suspense fallback={<p className="route-loading">Preparing the index…</p>}>
         <ArchiveIndex records={records} sources={sources} />
@@ -22,4 +24,3 @@ export default function ArchivePage() {
     </ArchiveShell>
   );
 }
-

@@ -2,22 +2,23 @@
 /* eslint-disable @next/next/no-html-link-for-pages -- The deployed Vinext client requires full document navigation between archive routes. */
 
 import { usePathname } from "next/navigation";
-import locale from "@/content/locales/en.json";
-
-const links = [
-  { href: "/archive", label: locale.nav.archive, mark: "一" },
-  { href: "/atlas", label: locale.nav.atlas, mark: "二" },
-  { href: "/chronicles", label: locale.nav.chronicles, mark: "三" },
-  { href: "/about", label: locale.nav.about, mark: "四" },
-];
+import { LanguageToggle } from "./LanguageToggle";
+import { useLocale } from "./LocaleProvider";
 
 export function ArchiveNav() {
   const pathname = usePathname();
+  const { dictionary } = useLocale();
+  const links = [
+    { href: "/archive", label: dictionary.nav.archive, mark: "一" },
+    { href: "/atlas", label: dictionary.nav.atlas, mark: "二" },
+    { href: "/chronicles", label: dictionary.nav.chronicles, mark: "三" },
+    { href: "/about", label: dictionary.nav.about, mark: "四" },
+  ];
 
   return (
     <header className="archive-header">
       <div className="archive-identity">
-        <a className="archive-back" href="/" aria-label="Return to Gate 01, Ashigara">
+        <a className="archive-back" href="/" aria-label={dictionary.nav.returnLabel}>
           <span aria-hidden="true">←</span>
           Gate 01
         </a>
@@ -25,11 +26,12 @@ export function ArchiveNav() {
           <span className="archive-brand__seal" aria-hidden="true">足</span>
           <span>
             <strong>ASHIGARA</strong>
-            <small>The Living Archive</small>
+            <small>{dictionary.shell.brandSubtitle}</small>
           </span>
         </a>
+        <LanguageToggle compact />
       </div>
-      <nav aria-label="Primary archive navigation">
+      <nav aria-label={dictionary.nav.primaryLabel}>
         <ul className="archive-nav-list">
           {links.map((link) => {
             const active = pathname.startsWith(link.href);

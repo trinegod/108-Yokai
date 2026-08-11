@@ -9,7 +9,7 @@ The Phase One archive uses versioned, repository-local JSON with TypeScript type
 - `content/places.json`: narrative atlas nodes with visible certainty labels.
 - `content/chronicles.json`: finite exhibitions composed from record IDs.
 - `content/assets.json`: canonical source and derivative metadata.
-- `content/locales/`: interface dictionaries and localization status.
+- `content/locales/`: route/interface dictionaries plus record, place, and chronicle translations with visible localization status.
 - `content/schema.ts`: TypeScript contract for the above registries.
 
 ## Record contract
@@ -41,7 +41,7 @@ Only `published` records appear in the current index. Adding a record requires e
 7. Exclude draft records from the public index.
 8. Never use AI-authored prose as a factual source.
 9. Record rights status for every bundled asset; link-only source records do not imply image reuse rights.
-10. Require human editorial review before exposing a Japanese locale as complete.
+10. Expose Japanese drafts only with a visible provisional label, and require fluent human editorial review before describing the locale as reviewed or complete.
 
 ## Validation
 
@@ -58,4 +58,3 @@ Only `published` records appear in the current index. Adding a record requires e
 ## CMS migration seam
 
 The registries can move behind a CMS adapter later because routes consume normalized typed records rather than importing view-specific prose. A future migration should preserve stable IDs/slugs, editorial status, cross-reference validation, locale separation, and build-time failure for broken references.
-

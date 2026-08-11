@@ -22,34 +22,32 @@ The threshold should render a lightweight responsive poster immediately, then ad
 - No GPU requirement.
 - Record actual local build artifacts; do not claim Core Web Vitals without field or Lighthouse evidence.
 
-## Measured local artifacts — 2026-08-10
+## Measured local artifacts — 2026-08-11
 
 Measurements are from the successful production build on Node.js 24.18.0. They are artifact sizes, not field-transfer or Core Web Vitals claims.
 
 | Artifact | Raw | Gzip |
 |---|---:|---:|
-| Threshold route component | 9,048 B | 2,941 B |
-| Archive index component | 29,504 B | 8,701 B |
-| Archive navigation component | 1,314 B | 600 B |
-| Shared framework chunk | 190,152 B | 59,106 B |
-| Shared application/runtime chunk | 169,627 B | 49,102 B |
-| Global CSS | 53,273 B | 12,458 B |
+| Threshold route component | 11,724 B | 3,053 B |
+| Archive index component | 15,198 B | 3,993 B |
+| Archive navigation component | 1,861 B | 772 B |
+| Global CSS | 69,291 B | 13,507 B |
 
 | Responsive visual | File size |
 |---|---:|
-| Desktop actorless threshold, 1440px AVIF | 103,723 B |
-| Desktop actorless threshold, 1440px WebP fallback | 167,806 B |
-| Mobile actorless threshold, 941px AVIF | 127,055 B |
-| Mobile actorless threshold, 941px WebP fallback | 208,274 B |
+| Desktop actorless threshold, 1440px AVIF | 152,774 B |
+| Desktop actorless threshold, 1440px WebP fallback | 229,374 B |
+| Mobile actorless threshold, 941px AVIF | 173,916 B |
+| Mobile actorless threshold, 941px WebP fallback | 259,964 B |
 | Social preview JPEG | 198,336 B |
 
 Additional measured totals:
 
-- Preserved source masters: 13.8 MB on disk.
-- Versioned actorless working plates: 4.2 MB on disk.
-- All optimized public art derivatives: 5.4 MB on disk; they are not all loaded on one route.
-- Complete production output: 8.3 MB on disk.
-- Production build stages completed in roughly four seconds in the local workspace during the final implementation pass.
+- Preserved source masters: approximately 16.0 MiB on disk.
+- Versioned actorless working plates: approximately 4.2 MiB on disk.
+- All optimized public art derivatives: approximately 7.1 MiB on disk; they are not all loaded on one route.
+- Complete production output: approximately 10.3 MiB on disk.
+- The production build stages reported approximately 4.6 seconds of aggregate transform/render time in the final local validation pass.
 
 ## Evidence not yet collected
 

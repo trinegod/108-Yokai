@@ -22,7 +22,7 @@ Planned; not implemented.
 - Introduce approved Yamauba, Shuten-dōji, Ibaraki-dōji, and other production sprites.
 - Expand atlas nodes and relationships.
 - Introduce `108 Yōkai` as an optional collection/exhibition identity.
-- Complete Japanese editorial review before exposing the locale.
+- Complete fluent Japanese editorial review before promoting the exposed provisional draft to reviewed status.
 
 ## Phase Three — dimensional depth
 
@@ -53,4 +53,3 @@ Planned; requires explicit owner authorization.
 3. Supply the layered threshold package and production Kintarō/Hōju animation assets described in the asset backlog.
 4. Select the first Phase Two record batch and editorial reviewer.
 5. Authorize deployment only when ready; no remote or publication currently exists.
-

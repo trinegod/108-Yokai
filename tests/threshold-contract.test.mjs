@@ -13,8 +13,9 @@ test("threshold preserves locked responsive masters and required controls", asyn
   assert.match(component, /ashigara-threshold-mobile/);
   assert.match(component, /ashigara-threshold-desktop-actorless/);
   assert.match(component, /ashigara-threshold-mobile-actorless/);
-  assert.match(component, /locale\.enter/);
-  assert.match(component, /locale\.ascend/);
+  assert.match(component, /dictionary\.enter/);
+  assert.match(component, /dictionary\.ascend/);
+  assert.match(component, /LanguageToggle/);
   assert.match(component, /threshold__kintaro/);
   assert.match(component, /threshold__kintaro-breath/);
   assert.doesNotMatch(component, /threshold__kintaro-aura/);

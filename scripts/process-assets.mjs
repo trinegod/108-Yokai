@@ -11,6 +11,7 @@ async function ensureDirectories() {
   await Promise.all([
     mkdir(output("backgrounds", "threshold"), { recursive: true }),
     mkdir(output("relics"), { recursive: true }),
+    mkdir(output("portraits"), { recursive: true }),
     mkdir(output("sprites", "characters"), { recursive: true }),
   ]);
 }
@@ -111,6 +112,30 @@ await Promise.all([
     directory: path.join("sprites", "characters"),
     stem: "kintaro-sprite-reference",
     widths: [724, 1448],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "yamauba-archive-master.jpg"),
+    directory: "portraits",
+    stem: "yamauba-archive",
+    widths: [360, 720],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "shuten-doji-archive-master.jpg"),
+    directory: "portraits",
+    stem: "shuten-doji-archive",
+    widths: [360, 720],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "ibaraki-doji-archive-master.jpg"),
+    directory: "portraits",
+    stem: "ibaraki-doji-archive",
+    widths: [360, 720],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "minamoto-yorimitsu-archive-master.jpg"),
+    directory: "portraits",
+    stem: "minamoto-yorimitsu-archive",
+    widths: [360, 720],
   }),
 ]);
 

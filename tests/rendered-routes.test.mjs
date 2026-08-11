@@ -5,15 +5,25 @@ const workerUrl = new URL("../dist/server/index.js", import.meta.url);
 workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}`);
 const { default: worker } = await import(workerUrl.href);
 
-async function render(pathname) {
+async function render(pathname, headers = {}) {
   return worker.fetch(
-    new Request(`http://localhost${pathname}`, { headers: { accept: "text/html" } }),
+    new Request(`http://localhost${pathname}`, { headers: { accept: "text/html", ...headers } }),
     {
       ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) },
     },
     { waitUntil() {}, passThroughOnException() {} },
   );
 }
+
+test("server-renders the persisted Japanese locale from its request cookie", async () => {
+  const response = await render("/archive?record=yamauba", { cookie: "ashigara-language=ja" });
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /<html[^>]*lang="ja"[^>]*data-locale="ja"/);
+  assert.match(html, /生きた索引/);
+  assert.match(html, /最初の星座/);
+  assert.match(html, /山姥/);
+});
 
 const routes = [
   ["/", /GATE 01[\s\S]*ASHIGARA/, /ENTER ASHIGARA/],

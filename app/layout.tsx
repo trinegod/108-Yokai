@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 import "./globals.css";
+import { LocaleProvider, type SiteLocale } from "./_components/LocaleProvider";
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
@@ -36,14 +38,17 @@ export const viewport: Viewport = {
   themeColor: "#07090a",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const initialLocale: SiteLocale = cookieStore.get("ashigara-language")?.value === "ja" ? "ja" : "en";
+
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang={initialLocale} data-locale={initialLocale}>
+      <body><LocaleProvider initialLocale={initialLocale}>{children}</LocaleProvider></body>
     </html>
   );
 }

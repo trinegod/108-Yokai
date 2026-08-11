@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import locale from "@/content/locales/en.json";
 import { thresholdSceneManifest } from "@/content/threshold-scene";
+import { LanguageToggle } from "./LanguageToggle";
+import { useLocale } from "./LocaleProvider";
 
 function readStoredSoundPreference() {
   try {
@@ -92,6 +93,7 @@ function playAscendSound() {
 
 export function ThresholdScene() {
   const router = useRouter();
+  const { locale, dictionary } = useLocale();
   const sceneRef = useRef<HTMLElement>(null);
   const routeTimerRef = useRef<number | null>(null);
   const relicTimerRef = useRef<number | null>(null);
@@ -241,7 +243,7 @@ export function ThresholdScene() {
       <button
         type="button"
         className="threshold__relic-hotspot"
-        aria-label={thresholdSceneManifest.relic.interactionLabel}
+        aria-label={dictionary.relicLabel}
         aria-describedby="hoju-description"
         aria-pressed={relicActive}
         disabled={ascending}
@@ -251,18 +253,14 @@ export function ThresholdScene() {
         onBlur={blurRelic}
       />
 
-      <p className="sr-only">
-        At blue hour beneath Mount Ashigara, Kintarō stands empty-handed beside a separately planted legendary axe. A Hōju relic floats above the mountain.
-      </p>
-      <p id="hoju-description" className="sr-only">
-        Focus or activate the relic to reveal its shallow dimensional response. This optional interaction does not block entry.
-      </p>
+      <p className="sr-only" lang={locale}>{dictionary.thresholdScene}</p>
+      <p id="hoju-description" className="sr-only" lang={locale}>{dictionary.relicDescription}</p>
 
       <section className="threshold__interface" aria-labelledby="threshold-title">
-        <p className="threshold__kicker">{locale.siteKicker}</p>
+        <p className="threshold__kicker">{dictionary.siteKicker}</p>
         <h1 id="threshold-title">
-          <span>ASHIGARA</span>
-          <small>THE LIVING ARCHIVE</small>
+          <span lang={locale}>{dictionary.siteWordmark}</span>
+          <small lang={locale}>{dictionary.siteSubtitle}</small>
         </h1>
         <div className="threshold__command">
           <button
@@ -272,27 +270,28 @@ export function ThresholdScene() {
             disabled={ascending}
             aria-describedby="ascend-instruction"
           >
-            <span>{ascending ? "ASCENDING" : locale.enter}</span>
+            <span>{ascending ? dictionary.entering : dictionary.enter}</span>
           </button>
-          <p id="ascend-instruction">{locale.ascend}</p>
+          <p id="ascend-instruction">{dictionary.ascend}</p>
         </div>
       </section>
 
       <div className="threshold__controls">
+        <LanguageToggle compact />
         <button type="button" className="sound-control" onClick={toggleSound} aria-pressed={soundEnabled}>
           <span aria-hidden="true">{soundEnabled ? "◈" : "◇"}</span>
-          {soundEnabled ? locale.soundOn : locale.soundOff}
+          {soundEnabled ? dictionary.soundOn : dictionary.soundOff}
         </button>
         {ascending ? (
           <button type="button" className="skip-transition" onClick={() => commitEntry(true)}>
-            {locale.skipTransition}
+            {dictionary.skipTransition}
           </button>
         ) : null}
       </div>
 
       <p className="threshold__edition">
-        <span>PHASE ONE · ARCHIVE GATE 01</span>
-        <span>WEBSITE CREATED BY STEVEN ADKINS</span>
+        <span>{dictionary.phase}</span>
+        <span>{dictionary.creator}</span>
       </p>
     </main>
   );

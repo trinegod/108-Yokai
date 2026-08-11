@@ -12,6 +12,10 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `hoju-state-reference` | `hoju-32bit-state-sheet.png` | State reference | 1312 × 1199, visual 4 × 3 layout | No | Reference only; no frame extraction | Locked reference |
 | `kintaro-sprite-reference` | `kintaro-sprite-reference.png` | Directional reference | 1448 × 1086, four figures | No | Reference only; no animation extraction | Approved reference |
 | `kintaro-character` | `kintaro-character-master.png` | Character illustration | 941 × 1672, single portrait | No | Identity authority and process plate | Identity reference |
+| `yamauba-archive-portrait` | `archive/yamauba-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
+| `shuten-doji-archive-portrait` | `archive/shuten-doji-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
+| `ibaraki-doji-archive-portrait` | `archive/ibaraki-doji-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
+| `minamoto-yorimitsu-archive-portrait` | `archive/minamoto-yorimitsu-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
 
 ## Source integrity
 
@@ -23,6 +27,10 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `hoju-32bit-state-sheet.png` | `1b4f7e7eb0260f493e3e142438ed5c45e3232a632fd69a8fe5012cc64a708b69` |
 | `kintaro-sprite-reference.png` | `816ae69e2f8f50f0d9765c646dc8e75cdba9c0ea8fd1989e868dba82533ec18a` |
 | `kintaro-character-master.png` | `3db03477e5f032e4ca6fffd2ab16d91e141d2f37187361a8c9b4fa8d3891f097` |
+| `archive/yamauba-archive-master.jpg` | `d5163168bc9f2640d2adedf2d8eec7545d759d114d3abb9c2a70fb67e3e40b0e` |
+| `archive/shuten-doji-archive-master.jpg` | `f940489e428163fa5bdec25f4d6534140a15331a9d4e7c2771ce2c7a02e9b3cf` |
+| `archive/ibaraki-doji-archive-master.jpg` | `0e7c279a4b7a5f7185ff38a86784d0c56a479f835f2eac09476c78fff8235c64` |
+| `archive/minamoto-yorimitsu-archive-master.jpg` | `658b11aaf4daa98fb12e639219e03d17bee13dda5970b6f3d6a7408f1649b381` |
 
 ## Runtime derivatives
 
@@ -32,6 +40,7 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 - Hōju state reference: 656 and 1312-pixel AVIF/WebP; documentation/reference only.
 - Kintarō identity: 480 and 720-pixel AVIF/WebP.
 - Kintarō directional reference: 724 and 1448-pixel AVIF/WebP; documentation/reference only.
+- Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu archive portraits: 360 and 720-pixel AVIF/WebP.
 - Social preview: 1200 × 630 JPEG crop from the approved desktop threshold.
 - Favicon: 96 × 96 PNG derivative from the approved Hōju concept.
 
@@ -48,4 +57,4 @@ The files were supplied by the project owner for this local Phase One build. A f
 3. Transparent, evenly packed Hōju production planes or frames with explicit timing and owner approval for extraction.
 4. Separate full-height planted axe and crater matte matching both threshold masters.
 5. Optional owner-approved ambient loop. The current axe impact is original procedural synthesis and requires no bundled audio asset.
-6. Production art for non-Kintarō/Hōju archive records. Current geometric sigils are controlled placeholders.
+6. Production art for the remaining non-illustrated archive records. Current geometric sigils remain controlled placeholders where no approved artwork exists.

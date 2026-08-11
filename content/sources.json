@@ -88,6 +88,50 @@
     "url": "https://jpsearch.go.jp/en/gallery/ndl-14J962qEkjE",
     "accessedAt": "2026-08-10",
     "rightsNote": "Collection and exhibition text used as a research pathway; no linked image is bundled."
+  },
+  {
+    "id": "jpsearch-yamauba-chestnut",
+    "title": "Holding a Chestnut Sprig from the Series Kintarō and a Mountain Witch",
+    "institution": "Japan Search / ColBase / National Institutes for Cultural Heritage",
+    "kind": "institutional-collection",
+    "url": "https://jpsearch.go.jp/en/item/cobas-49150",
+    "accessedAt": "2026-08-11",
+    "rightsNote": "CC BY collection metadata used to compare Yamauba's maternal and monstrous visual registers; no collection image is bundled."
+  },
+  {
+    "id": "british-yamauba-authority",
+    "title": "Yamauba collection term",
+    "institution": "The British Museum",
+    "kind": "authority-record",
+    "url": "https://www.britishmuseum.org/collection/term/BIOG7379",
+    "accessedAt": "2026-08-11",
+    "rightsNote": "Authority metadata used as a narrow reference for the broader mountain-woman tradition."
+  },
+  {
+    "id": "british-ibaraki-arm",
+    "title": "The Old Woman Taking Away the Oni's Arm",
+    "institution": "The British Museum",
+    "kind": "institutional-collection",
+    "url": "https://www.britishmuseum.org/collection/object/A_1946-0209-0-105",
+    "accessedAt": "2026-08-11",
+    "rightsNote": "Collection metadata used for the Ibaraki arm-retrieval episode; no museum image is bundled."
+  },
+  {
+    "id": "british-ibaraki-netsuke",
+    "title": "Hannya hiding under a kimono",
+    "institution": "The British Museum",
+    "kind": "institutional-collection",
+    "url": "https://www.britishmuseum.org/collection/object/A_F-733",
+    "accessedAt": "2026-08-11",
+    "rightsNote": "Curatorial commentary used for the Modoribashi encounter variant; no museum image is bundled."
+  },
+  {
+    "id": "british-shuten-scroll",
+    "title": "Shuten-dōji handscroll",
+    "institution": "The British Museum",
+    "kind": "institutional-collection",
+    "url": "https://www.britishmuseum.org/collection/object/A_1881-1210-0-383-416-a",
+    "accessedAt": "2026-08-11",
+    "rightsNote": "Collection metadata used to trace the illustrated Ōeyama narrative sequence; no museum image is bundled."
   }
 ]
-
