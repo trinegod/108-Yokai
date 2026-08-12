@@ -11,10 +11,32 @@ async function ensureDirectories() {
   await Promise.all([
     mkdir(output("backgrounds", "threshold"), { recursive: true }),
     mkdir(output("backgrounds", "portal"), { recursive: true }),
+    mkdir(output("stickers", "portal"), { recursive: true }),
     mkdir(output("relics"), { recursive: true }),
     mkdir(output("portraits"), { recursive: true }),
     mkdir(output("sprites", "characters"), { recursive: true }),
   ]);
+}
+
+async function responsiveSticker({ sourceName, stem, widths }) {
+  for (const width of widths) {
+    const base = sharp(source(sourceName)).resize({
+      width,
+      withoutEnlargement: true,
+      fit: "inside",
+    });
+
+    await Promise.all([
+      base
+        .clone()
+        .webp({ lossless: true, effort: 6 })
+        .toFile(output("stickers", "portal", `${stem}-${width}.webp`)),
+      base
+        .clone()
+        .png({ compressionLevel: 9 })
+        .toFile(output("stickers", "portal", `${stem}-${width}.png`)),
+    ]);
+  }
 }
 
 async function responsiveIllustration({
@@ -103,16 +125,21 @@ await Promise.all([
     widths: [640, 941],
   }),
   responsiveIllustration({
-    sourceName: path.join("portal", "108-yokai-analog-street-desktop-master.jpg"),
+    sourceName: path.join("portal", "108-yokai-analog-street-desktop-master.png"),
     directory: path.join("backgrounds", "portal"),
     stem: "108-yokai-analog-street-desktop",
-    widths: [960, 1280],
+    widths: [960, 1280, 1672],
   }),
   responsiveIllustration({
-    sourceName: path.join("portal", "108-yokai-analog-street-mobile-master.jpg"),
+    sourceName: path.join("portal", "108-yokai-analog-street-mobile-master.png"),
     directory: path.join("backgrounds", "portal"),
     stem: "108-yokai-analog-street-mobile",
-    widths: [640, 720],
+    widths: [640, 720, 941],
+  }),
+  responsiveSticker({
+    sourceName: path.join("portal", "stickers", "gate-01-brutal-calligraphy-master.png"),
+    stem: "gate-01-brutal-calligraphy",
+    widths: [256, 512],
   }),
   responsiveIllustration({
     sourceName: "hoju-concept-master.png",

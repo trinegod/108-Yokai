@@ -1,6 +1,7 @@
 export type PortalGate = {
   number: string;
   title: string;
+  japanese?: string;
   subtitle: string;
   href?: string;
   status: "open" | "sealed";
@@ -10,6 +11,7 @@ export const portalGates: readonly PortalGate[] = [
   {
     number: "01",
     title: "Ashigara",
+    japanese: "足柄",
     subtitle: "The Living Archive",
     href: "/",
     status: "open",

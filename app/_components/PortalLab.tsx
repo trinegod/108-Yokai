@@ -89,27 +89,27 @@ export function PortalLab() {
             <source
               media="(max-width: 699px)"
               type="image/avif"
-              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-mobile-640.avif 640w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-720.avif 720w"
+              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-mobile-640.avif 640w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-720.avif 720w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-941.avif 941w"
               sizes="100vw"
             />
             <source
               media="(max-width: 699px)"
               type="image/webp"
-              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-mobile-640.webp 640w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-720.webp 720w"
+              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-mobile-640.webp 640w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-720.webp 720w, /assets/backgrounds/portal/108-yokai-analog-street-mobile-941.webp 941w"
               sizes="100vw"
             />
             <source
               type="image/avif"
-              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-desktop-960.avif 960w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1280.avif 1280w"
+              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-desktop-960.avif 960w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1280.avif 1280w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1672.avif 1672w"
               sizes="100vw"
             />
             <img
-              src="/assets/backgrounds/portal/108-yokai-analog-street-desktop-1280.webp"
-              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-desktop-960.webp 960w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1280.webp 1280w"
+              src="/assets/backgrounds/portal/108-yokai-analog-street-desktop-1672.webp"
+              srcSet="/assets/backgrounds/portal/108-yokai-analog-street-desktop-960.webp 960w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1280.webp 1280w, /assets/backgrounds/portal/108-yokai-analog-street-desktop-1672.webp 1672w"
               sizes="100vw"
               alt=""
-              width="1280"
-              height="720"
+              width="1672"
+              height="941"
               fetchPriority="high"
             />
           </picture>
@@ -127,11 +127,8 @@ export function PortalLab() {
         <div className="portal-wordmark" aria-hidden="true">
           <span className="portal-wordmark__number" data-text="108">108</span>
           <span className="portal-wordmark__name" data-text="YŌKAI">
-            Y<span className="portal-wordmark__o">Ō
-              <svg className="portal-wordmark__sigil" viewBox="0 0 54 42">
-                <path d="M5 7c1 10 6 16 15 18M49 7c-1 10-6 16-15 18M19 25l8 12 8-12M27 37V19" />
-              </svg>
-            </span>KAI
+            YŌKAI
+            <i className="portal-wordmark__sigil" />
           </span>
         </div>
         <h1 id="portal-title" className="sr-only">108 Yōkai</h1>
@@ -246,7 +243,22 @@ function HeroGateTag({
           onFocus={() => onActiveChange?.(true)}
           onBlur={() => onActiveChange?.(false)}
         >
-          <b>{gate.number}</b><span>Enter</span>
+          <picture className="portal-street-tag__sticker">
+            <source
+              type="image/webp"
+              srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.webp 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.webp 512w"
+              sizes="(max-width: 699px) 92px, 112px"
+            />
+            <img
+              src="/assets/stickers/portal/gate-01-brutal-calligraphy-512.png"
+              srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.png 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.png 512w"
+              sizes="(max-width: 699px) 92px, 112px"
+              alt=""
+              width="512"
+              height="512"
+              decoding="async"
+            />
+          </picture>
         </a>
       ) : (
         <span aria-label={`Gate ${gate.number}, sealed`}><b>{gate.number}</b><i /></span>
@@ -260,7 +272,10 @@ function GateContents({ gate }: { gate: PortalGate }) {
     <>
       <span className="portal-gate__number">{gate.number}</span>
       <span className="portal-gate__label">
-        <strong>{gate.title}</strong>
+        <strong>
+          <span>{gate.title}</span>
+          {gate.japanese ? <em className="portal-gate__japanese" lang="ja">{gate.japanese}</em> : null}
+        </strong>
         <small>{gate.subtitle}</small>
       </span>
       <span className="portal-gate__state" aria-hidden="true">{gate.status === "open" ? "Enter ↗" : "Sealed"}</span>
