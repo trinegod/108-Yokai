@@ -98,6 +98,62 @@ export const archivePortraits: Record<string, ArchivePortrait> = {
       ja: "月夜の山の社で青と金の甲冑をまとう源頼光のASHIGARA人物画",
     },
   },
+  "watanabe-no-tsuna-archive-portrait": {
+    id: "watanabe-no-tsuna-archive-portrait",
+    stem: "/assets/portraits/watanabe-no-tsuna-archive",
+    width: 720,
+    height: 1280,
+    responsiveWidths: [360, 720],
+    objectPosition: "center 27%",
+    detailPosition: "center 13%",
+    mobileDetailPosition: "center 15%",
+    alt: {
+      en: "Original ASHIGARA character study of Watanabe no Tsuna drawing a sword in a candlelit room encircled by black ink",
+      ja: "黒い墨の円が巡る灯火の室内で刀を抜く渡辺綱のASHIGARA人物画",
+    },
+  },
+  "usui-sadamitsu-archive-portrait": {
+    id: "usui-sadamitsu-archive-portrait",
+    stem: "/assets/portraits/usui-sadamitsu-archive",
+    width: 719,
+    height: 1280,
+    responsiveWidths: [360, 719],
+    objectPosition: "center 29%",
+    detailPosition: "center 15%",
+    mobileDetailPosition: "center 17%",
+    alt: {
+      en: "Original ASHIGARA character study of Usui Sadamitsu in patterned robes gathering red energy in a dark interior",
+      ja: "暗い室内で赤い気を集める、文様の衣をまとった碓井貞光のASHIGARA人物画",
+    },
+  },
+  "urabe-no-suetake-archive-portrait": {
+    id: "urabe-no-suetake-archive-portrait",
+    stem: "/assets/portraits/urabe-no-suetake-archive",
+    width: 720,
+    height: 1280,
+    responsiveWidths: [360, 720],
+    objectPosition: "center 29%",
+    detailPosition: "center 16%",
+    mobileDetailPosition: "center 18%",
+    alt: {
+      en: "Original ASHIGARA character study of Urabe no Suetake holding a spear beneath a red moon at a mountain shrine",
+      ja: "山の社で赤い月の下に槍を持つ卜部季武のASHIGARA人物画",
+    },
+  },
+  "sakata-no-kintoki-archive-portrait": {
+    id: "sakata-no-kintoki-archive-portrait",
+    stem: "/assets/portraits/sakata-no-kintoki-archive",
+    width: 720,
+    height: 1280,
+    responsiveWidths: [360, 720],
+    objectPosition: "center 25%",
+    detailPosition: "center 13%",
+    mobileDetailPosition: "center 15%",
+    alt: {
+      en: "Original ASHIGARA character study of adult Sakata no Kintoki in checkered garments and armor carrying a legendary axe",
+      ja: "市松模様の衣と甲冑をまとい、伝説の斧を持つ成人した坂田金時のASHIGARA人物画",
+    },
+  },
 };
 
 export function getArchivePortrait(assetId?: string) {

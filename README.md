@@ -4,7 +4,7 @@ An interactive, source-conscious folklore archive presented through the title sc
 
 [`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. A global 108 Yōkai portal and later gates are planned, not presented as implemented.
 
-> Status: The current Phase One vertical slice is available as an owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site), including the expanded illustrated archive and bilingual interface described below. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
+> Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) remains on the preceding release until Steven approves this reviewed local batch for publication. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
 ## Screenshots
 
@@ -23,6 +23,14 @@ Real 390 × 844 browser capture of the rebuilt illustrated archive:
 Real 1440 × 900 browser capture of the new editorial record chamber:
 
 ![Yamauba record chamber with face-aware detail framing and separate tradition and ASHIGARA adaptation sections](docs/screenshots/archive-yamauba-record-desktop-1440x900-refined.png)
+
+Real local 1440 × 900 capture of the adult Sakata no Kintoki chamber added in the Raikō-retainer expansion:
+
+![Adult Sakata no Kintoki archive chamber with face-aware desktop framing](docs/screenshots/archive-kintoki-record-desktop-1440x900.png)
+
+Real local 390 × 844 capture of the illustrated Watanabe no Tsuna chamber:
+
+![Watanabe no Tsuna archive chamber at a 390 by 844 phone viewport](docs/screenshots/archive-watanabe-record-mobile-390x844.png)
 
 ## Creative and product direction
 
@@ -58,8 +66,8 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 ### Living archive
 
 - Internal pages use a dedicated Gate 01 return control and four-route archive navigation without duplicating the threshold as a navigation tab.
-- Eleven source-linked Phase One records across hero, spirit, object, oni, creature, and place types.
-- Portrait-led cards and record chambers for Kintarō, Hōju, Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu, with clear notices separating project art from historical evidence.
+- Fourteen source-linked Phase One records across hero, spirit, object, oni, creature, and place types.
+- Portrait-led cards and record chambers for Kintarō, Hōju, Yamauba, Shuten-dōji, Ibaraki-dōji, Minamoto no Yorimitsu, Watanabe no Tsuna, Usui Sadamitsu, Urabe no Suetake, and Sakata no Kintoki, with clear notices separating project art from historical evidence.
 - Each illustrated chamber uses separate card, desktop-detail, and phone-detail focal positions so faces remain legible without modifying the approved portrait files.
 - Search across English, Japanese, kana, romanization, alias, region, theme, motif, and summary fields.
 - Entity filter and grid/list views.
@@ -71,7 +79,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 ### Atlas, Chronicles, and method
 
 - Narrative atlas with traditional/legendary/approximate certainty labels and a permanent text alternative.
-- One finite seven-record chronicle with institutional source trail.
+- One finite eleven-record chronicle with institutional source trail.
 - Focused Gate 01 case study covering the creative brief, experience design, visual authorities, actual technology, authorship, AI assistance, implemented work, and current limits.
 
 ## Routes
@@ -214,7 +222,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 - No claim is made about users, traffic, conversion, research completeness, or field performance.
 - Final source-approved transparent Kintarō/Hōju layers and animation sheets are not supplied; the implemented separation uses versioned clean-plate derivatives plus masked pixels from the locked masters.
 - Kintarō uses a restrained still-based treatment, not a claimed production frame animation.
-- Six records now have approved project artwork; records without approved imagery continue to use controlled geometric sigils.
+- Ten records now have approved project artwork; records without approved imagery continue to use controlled geometric sigils.
 - Japanese is available across all routes as a visibly provisional draft and still awaits fluent editorial review before it can be described as reviewed or authoritative.
 - Desktop and 390 × 844 browser acceptance are complete for all routes and the expanded Yamauba chamber; broader phone/tablet hardware coverage remains open.
 - Full development-toolchain audit still has 11 advisories requiring coordinated breaking upgrades.

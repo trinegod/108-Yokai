@@ -31,6 +31,10 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `archive/shuten-doji-archive-master.jpg` | `f940489e428163fa5bdec25f4d6534140a15331a9d4e7c2771ce2c7a02e9b3cf` |
 | `archive/ibaraki-doji-archive-master.jpg` | `0e7c279a4b7a5f7185ff38a86784d0c56a479f835f2eac09476c78fff8235c64` |
 | `archive/minamoto-yorimitsu-archive-master.jpg` | `658b11aaf4daa98fb12e639219e03d17bee13dda5970b6f3d6a7408f1649b381` |
+| `archive/watanabe-no-tsuna-archive-master.jpg` | `d24066f9c938d890733ddaa651690051e012f3c694248aae25759c63f8bac6b8` |
+| `archive/usui-sadamitsu-archive-master.jpg` | `20b022ff103275046195f2f9e49f8fd877da651141fb0f485bba634e2ab2160f` |
+| `archive/urabe-no-suetake-archive-master.jpg` | `5bb1e12f71ed0eeb541610f60ca63ec0c1002b157c991302f1c465e304f49caf` |
+| `archive/sakata-no-kintoki-archive-master.jpg` | `2d5a336db647ab4a13242a86c704b23e284f94e463dad698e35ce4c8ddbac77b` |
 
 ## Runtime derivatives
 
@@ -57,4 +61,4 @@ The files were supplied by the project owner for this local Phase One build. A f
 3. Transparent, evenly packed Hōju production planes or frames with explicit timing and owner approval for extraction.
 4. Separate full-height planted axe and crater matte matching both threshold masters.
 5. Optional owner-approved ambient loop. The current axe impact is original procedural synthesis and requires no bundled audio asset.
-6. Production art for the remaining non-illustrated archive records. Current geometric sigils remain controlled placeholders where no approved artwork exists.
+6. Production art for the remaining non-illustrated archive records. Ten records now have owner-supplied project art; current geometric sigils remain controlled placeholders where no approved artwork exists.

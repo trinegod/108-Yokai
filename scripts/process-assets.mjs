@@ -137,6 +137,30 @@ await Promise.all([
     stem: "minamoto-yorimitsu-archive",
     widths: [360, 720],
   }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "watanabe-no-tsuna-archive-master.jpg"),
+    directory: "portraits",
+    stem: "watanabe-no-tsuna-archive",
+    widths: [360, 720],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "usui-sadamitsu-archive-master.jpg"),
+    directory: "portraits",
+    stem: "usui-sadamitsu-archive",
+    widths: [360, 719],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "urabe-no-suetake-archive-master.jpg"),
+    directory: "portraits",
+    stem: "urabe-no-suetake-archive",
+    widths: [360, 720],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("archive", "sakata-no-kintoki-archive-master.jpg"),
+    directory: "portraits",
+    stem: "sakata-no-kintoki-archive",
+    widths: [360, 720],
+  }),
 ]);
 
 await sharp(source("ashigara-threshold-desktop-master.png"))

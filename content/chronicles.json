@@ -5,8 +5,8 @@
     "status": "published",
     "title": "From Ashigara to the demon road",
     "eyebrow": "Phase One exhibition · 01",
-    "introduction": "A compact path through Kintarō’s mountain association, later warrior identity, and the branching traditions surrounding Shuten-dōji and Ibaraki-dōji.",
-    "recordIds": ["kintaro", "mount-ashigara", "yamauba", "minamoto-yorimitsu", "shuten-doji", "ibaraki-doji", "mount-oe"],
-    "sourceIds": ["jpsearch-kintaro", "met-yamauba-kintaro", "tnm-shuten-doji", "british-ibuki-doji", "british-ibaraki-arm", "british-ibaraki-netsuke"]
+    "introduction": "A compact path from Kintarō’s mountain childhood into the adult Kintoki identity, Raikō’s retainer constellation, and the branching traditions surrounding Shuten-dōji and Ibaraki-dōji.",
+    "recordIds": ["kintaro", "mount-ashigara", "yamauba", "sakata-no-kintoki", "minamoto-yorimitsu", "watanabe-no-tsuna", "usui-sadamitsu", "urabe-no-suetake", "shuten-doji", "ibaraki-doji", "mount-oe"],
+    "sourceIds": ["jpsearch-kintaro", "jpsearch-kintoki", "met-yamauba-kintaro", "jpsearch-raiko-four-retainers", "british-raiko-retainers-triptych", "tnm-shuten-doji", "british-ibuki-doji", "british-ibaraki-arm", "british-ibaraki-netsuke"]
   }
 ]

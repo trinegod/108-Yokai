@@ -36,7 +36,7 @@ Archive details use `?record=slug`. Opening and closing records updates browser 
 
 ## ADR-009 — structured local content before CMS
 
-Eleven Phase One records, sources, places, chronicles, assets, and bilingual locale data live in versioned JSON. TypeScript defines the contract and Node tests validate references and provisional Japanese coverage. A CMS can replace storage later without rewriting routes.
+Fourteen Phase One records, sources, places, chronicles, assets, and bilingual locale data live in versioned JSON. TypeScript defines the contract and Node tests validate references and provisional Japanese coverage. A CMS can replace storage later without rewriting routes.
 
 ## ADR-010 — publication only with authorization
 

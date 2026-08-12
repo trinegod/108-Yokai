@@ -17,15 +17,15 @@ The full dependency tree audit initially reported 17 vulnerabilities. A non-brea
 
 ## Illustrated archive and bilingual interface
 
-- Four owner-supplied JPEG portraits are preserved byte-for-byte in `source-art/archive/`; `cmp` and SHA-256 verification matched every uploaded original.
-- Separate 360 and 720-pixel AVIF/WebP portrait derivatives were generated under `public/assets/portraits/`.
-- The archive now renders 11 source-linked records, including expanded Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu records.
-- Six records have approved project art. Records without approved art retain controlled geometric sigils.
+- Eight owner-supplied JPEG portraits are preserved byte-for-byte in `source-art/archive/`; SHA-256 verification matched the four new uploaded originals, and the repeated Raikō upload matched his preserved master exactly.
+- Separate 360 and source-width AVIF/WebP portrait derivatives were generated under `public/assets/portraits/`.
+- The archive now renders 14 source-linked records, including the expanded Raikō retainer constellation and separate child Kintarō and adult Sakata no Kintoki records.
+- Ten records have approved project art. Records without approved art retain controlled geometric sigils.
 - Record art is visibly labelled as an original ASHIGARA character study and not historical evidence.
 - English and provisional Japanese coverage resolves every published record, place, chronicle, route heading, control, and accessibility description. The Japanese interface is labelled `仮訳` and remains subject to fluent editorial review.
 - The language choice persisted when navigating from `/archive` to `/about`; the document `lang` changed to `ja` and the Japanese heading rendered after navigation.
 - Japanese mode renders `足柄` as the primary threshold wordmark with `ASHIGARA` retained as a romanized cue. The cookie-backed server locale now matches the first client render on direct links; a fresh Japanese record tab produced no hydration warning or browser error.
-- Illustrated record chambers use independent card, desktop-detail, and phone-detail focal positions. Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu were checked at both target viewports with their faces visible and no source-image modification.
+- Illustrated record chambers use independent card, desktop-detail, and phone-detail focal positions. Watanabe no Tsuna, Usui Sadamitsu, Urabe no Suetake, and Sakata no Kintoki were checked at both target viewports with their faces visible and no source-image modification; the earlier illustrated chambers retain their approved framing.
 - Desktop checks at 1440 × 900 and phone checks at 390 × 844 found no horizontal overflow or failed images across `/`, `/archive`, `/atlas`, `/chronicles`, and `/about`.
 - The Yamauba record chamber fit both viewports without horizontal overflow. The phone close target measured approximately 84 × 45 pixels.
 - Mobile text-action targets in the footer, chronicle, and About status panels were increased to a 44-pixel minimum height after the first responsive inspection.
@@ -54,7 +54,7 @@ Production preview, 1440 × 900 viewport:
 - The Hōju keeps its `hojuHover` animation running when its focus/touch state is active. The visible relic has one moving masked master layer and the removed `HŌJU · RELIC FOCUS` text does not appear in the DOM.
 - The entry overlay covers the full viewport with opacity only and no scaled rectangular bounds. The experimental Kintarō aura and spark nodes are absent from both the component and stylesheet.
 - Rebuilt production preview logs contained no warnings/errors for the tested threshold/archive flow.
-- Archive renders 11 records, grid/list controls, entity filter, and tolerant Japanese-name search.
+- Archive renders 14 records, grid/list controls, entity filter, and tolerant Japanese-name search.
 - Search for `宝珠` returned the Hōju record.
 - Oni filter returned two records after the search was cleared.
 - Kintarō record opened at `/archive?record=kintaro`.

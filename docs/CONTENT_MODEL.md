@@ -48,7 +48,7 @@ Only `published` records appear in the current index. Adding a record requires e
 `npm run test:content` checks:
 
 - unique IDs and slugs;
-- the 8–12 record Phase One scope;
+- the curated Phase One record scope, currently 14 published entries;
 - source presence and resolvability;
 - related-record, place, variant-source, and asset references;
 - separate Tradition and ASHIGARA fields;

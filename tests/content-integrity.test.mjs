@@ -16,7 +16,7 @@ test("published records resolve every source, relation, place, and asset", async
     readJson("assets.json"),
   ]);
 
-  assert.ok(records.length >= 8 && records.length <= 12, "Phase One stays within the 8–12 record slice");
+  assert.ok(records.length >= 8 && records.length <= 18, "Phase One stays within its curated record slice");
   const recordIds = new Set(records.map((record) => record.id));
   const recordSlugs = new Set(records.map((record) => record.slug));
   const sourceIds = new Set(sources.map((source) => source.id));
@@ -75,6 +75,10 @@ test("all canonical source masters and optimized runtime assets exist separately
     access(new URL("../public/assets/portraits/shuten-doji-archive-360.avif", import.meta.url)),
     access(new URL("../public/assets/portraits/ibaraki-doji-archive-360.avif", import.meta.url)),
     access(new URL("../public/assets/portraits/minamoto-yorimitsu-archive-360.avif", import.meta.url)),
+    access(new URL("../public/assets/portraits/watanabe-no-tsuna-archive-360.avif", import.meta.url)),
+    access(new URL("../public/assets/portraits/usui-sadamitsu-archive-360.avif", import.meta.url)),
+    access(new URL("../public/assets/portraits/urabe-no-suetake-archive-360.avif", import.meta.url)),
+    access(new URL("../public/assets/portraits/sakata-no-kintoki-archive-360.avif", import.meta.url)),
   ]);
 });
 

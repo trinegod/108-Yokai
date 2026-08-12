@@ -38,7 +38,7 @@
   "archive": {
     "eyebrow": "Archive chamber · 01",
     "title": "The Living Index",
-    "introduction": "Eleven connected records form a source-conscious vertical slice. Search names, places, and motifs, or browse by entity class. Every record keeps tradition separate from original ASHIGARA canon.",
+    "introduction": "Fourteen connected records form a source-conscious vertical slice. Search names, places, and motifs, or browse by entity class. Every record keeps tradition separate from original ASHIGARA canon.",
     "searchLabel": "Search names, regions, motifs",
     "searchPlaceholder": "Try Kintarō, mountain, 宝珠…",
     "filterLabel": "Entity class",
@@ -124,7 +124,7 @@
     "implemented": [
       "Independent desktop and mobile threshold compositions",
       "Gesture-controlled entry, optional sound, and reduced-motion behavior",
-      "Eleven searchable, source-linked records with six illustrated chambers",
+      "Fourteen searchable, source-linked records with ten illustrated chambers",
       "Persistent English and provisional Japanese presentation across all five routes",
       "Narrative atlas, expanded first chronicle, and five-route structural shell",
       "Nondestructive artwork originals and responsive derivatives"

@@ -9,7 +9,7 @@ Status: implemented locally and validated as described in the README.
 - `ENTER ASHIGARA` / `PRESS TO ASCEND` interaction.
 - Restrained Kintarō still-life treatment, independent stationary axe interaction mask, Hōju 2.5D enhancement, pulse, transition, and optional procedural impact.
 - Five routes.
-- Ten source-linked sample records with deep-linked detail chambers.
+- Fourteen source-linked sample records with deep-linked detail chambers.
 - Search, filter, grid/list view, atlas/list alternative, first chronicle, About/method record.
 - Reduced motion, no-GPU baseline, keyboard/touch behavior, content tests, and documentation.
 
@@ -49,7 +49,7 @@ Planned; requires explicit owner authorization.
 ## Owner decisions needed next
 
 1. Approve or decline renaming the existing local folder from `108 YOKAI` to exact `108Yokai`.
-2. Supply/publication-confirm a rights and credit statement for the six owner-supplied artworks.
+2. Supply/publication-confirm a rights and credit statement for the ten owner-supplied archive artworks.
 3. Supply the layered threshold package and production Kintarō/Hōju animation assets described in the asset backlog.
 4. Select the first Phase Two record batch and editorial reviewer.
 5. Authorize deployment only when ready; no remote or publication currently exists.
