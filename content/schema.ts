@@ -103,7 +103,7 @@ export type AssetRecord = {
   sourceFilename: string;
   canonicalSourceName: string;
   sourcePath: string;
-  type: "background" | "relic" | "sprite-reference" | "character-reference";
+  type: "background" | "portal-environment" | "relic" | "sprite-reference" | "character-reference";
   association: string;
   width: number;
   height: number;
@@ -113,7 +113,6 @@ export type AssetRecord = {
   rightsStatus: string;
   optimization: string;
   missingStates: string;
-  approvalStatus: "locked" | "locked-reference" | "approved-reference" | "identity-reference";
+  approvalStatus: "prototype" | "locked" | "locked-reference" | "approved-reference" | "identity-reference";
   runtimeAsset: boolean;
 };
-

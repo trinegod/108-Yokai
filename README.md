@@ -2,9 +2,9 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. A global 108 Yōkai portal and later gates are planned, not presented as implemented.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated, unpublished global-portal interaction study now exists locally; it is not the approved site entrance. Its approved study masters use independent monochrome desktop and mobile compositions, with code-aligned street tags and one functional Gate 01 marker. Later gates remain planned.
 
-> Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) remains on the preceding release until Steven approves this reviewed local batch for publication. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
+> Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) includes the isolated `/portal-lab` study for review while the approved Gate 01 threshold remains the site entrance. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
 ## Screenshots
 
@@ -91,12 +91,14 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 | `/atlas` | Narrative place/region index with list alternative | Implemented and browser-tested at desktop and phone sizes |
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented and browser-tested at desktop and phone sizes |
 | `/about` | Gate 01 creative direction, system, method, and status | Implemented and browser-tested at desktop and phone sizes |
+| `/portal-lab` | Isolated global 108 Yōkai analog-street typography and gate-system study | Published review study using owner-approved art; not linked from the Gate 01 experience or approved as the final collection entrance |
 
 ## Architecture
 
 ```text
 app/
 ├── page.tsx                    permanent threshold
+├── portal-lab/page.tsx         isolated future collection study
 ├── archive/page.tsx            searchable record index
 ├── atlas/page.tsx              narrative spatial view
 ├── chronicles/page.tsx         finite exhibition
@@ -113,7 +115,7 @@ content/
 ├── assets.json                 machine-readable asset manifest
 └── locales/                    English UI + complete provisional Japanese draft layer
 
-source-art/                     untouched canonical source PNGs
+source-art/                     untouched canonical source PNGs and JPEGs
 derived-art/clean-plates/       versioned AI-assisted actorless working derivatives
 public/assets/                  generated AVIF/WebP derivatives
 scripts/process-assets.mjs      nondestructive derivative pipeline
