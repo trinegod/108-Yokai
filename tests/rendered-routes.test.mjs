@@ -28,7 +28,7 @@ test("server-renders the persisted Japanese locale from its request cookie", asy
 const routes = [
   ["/", /GATE 01[\s\S]*ASHIGARA/, /ENTER ASHIGARA/],
   ["/archive", /The Living Index/, /source-checked[\s\S]*Phase One sample/],
-  ["/atlas", /Places, Paths &amp; Regions/, /Approximate narrative placement/],
+  ["/atlas", /Places, Paths &amp; Regions/, /Traditional regions · approximate placement/],
   ["/chronicles", /Chronicles/, /From Ashigara to the demon road/],
   ["/about", /Direction, System &amp; Method/, /Directed by Steven Adkins/],
   ["/portal-lab", /108 Yōkai/, /back wall\./],
