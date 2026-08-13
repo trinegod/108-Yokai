@@ -85,6 +85,7 @@ export type Place = {
   note: string;
   sourceIds: string[];
   mapPosition: { x: number; y: number };
+  mobileMapPosition?: { x: number; y: number };
 };
 
 export type Chronicle = {

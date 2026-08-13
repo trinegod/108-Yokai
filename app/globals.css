@@ -3429,22 +3429,34 @@ html[data-locale="ja"] .case-study-section h2 {
 .atlas-map {
   position: sticky;
   top: 7rem;
-  min-height: 42rem;
+  aspect-ratio: 4 / 3;
+  min-height: 0;
   overflow: hidden;
   border: 1px solid var(--line);
-  background:
-    linear-gradient(132deg, transparent 22%, rgba(53, 63, 55, 0.25) 22.2% 39%, transparent 39.2%),
-    radial-gradient(ellipse at 36% 62%, rgba(110, 78, 51, 0.22), transparent 29%),
-    radial-gradient(ellipse at 63% 42%, rgba(70, 78, 68, 0.26), transparent 32%),
-    #0c1011;
+  background: #080a09;
+  box-shadow: 0 1.5rem 5rem rgba(0, 0, 0, 0.28);
 }
 
-.atlas-map__contours {
+.atlas-map__picture,
+.atlas-map__art,
+.atlas-map__wash {
   position: absolute;
-  inset: -20%;
-  opacity: 0.55;
-  background: repeating-radial-gradient(ellipse at 52% 50%, transparent 0 32px, rgba(231, 221, 200, 0.07) 33px 34px);
-  transform: rotate(-14deg) scale(1.25);
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.atlas-map__art {
+  display: block;
+  object-fit: cover;
+}
+
+.atlas-map__wash {
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(5, 7, 7, 0.08), transparent 28%, transparent 74%, rgba(5, 7, 7, 0.66)),
+    radial-gradient(circle at 50% 50%, transparent 48%, rgba(5, 7, 7, 0.34) 100%);
+  box-shadow: inset 0 0 5rem rgba(0, 0, 0, 0.42);
 }
 
 .atlas-map__north {
@@ -3467,12 +3479,12 @@ html[data-locale="ja"] .case-study-section h2 {
 
 .atlas-map__path {
   position: absolute;
-  top: 36%;
-  left: 31%;
-  width: 34%;
-  height: 28%;
-  border-top: 1px dashed rgba(200, 146, 72, 0.55);
-  border-right: 1px dashed rgba(200, 146, 72, 0.55);
+  top: 29%;
+  left: 27%;
+  width: 50%;
+  height: 34%;
+  border-top: 1px dashed rgba(222, 169, 87, 0.58);
+  border-right: 1px dashed rgba(222, 169, 87, 0.58);
   border-radius: 50%;
   transform: rotate(-20deg);
 }
@@ -3482,6 +3494,8 @@ html[data-locale="ja"] .case-study-section h2 {
   z-index: 2;
   display: grid;
   min-width: 8.5rem;
+  left: var(--atlas-x);
+  top: var(--atlas-y);
   transform: translate(-50%, -50%);
   color: var(--bone);
   text-decoration: none;
@@ -4159,7 +4173,13 @@ html[data-locale="ja"] .case-study-section h2 {
   .atlas-map {
     position: relative;
     top: auto;
-    min-height: 34rem;
+    aspect-ratio: 2 / 3;
+    min-height: 0;
+  }
+
+  .atlas-node {
+    left: var(--atlas-x-mobile);
+    top: var(--atlas-y-mobile);
   }
 
   .chronicle-hero > span { display: none; }

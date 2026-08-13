@@ -1,4 +1,5 @@
 "use client";
+import type { CSSProperties } from "react";
 import type { FolkloreRecord, Place } from "@/content/schema";
 import placeTranslations from "@/content/locales/places.ja.json";
 import { useLocale } from "./LocaleProvider";
@@ -17,7 +18,38 @@ export function AtlasContent({ places, records }: { places: Place[]; records: Fo
   return (
     <section className="atlas-layout">
       <div className="atlas-map" aria-label={dictionary.atlas.mapLabel}>
-        <div className="atlas-map__contours" aria-hidden="true" />
+        <picture className="atlas-map__picture">
+          <source
+            media="(max-width: 760px)"
+            type="image/avif"
+            srcSet="/assets/backgrounds/atlas/ashigara-atlas-mobile-640.avif 640w, /assets/backgrounds/atlas/ashigara-atlas-mobile-853.avif 853w"
+            sizes="100vw"
+          />
+          <source
+            media="(max-width: 760px)"
+            type="image/webp"
+            srcSet="/assets/backgrounds/atlas/ashigara-atlas-mobile-640.webp 640w, /assets/backgrounds/atlas/ashigara-atlas-mobile-853.webp 853w"
+            sizes="100vw"
+          />
+          <source
+            type="image/avif"
+            srcSet="/assets/backgrounds/atlas/ashigara-atlas-desktop-960.avif 960w, /assets/backgrounds/atlas/ashigara-atlas-desktop-1280.avif 1280w"
+            sizes="(max-width: 1100px) 100vw, 65vw"
+          />
+          <source
+            type="image/webp"
+            srcSet="/assets/backgrounds/atlas/ashigara-atlas-desktop-960.webp 960w, /assets/backgrounds/atlas/ashigara-atlas-desktop-1280.webp 1280w"
+            sizes="(max-width: 1100px) 100vw, 65vw"
+          />
+          <img
+            className="atlas-map__art"
+            src="/assets/backgrounds/atlas/ashigara-atlas-desktop-1280.webp"
+            alt=""
+            width="1280"
+            height="960"
+          />
+        </picture>
+        <div className="atlas-map__wash" aria-hidden="true" />
         <p className="atlas-map__north" aria-hidden="true">N</p>
         <div className="atlas-map__path" aria-hidden="true" />
         {places.map((place, index) => {
@@ -28,7 +60,12 @@ export function AtlasContent({ places, records }: { places: Place[]; records: Fo
               key={place.id}
               className="atlas-node"
               href={record ? `/archive?record=${record.slug}` : "/archive"}
-              style={{ left: `${place.mapPosition.x}%`, top: `${place.mapPosition.y}%` }}
+              style={{
+                "--atlas-x": `${place.mapPosition.x}%`,
+                "--atlas-y": `${place.mapPosition.y}%`,
+                "--atlas-x-mobile": `${place.mobileMapPosition?.x ?? place.mapPosition.x}%`,
+                "--atlas-y-mobile": `${place.mobileMapPosition?.y ?? place.mapPosition.y}%`,
+              } as CSSProperties}
             >
               <span>{String(index + 1).padStart(2, "0")}</span>
               <strong>{translation?.name ?? place.name}</strong>

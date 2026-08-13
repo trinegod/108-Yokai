@@ -7,7 +7,8 @@
     "region": "Kanagawa–Shizuoka border region",
     "note": "A traditional, broad mountain setting associated with Kintarō; the archive does not reduce it to one precise coordinate.",
     "sourceIds": ["jpsearch-kintaro"],
-    "mapPosition": { "x": 31, "y": 63 }
+    "mapPosition": { "x": 79, "y": 61 },
+    "mobileMapPosition": { "x": 77, "y": 62 }
   },
   {
     "id": "mount-oe",
@@ -17,7 +18,8 @@
     "region": "Kyoto Prefecture tradition",
     "note": "A principal traditional setting for the Shuten-dōji cycle; versions differ in setting and narrative detail.",
     "sourceIds": ["tnm-shuten-doji", "british-ibuki-doji"],
-    "mapPosition": { "x": 62, "y": 36 }
+    "mapPosition": { "x": 24, "y": 27 },
+    "mobileMapPosition": { "x": 25, "y": 24 }
   },
   {
     "id": "mount-ibuki",
@@ -27,7 +29,7 @@
     "region": "Shiga–Gifu border region",
     "note": "A variant setting in the Ibuki-dōji narrative preserved by the British Museum handscroll record.",
     "sourceIds": ["british-ibuki-doji"],
-    "mapPosition": { "x": 51, "y": 48 }
+    "mapPosition": { "x": 47, "y": 36 },
+    "mobileMapPosition": { "x": 55, "y": 38 }
   }
 ]
-

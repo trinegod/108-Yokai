@@ -11,6 +11,7 @@ async function ensureDirectories() {
   await Promise.all([
     mkdir(output("backgrounds", "threshold"), { recursive: true }),
     mkdir(output("backgrounds", "portal"), { recursive: true }),
+    mkdir(output("backgrounds", "atlas"), { recursive: true }),
     mkdir(output("stickers", "portal"), { recursive: true }),
     mkdir(output("relics"), { recursive: true }),
     mkdir(output("portraits"), { recursive: true }),
@@ -135,6 +136,18 @@ await Promise.all([
     directory: path.join("backgrounds", "portal"),
     stem: "108-yokai-analog-street-mobile",
     widths: [640, 720, 941],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("atlas", "ashigara-atlas-desktop-master.jpg"),
+    directory: path.join("backgrounds", "atlas"),
+    stem: "ashigara-atlas-desktop",
+    widths: [960, 1280],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("atlas", "ashigara-atlas-mobile-master.jpg"),
+    directory: path.join("backgrounds", "atlas"),
+    stem: "ashigara-atlas-mobile",
+    widths: [640, 853],
   }),
   responsiveSticker({
     sourceName: path.join("portal", "stickers", "gate-01-brutal-calligraphy-master.png"),

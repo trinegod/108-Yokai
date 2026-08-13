@@ -78,7 +78,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 
 ### Atlas, Chronicles, and method
 
-- Narrative atlas with traditional/legendary/approximate certainty labels and a permanent text alternative.
+- Responsive illustrated narrative atlas with independent desktop/mobile map masters, coded bilingual place markers, traditional/legendary/approximate certainty labels, and a permanent text alternative.
 - One finite eleven-record chronicle with institutional source trail.
 - Focused Gate 01 case study covering the creative brief, experience design, visual authorities, actual technology, authorship, AI assistance, implemented work, and current limits.
 

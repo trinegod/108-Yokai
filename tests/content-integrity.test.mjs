@@ -71,6 +71,8 @@ test("all canonical source masters and optimized runtime assets exist separately
     access(new URL("../public/assets/backgrounds/portal/108-yokai-relic-mobile-640.avif", import.meta.url)),
     access(new URL("../public/assets/backgrounds/portal/108-yokai-analog-street-desktop-960.avif", import.meta.url)),
     access(new URL("../public/assets/backgrounds/portal/108-yokai-analog-street-mobile-640.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/atlas/ashigara-atlas-desktop-960.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/atlas/ashigara-atlas-mobile-640.avif", import.meta.url)),
     access(new URL("../derived-art/clean-plates/ashigara-threshold-desktop-actorless-v1.png", import.meta.url)),
     access(new URL("../derived-art/clean-plates/ashigara-threshold-mobile-actorless-v1.png", import.meta.url)),
     access(new URL("../public/assets/relics/hoju-concept-480.webp", import.meta.url)),
