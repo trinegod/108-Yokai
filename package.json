@@ -16,6 +16,7 @@
     "assets:build": "node scripts/process-assets.mjs",
     "assets:audio": "node scripts/process-left-right-audio.mjs",
     "assets:audio:martyrs": "node scripts/process-martyrs-audio.mjs",
+    "assets:editorials:martyrs": "node scripts/process-martyrs-editorials.mjs",
     "assets:sticker:martyrs": "node scripts/process-martyrs-sticker.mjs",
     "assets:wordmark:martyrs": "node scripts/process-martyrs-wordmark.mjs"
   },

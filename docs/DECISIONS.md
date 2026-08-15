@@ -73,3 +73,11 @@ The mobile route omits the desktop editorial inset frame so the independent port
 Gate 02 uses the owner-supplied no-target transparent industrial `02` sticker without code recoloring. The superseded yellow/red source remains archived, while small lossless derivatives of the black/bone/gray replacement use the same marker dimensions as Gate 01 on desktop and mobile.
 
 The Portal Lab no longer renders Wall or Motion controls. Motion runs by default with no visible switch while the required reduced-motion preference still disables nonessential animation and pointer parallax. The gate index follows naturally below the hero under a large centered stack with `THE` above `BASEMENT.`
+
+## ADR-015 — MART¥RS threshold becomes an editorial cover
+
+The padded asylum room remains a fixed issue cover rather than becoming a vertical image feed. Two directly actionable cover lines are set into its open wall and link to `/martyrs/persona` and `/martyrs/unfinished`. This preserves the original threshold composition while giving future features a repeatable content route instead of adding more full-screen wallpapers.
+
+Each feature is a responsive magazine spread driven by the content layer. Persona places its art on the left and Unfinished mirrors it on the right. Both use owner-supplied 2400 × 3000 desktop and mobile-labeled masters through breakpoint-specific `<picture>` sources. The four source files remain unchanged, and every runtime image is a nondestructive AVIF/WebP derivative with no crop or repaint.
+
+The visual system pairs a high-contrast Didot/Bodoni-style serif with minimal monospaced folios. A one-time pair of opaque panels closes over the art and opens again on entry. The panels do not alter the image, do not loop, and are removed for reduced motion. The shared MART¥RS layout owns the gesture-only sound control so client navigation between the cover and editorials does not replace the audio element.

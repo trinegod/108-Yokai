@@ -107,6 +107,9 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 - The approved 28.656708-second stereo 48 kHz WAV remains preserved byte-for-byte. Playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade, remains silent by default, uses `preload="none"`, and starts only after the visible Sound control is pressed.
 - Reduced motion removes the rare flicker without removing navigation, the static wordmark bloom, or sound control.
 - The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own rare flicker map without loading the desktop art. The desktop editorial inset frame is removed on phones, and an owner-approved static 0.2% bleed prevents sub-pixel edge seams without perceptible distortion.
+- The threshold now behaves as the issue cover. Two high-contrast serif cover lines printed into the asylum wall open `Persona` and `Unfinished` as independent editorial routes rather than extending the room into a conventional scrolling gallery.
+- Each editorial uses an uncropped owner-supplied 2400 × 3000 desktop master and a separately supplied 2400 × 3000 mobile alternate. Persona runs image-left on desktop, Unfinished runs image-right, and phones stack title, complete artwork, statement, and next-story navigation.
+- A one-time black aperture closes over each artwork and reopens on entry. It never loops, leaves the settled artwork clear, and is absent when reduced motion is requested.
 
 ### Preserved LEFT / RIGHT study
 
@@ -128,7 +131,9 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented and browser-tested at desktop and phone sizes |
 | `/about` | Gate 01 creative direction, system, method, and status | Implemented and browser-tested at desktop and phone sizes |
 | `/portal-lab` | Isolated global 108 Yōkai analog-street typography and gate-system study | Published review study using owner-approved art; not linked from the Gate 01 experience or approved as the final collection entrance |
-| `/martyrs` | Current Gate 02 aggressive fashion-editorial threshold and gesture-only dark-techno loop | Independent desktop/mobile masters integrated in local validation; not published |
+| `/martyrs` | Gate 02 cover, editorial contents, and gesture-only dark-techno loop | Published owner-review route with wall links to two features |
+| `/martyrs/persona` | MART¥RS 02.01 fashion-editorial feature | Responsive split spread with uncropped desktop/mobile Persona masters |
+| `/martyrs/unfinished` | MART¥RS 02.02 fashion-editorial feature | Responsive mirrored spread with uncropped desktop/mobile Unfinished masters |
 | `/left-right` | Preserved prior Gate 02 typography, rain, direction, and sound study | Implemented and browser-tested locally; retained as a legacy study and no longer linked from the portal index |
 
 ## Architecture
@@ -137,7 +142,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 app/
 ├── page.tsx                    permanent threshold
 ├── portal-lab/page.tsx         isolated future collection study
-├── martyrs/page.tsx            current unpublished Gate 02 direction
+├── martyrs/                    Gate 02 cover plus Persona and Unfinished features
 ├── left-right/page.tsx         preserved prior Gate 02 interaction study
 ├── archive/page.tsx            searchable record index
 ├── atlas/page.tsx              narrative spatial view
@@ -159,6 +164,7 @@ source-art/                     untouched canonical source PNGs and JPEGs
 derived-art/clean-plates/       versioned AI-assisted actorless working derivatives
 public/assets/                  generated AVIF/WebP derivatives
 scripts/process-assets.mjs      nondestructive derivative pipeline
+scripts/process-martyrs-editorials.mjs  uncropped MART¥RS feature derivatives
 scripts/process-left-right-audio.mjs  nondestructive Gate 02 loop builder
 tests/                          content, threshold-contract, and SSR checks
 docs/                           creative, editorial, performance, decisions

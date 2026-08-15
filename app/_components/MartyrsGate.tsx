@@ -1,12 +1,11 @@
 "use client";
 
 import {
-  useEffect,
-  useRef,
-  useState,
   useSyncExternalStore,
 } from "react";
+import Link from "next/link";
 import { martyrsGate } from "@/content/martyrs";
+import { martyrsEditorials } from "@/content/martyrs-editorials";
 
 function subscribeToReducedMotion(onChange: () => void) {
   const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -19,66 +18,8 @@ function getReducedMotion() {
 }
 
 export function MartyrsGate() {
-  const audioRef = useRef<HTMLAudioElement>(null);
-  const audioFadeRef = useRef(0);
-  const [soundEnabled, setSoundEnabled] = useState(false);
-  const [soundLoading, setSoundLoading] = useState(false);
-  const [soundError, setSoundError] = useState(false);
   const reduceMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, () => false);
   const motionActive = !reduceMotion;
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    return () => {
-      window.cancelAnimationFrame(audioFadeRef.current);
-      audio?.pause();
-    };
-  }, []);
-
-  function fadeAudio(target: number, duration: number, onComplete?: () => void) {
-    const audio = audioRef.current;
-    if (!audio) return;
-    window.cancelAnimationFrame(audioFadeRef.current);
-    const initial = audio.volume;
-    const startedAt = performance.now();
-
-    const step = (now: number) => {
-      const progress = Math.max(0, Math.min(1, (now - startedAt) / duration));
-      const eased = 1 - Math.pow(1 - progress, 3);
-      audio.volume = Math.max(0, Math.min(1, initial + (target - initial) * eased));
-      if (progress < 1) audioFadeRef.current = window.requestAnimationFrame(step);
-      else onComplete?.();
-    };
-
-    audioFadeRef.current = window.requestAnimationFrame(step);
-  }
-
-  async function toggleSound() {
-    const audio = audioRef.current;
-    if (!audio || soundLoading) return;
-
-    if (soundEnabled) {
-      setSoundEnabled(false);
-      window.localStorage.setItem("martyrs-sound", "off");
-      fadeAudio(0, 450, () => audio.pause());
-      return;
-    }
-
-    setSoundLoading(true);
-    setSoundError(false);
-    audio.volume = 0;
-    try {
-      await audio.play();
-      setSoundEnabled(true);
-      window.localStorage.setItem("martyrs-sound", "on");
-      fadeAudio(0.68, 1000);
-    } catch {
-      setSoundEnabled(false);
-      setSoundError(true);
-    } finally {
-      setSoundLoading(false);
-    }
-  }
 
   return (
     <main
@@ -128,10 +69,10 @@ export function MartyrsGate() {
       </div>
 
       <header className="martyrs-header">
-        <a href="/portal-lab" className="martyrs-back" aria-label="Back to the 108 Yōkai gate index">
+        <Link href="/portal-lab" className="martyrs-back" aria-label="Back to the 108 Yōkai gate index">
           <span>108</span>
           <span>Y</span>
-        </a>
+        </Link>
       </header>
 
       <section className="martyrs-title" aria-labelledby="martyrs-heading">
@@ -151,38 +92,24 @@ export function MartyrsGate() {
         </h1>
       </section>
 
+      <nav className="martyrs-contents" aria-label="MART¥RS editorial contents">
+        <p>Contents / private edition</p>
+        {martyrsEditorials.map((editorial) => (
+          <Link href={`/martyrs/${editorial.slug}`} key={editorial.slug}>
+            <span>{editorial.issue}</span>
+            <strong>{editorial.title}</strong>
+            <small>{editorial.kicker}</small>
+          </Link>
+        ))}
+      </nav>
+
       <aside className="martyrs-proof" aria-hidden="true">
         <span>Edition 00</span>
         <i />
         <span>Private threshold</span>
       </aside>
 
-      <section id="martyrs-controls" className="martyrs-controls" aria-label="Sound control">
-        <button
-          className="martyrs-sound-control"
-          type="button"
-          aria-label={soundLoading ? "Sound loading" : soundEnabled ? "Turn sound off" : "Turn sound on"}
-          aria-pressed={soundEnabled}
-          onClick={toggleSound}
-          disabled={soundLoading}
-        >
-          <span className="martyrs-sound-icon" aria-hidden="true">
-            <span className="martyrs-sound-icon__speaker" />
-            <span className="martyrs-sound-icon__signal" />
-          </span>
-        </button>
-      </section>
-
       <p className="martyrs-credit">{martyrsGate.credit}</p>
-      <p className="martyrs-status" aria-live="polite">
-        Sound {soundError ? "unavailable" : soundEnabled ? "on" : "off"}. Motion {motionActive ? "on" : "still"}.
-      </p>
-
-      {/* Instrumental loop contains no speech or lyrical content to caption. */}
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio ref={audioRef} loop preload="none" aria-label={martyrsGate.audio.label}>
-        <source src={martyrsGate.audio.source} type="audio/wav" />
-      </audio>
     </main>
   );
 }

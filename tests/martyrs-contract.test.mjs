@@ -3,6 +3,9 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 const component = await readFile(new URL("../app/_components/MartyrsGate.tsx", import.meta.url), "utf8");
+const shell = await readFile(new URL("../app/_components/MartyrsShell.tsx", import.meta.url), "utf8");
+const editorial = await readFile(new URL("../app/_components/MartyrsEditorial.tsx", import.meta.url), "utf8");
+const editorialContent = await readFile(new URL("../content/martyrs-editorials.ts", import.meta.url), "utf8");
 const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 const portalComponent = await readFile(new URL("../app/_components/PortalLab.tsx", import.meta.url), "utf8");
 const portalGates = await readFile(new URL("../content/portal-gates.ts", import.meta.url), "utf8");
@@ -35,18 +38,36 @@ test("Portal Lab keeps motion implicit and the Gate 02 marker aligned with Gate 
 });
 
 test("MART¥RS remains silent until its visible sound gesture", () => {
-  assert.match(component, /<button[^>]+aria-pressed=\{soundEnabled\}/s);
-  assert.match(component, /className="martyrs-sound-control"/);
-  assert.match(component, /className="martyrs-sound-icon"/);
-  assert.doesNotMatch(component, />\s*Sound\s*\//);
+  assert.match(shell, /<button[^>]+aria-pressed=\{soundEnabled\}/s);
+  assert.match(shell, /className="martyrs-sound-control"/);
+  assert.match(shell, /className="martyrs-sound-icon"/);
+  assert.doesNotMatch(shell, />\s*Sound\s*\//);
   assert.doesNotMatch(component, /←/);
   assert.match(styles, /\.martyrs-back span:last-child \{\s*color: var\(--martyrs-ink\);\s*\}/);
   assert.match(styles, /\.martyrs-controls button \{[\s\S]*?border: 0;[\s\S]*?background: transparent;/);
-  assert.match(component, /<audio ref=\{audioRef\} loop preload="none"/);
-  assert.doesNotMatch(component, /\bautoPlay\b|\bautoplay\b/);
-  assert.match(component, /await audio\.play\(\)/);
+  assert.match(shell, /<audio ref=\{audioRef\} loop preload="none"/);
+  assert.doesNotMatch(shell, /\bautoPlay\b|\bautoplay\b/);
+  assert.match(shell, /await audio\.play\(\)/);
   assert.match(martyrsContent, /martyrs-extended-loop\.wav/);
   assert.match(martyrsContent, /durationSeconds: 56\.113417/);
+});
+
+test("MART¥RS cover exposes two modular editorial entrances", () => {
+  assert.match(component, /aria-label="MART¥RS editorial contents"/);
+  assert.match(component, /martyrsEditorials\.map/);
+  assert.match(editorialContent, /issue: "02\.01"[\s\S]*?title: "Persona"/);
+  assert.match(editorialContent, /issue: "02\.02"[\s\S]*?title: "Unfinished"/);
+  assert.doesNotMatch(editorialContent, /—| - /);
+});
+
+test("MART¥RS editorials preserve breakpoint masters and reduced motion", () => {
+  assert.match(editorial, /media="\(max-width: 699px\)"/);
+  assert.match(editorial, /-mobile-480\.avif/);
+  assert.match(editorial, /-desktop-1920\.webp/);
+  assert.match(editorial, /className="martyrs-editorial__aperture/);
+  assert.match(styles, /martyrsEditorialApertureLeft/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-editorial__aperture \{ display: none; \}/);
+  assert.match(styles, /Didot, "Bodoni 72", "Bodoni MT"/);
 });
 
 test("MART¥RS uses an independent portrait master on phones", () => {

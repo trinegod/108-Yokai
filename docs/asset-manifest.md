@@ -23,6 +23,10 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `martyrs-gate-02-s-sticker` | `martyrs/martyrs-s-sticker-upload.png` | Portal sticker | 2048 × 2048, single transparent composition | Yes | Preserved superseded suffix exploration; not loaded | Superseded reference |
 | `martyrs-gate-02-wordmark` | `martyrs/martyrs-wordmark-generated-master.png` | Portal sticker | 1983 × 793, single generated landscape wordmark | Runtime derivatives | MART¥RS responsive image masthead | Prototype |
 | `martyrs-gate-02-audio` | `martyrs/audio/martyrs-master.wav` | Atmosphere audio | 28.656708 seconds, stereo 48 kHz 16-bit PCM | N/A | Gesture-only MART¥RS dark-techno loop and sonic authority | Approved reference |
+| `martyrs-persona-desktop-editorial` | `martyrs/editorials/persona-desktop-master.png` | Editorial artwork | 2400 × 3000, 4:5 | No | Persona desktop magazine spread | Prototype |
+| `martyrs-persona-mobile-editorial` | `martyrs/editorials/persona-mobile-master.png` | Editorial artwork | 2400 × 3000, 4:5 | No | Persona mobile feature artwork | Prototype |
+| `martyrs-unfinished-desktop-editorial` | `martyrs/editorials/unfinished-desktop-master.png` | Editorial artwork | 2400 × 3000, 4:5 | No | Unfinished desktop magazine spread | Prototype |
+| `martyrs-unfinished-mobile-editorial` | `martyrs/editorials/unfinished-mobile-master.png` | Editorial artwork | 2400 × 3000, 4:5 | No | Unfinished mobile feature artwork | Prototype |
 
 ## Source integrity
 
@@ -52,6 +56,10 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `martyrs/references/typography-reference-modular.jpg` | `a803e0700fd027791e0e8cc2c7ea5d627b9159a53cf10a2c2e8d0b0a526ea874` |
 | `martyrs/martyrs-wordmark-generated-master.png` | `b3cf479865fd1ae71f607b27c9ffabc116495d1f5fc92feffa178d2d80061839` |
 | `martyrs/audio/martyrs-master.wav` | `179e2748a7219f56214c5807278f0d4c7b0ccdafb37df5cc5a5b3be0eb86db9b` |
+| `martyrs/editorials/persona-desktop-master.png` | `566fe7d0303e9647942434982b04f7c556baeaeae18961f63625571ce3e580a3` |
+| `martyrs/editorials/persona-mobile-master.png` | `369c51c7e35e432d76259e200501e4b40de40845953eced6a2a2297f76612a68` |
+| `martyrs/editorials/unfinished-desktop-master.png` | `6c2810288e233624a72dbab4d85aba2addfc01d12c12dceb906fe96ae76fe4b9` |
+| `martyrs/editorials/unfinished-mobile-master.png` | `f7fa29bc7dce3e4cf4af3c8355168e75838b0181d9a8a623e164dab7fad61133` |
 
 ## Runtime derivatives
 
@@ -69,10 +77,11 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 - MART¥RS wordmark: transparent-trimmed 1944 × 253 archival PNG and 1200 × 156 lossless PNG/WebP runtime derivatives. The same WebP supplies a strong static CSS blur bloom around and slightly below the crisp image.
 - MART¥RS suffix sticker archive: the supplied 2048 × 2048 source stream and separate 1254 × 1254 restoration remain preserved. Its generated PNG/WebP files are historical derivatives only; the current image masthead does not request them.
 - MART¥RS sound: the exact runtime copy of the approved 28.656708-second PCM master remains preserved; playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade. It uses `preload="none"` and is requested only after a deliberate sound gesture.
+- MART¥RS Persona and Unfinished editorials: separate uncropped AVIF/WebP sets at 960, 1440, and 1920 pixels for desktop plus 480, 720, 1080, and 1440 pixels for the mobile-labeled alternates.
 - Social preview: 1200 × 630 JPEG crop from the approved desktop threshold.
 - Favicon: 96 × 96 PNG derivative from the approved Hōju concept.
 
-Regenerate visual derivatives with `npm run assets:build`, the MART¥RS wordmark with `npm run assets:wordmark:martyrs`, the preserved suffix exploration with `npm run assets:sticker:martyrs`, the legacy LEFT / RIGHT loop with `npm run assets:audio`, and the approved MART¥RS master copy plus extended seamless derivative with `npm run assets:audio:martyrs`.
+Regenerate visual derivatives with `npm run assets:build`, the MART¥RS editorials with `npm run assets:editorials:martyrs`, the MART¥RS wordmark with `npm run assets:wordmark:martyrs`, the preserved suffix exploration with `npm run assets:sticker:martyrs`, the legacy LEFT / RIGHT loop with `npm run assets:audio`, and the approved MART¥RS master copy plus extended seamless derivative with `npm run assets:audio:martyrs`.
 
 ## Rights status
 

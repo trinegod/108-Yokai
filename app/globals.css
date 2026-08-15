@@ -5077,6 +5077,11 @@ html[data-locale="ja"] .case-study-section h2 {
 
 /* Gate 02 — MART¥RS */
 
+.martyrs-route-shell {
+  min-height: 100vh;
+  background: #050607;
+}
+
 .martyrs-gate {
   --martyrs-ink: #090909;
   --martyrs-bone: #e8e6df;
@@ -5280,12 +5285,118 @@ html[data-locale="ja"] .case-study-section h2 {
   background: linear-gradient(90deg, var(--martyrs-proof), rgba(8, 8, 8, 0.28));
 }
 
-.martyrs-controls {
+.martyrs-contents {
   position: absolute;
-  z-index: 32;
+  z-index: 26;
+  top: 42%;
+  left: clamp(2.5rem, 6.4vw, 8rem);
+  display: grid;
+  width: min(34vw, 30rem);
+  color: var(--martyrs-ink);
+}
+
+.martyrs-contents > p {
+  margin: 0 0 0.6rem;
+  color: rgba(8, 8, 8, 0.44);
+  font-family: var(--mono);
+  font-size: clamp(0.38rem, 0.42vw, 0.48rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.martyrs-contents a {
+  position: relative;
+  display: grid;
+  min-height: 3.35rem;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  padding: 0.42rem 0.15rem 0.48rem;
+  border-top: 1px solid rgba(8, 8, 8, 0.25);
+  color: inherit;
+  text-decoration: none;
+}
+
+.martyrs-contents a:last-child {
+  border-bottom: 1px solid rgba(8, 8, 8, 0.25);
+}
+
+.martyrs-contents a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  right: 0;
+  bottom: 0.4rem;
+  left: 3rem;
+  height: 0.22rem;
+  background: var(--martyrs-proof);
+  filter: blur(7px);
+  opacity: 0;
+  transform: scaleX(0.22);
+  transform-origin: left center;
+  transition: opacity 220ms ease, transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.martyrs-contents a > span {
+  grid-row: 1 / 3;
+  color: rgba(8, 8, 8, 0.54);
+  font-family: var(--mono);
+  font-size: 0.48rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.martyrs-contents strong {
+  align-self: end;
+  font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-size: clamp(1.35rem, 1.8vw, 2rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.055em;
+  line-height: 0.92;
+  transition: letter-spacing 360ms cubic-bezier(0.22, 1, 0.36, 1), transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.martyrs-contents small {
+  align-self: start;
+  margin-top: 0.22rem;
+  color: rgba(8, 8, 8, 0.48);
+  font-family: var(--mono);
+  font-size: clamp(0.34rem, 0.38vw, 0.42rem);
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.martyrs-contents a:hover::after,
+.martyrs-contents a:focus-visible::after {
+  opacity: 0.72;
+  transform: scaleX(1);
+}
+
+.martyrs-contents a:hover strong,
+.martyrs-contents a:focus-visible strong {
+  letter-spacing: -0.075em;
+  transform: translateX(0.2rem);
+}
+
+.martyrs-controls {
+  position: fixed;
+  z-index: 92;
   bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + 0.9rem));
   left: clamp(1.35rem, 2.4vw, 2.5rem);
   display: block;
+}
+
+.martyrs-route-shell:has(.martyrs-editorial) .martyrs-controls button {
+  color: rgba(232, 230, 223, 0.74);
+}
+
+.martyrs-route-shell:has(.martyrs-editorial) .martyrs-controls button:hover,
+.martyrs-route-shell:has(.martyrs-editorial) .martyrs-controls button:focus-visible,
+.martyrs-route-shell:has(.martyrs-editorial) .martyrs-controls button[aria-pressed="true"] {
+  color: var(--martyrs-bone, #e8e6df);
 }
 
 .martyrs-controls button {
@@ -5468,6 +5579,28 @@ html[data-locale="ja"] .case-study-section h2 {
 
   .martyrs-proof { display: none; }
 
+  .martyrs-contents {
+    top: auto;
+    right: 4vw;
+    bottom: max(5.8rem, calc(env(safe-area-inset-bottom) + 5.2rem));
+    left: 4vw;
+    width: auto;
+  }
+
+  .martyrs-contents > p {
+    margin-bottom: 0.42rem;
+    font-size: 0.36rem;
+  }
+
+  .martyrs-contents a {
+    min-height: 2.8rem;
+    grid-template-columns: 2.75rem minmax(0, 1fr);
+    padding: 0.32rem 0.1rem 0.38rem;
+  }
+
+  .martyrs-contents strong { font-size: clamp(1.15rem, 5.6vw, 1.55rem); }
+  .martyrs-contents small { font-size: 0.32rem; }
+
   .martyrs-controls {
     bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.6rem));
     left: 1rem;
@@ -5502,4 +5635,376 @@ html[data-locale="ja"] .case-study-section h2 {
 
 @media (max-width: 699px) and (prefers-reduced-motion: reduce) {
   .martyrs-lockup { transform: rotate(-1.2deg) !important; }
+}
+
+/* MART¥RS editorial issue */
+
+.martyrs-editorial {
+  --martyrs-ink: #050607;
+  --martyrs-bone: #e8e4da;
+  --martyrs-proof: #7e1018;
+  min-height: 100vh;
+  overflow: clip;
+  background: var(--martyrs-ink);
+  color: var(--martyrs-bone);
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.martyrs-editorial__masthead {
+  position: relative;
+  z-index: 20;
+  display: grid;
+  min-height: 4.8rem;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding: max(1.15rem, env(safe-area-inset-top)) clamp(1.3rem, 2.5vw, 2.8rem) 1rem;
+  border-bottom: 1px solid rgba(232, 228, 218, 0.16);
+  font-family: var(--mono);
+  font-size: clamp(0.42rem, 0.48vw, 0.54rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.martyrs-editorial__masthead p {
+  margin: 0;
+  color: rgba(232, 228, 218, 0.5);
+}
+
+.martyrs-editorial__masthead a {
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  transition: opacity 180ms ease;
+}
+
+.martyrs-editorial__masthead a:hover,
+.martyrs-editorial__masthead a:focus-visible { opacity: 0.62; }
+
+.martyrs-editorial__return { justify-self: start; }
+.martyrs-editorial__portal { justify-self: end; }
+
+.martyrs-editorial__spread {
+  display: grid;
+  grid-template-columns: minmax(0, 62fr) minmax(20rem, 38fr);
+  grid-template-rows: auto 1fr;
+  align-items: start;
+}
+
+.martyrs-editorial--image-right .martyrs-editorial__spread {
+  grid-template-columns: minmax(20rem, 38fr) minmax(0, 62fr);
+}
+
+.martyrs-editorial__art {
+  position: relative;
+  isolation: isolate;
+  grid-row: 1 / 3;
+  margin: 0;
+  overflow: hidden;
+  background: #020303;
+}
+
+.martyrs-editorial--image-left .martyrs-editorial__art { grid-column: 1; }
+.martyrs-editorial--image-right .martyrs-editorial__art { grid-column: 2; }
+
+.martyrs-editorial__art picture,
+.martyrs-editorial__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.martyrs-editorial__art img {
+  position: relative;
+  z-index: 1;
+}
+
+.martyrs-editorial__art::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  background:
+    linear-gradient(90deg, transparent 83%, rgba(5, 6, 7, 0.18)),
+    repeating-radial-gradient(circle at 30% 20%, rgba(255, 255, 255, 0.22) 0 0.35px, transparent 0.7px 3px);
+  mix-blend-mode: soft-light;
+  opacity: 0.16;
+  pointer-events: none;
+}
+
+.martyrs-editorial__art figcaption {
+  position: absolute;
+  z-index: 6;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.42rem 0.52rem;
+  background: rgba(5, 6, 7, 0.74);
+  color: rgba(232, 228, 218, 0.7);
+  font-family: var(--mono);
+  font-size: 0.38rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.martyrs-editorial__aperture {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  bottom: 0;
+  width: 51%;
+  background: #050607;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.martyrs-editorial__aperture--left {
+  left: 0;
+  animation: martyrsEditorialApertureLeft 1.65s cubic-bezier(0.77, 0, 0.18, 1) 120ms both;
+}
+
+.martyrs-editorial__aperture--right {
+  right: 0;
+  animation: martyrsEditorialApertureRight 1.65s cubic-bezier(0.77, 0, 0.18, 1) 120ms both;
+}
+
+.martyrs-editorial__title-block,
+.martyrs-editorial__statement {
+  position: relative;
+  z-index: 8;
+  align-self: start;
+}
+
+.martyrs-editorial--image-left .martyrs-editorial__title-block,
+.martyrs-editorial--image-left .martyrs-editorial__statement { grid-column: 2; }
+
+.martyrs-editorial--image-right .martyrs-editorial__title-block,
+.martyrs-editorial--image-right .martyrs-editorial__statement { grid-column: 1; }
+
+.martyrs-editorial__title-block {
+  grid-row: 1;
+  padding: clamp(4rem, 10vh, 8rem) clamp(1.5rem, 3.2vw, 4.25rem) 2rem;
+  animation: martyrsEditorialTypeIn 900ms cubic-bezier(0.22, 1, 0.36, 1) 1.05s both;
+}
+
+.martyrs-editorial--image-left .martyrs-editorial__title-block { transform: translateX(clamp(-5rem, -4vw, -2rem)); }
+.martyrs-editorial--image-right .martyrs-editorial__title-block { transform: translateX(clamp(2rem, 4vw, 5rem)); }
+
+.martyrs-editorial__issue,
+.martyrs-editorial__kicker {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: clamp(0.42rem, 0.5vw, 0.58rem);
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.martyrs-editorial__issue {
+  margin-bottom: clamp(1.8rem, 4vh, 3.4rem);
+  color: rgba(232, 228, 218, 0.46);
+}
+
+.martyrs-editorial__title-block h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: var(--martyrs-bone);
+  font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-size: clamp(4.3rem, 8.3vw, 9.5rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.085em;
+  line-height: 0.76;
+  text-shadow: 0 0 22px rgba(126, 16, 24, 0.28), 0 0.11em 34px rgba(126, 16, 24, 0.18);
+}
+
+.martyrs-editorial__kicker {
+  margin-top: clamp(1.7rem, 4vh, 3rem);
+  color: rgba(232, 228, 218, 0.62);
+}
+
+.martyrs-editorial__statement {
+  grid-row: 2;
+  padding: clamp(2rem, 5vh, 4rem) clamp(1.5rem, 3.2vw, 4.25rem) clamp(5rem, 11vh, 9rem);
+}
+
+.martyrs-editorial__statement > p {
+  max-width: 30rem;
+  margin: 0;
+  color: rgba(232, 228, 218, 0.84);
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, serif;
+  font-size: clamp(1rem, 1.25vw, 1.35rem);
+  line-height: 1.62;
+}
+
+.martyrs-editorial__statement > p::first-letter {
+  float: left;
+  margin: 0.04em 0.12em 0 0;
+  color: var(--martyrs-bone);
+  font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-size: 4.1em;
+  font-style: italic;
+  line-height: 0.72;
+}
+
+.martyrs-editorial__folio {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: clamp(3rem, 7vh, 5rem);
+  color: rgba(232, 228, 218, 0.36);
+  font-family: var(--mono);
+  font-size: 0.42rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.martyrs-editorial__folio i {
+  width: 3rem;
+  height: 1px;
+  background: linear-gradient(90deg, var(--martyrs-proof), rgba(232, 228, 218, 0.18));
+}
+
+.martyrs-editorial__next {
+  position: relative;
+  z-index: 10;
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1.4rem, 5vw, 6rem);
+  background: var(--martyrs-bone);
+  color: var(--martyrs-ink);
+}
+
+.martyrs-editorial__next > p {
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.46rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.martyrs-editorial__next a {
+  display: flex;
+  min-height: 5rem;
+  align-items: baseline;
+  justify-content: space-between;
+  border-top: 1px solid rgba(5, 6, 7, 0.38);
+  border-bottom: 1px solid rgba(5, 6, 7, 0.38);
+  color: inherit;
+  text-decoration: none;
+}
+
+.martyrs-editorial__next a span {
+  font-family: Didot, "Bodoni 72", "Bodoni MT", "Times New Roman", serif;
+  font-size: clamp(3.2rem, 8vw, 8rem);
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  line-height: 1;
+}
+
+.martyrs-editorial__next a i {
+  font-family: var(--mono);
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  font-style: normal;
+  transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.martyrs-editorial__next a:hover i,
+.martyrs-editorial__next a:focus-visible i { transform: translate(0.28rem, -0.28rem); }
+
+@keyframes martyrsEditorialApertureLeft {
+  0%, 12% { transform: translateX(-102%); }
+  38%, 54% { transform: translateX(0); }
+  100% { transform: translateX(-102%); }
+}
+
+@keyframes martyrsEditorialApertureRight {
+  0%, 12% { transform: translateX(102%); }
+  38%, 54% { transform: translateX(0); }
+  100% { transform: translateX(102%); }
+}
+
+@keyframes martyrsEditorialTypeIn {
+  from { opacity: 0; filter: blur(9px); }
+  to { opacity: 1; filter: blur(0); }
+}
+
+@media (max-width: 699px) {
+  .martyrs-editorial__masthead {
+    min-height: 4.1rem;
+    grid-template-columns: 1fr auto;
+    padding: max(0.8rem, env(safe-area-inset-top)) 1rem 0.6rem;
+    font-size: 0.38rem;
+  }
+
+  .martyrs-editorial__masthead p { display: none; }
+
+  .martyrs-editorial__spread,
+  .martyrs-editorial--image-right .martyrs-editorial__spread {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .martyrs-editorial__title-block,
+  .martyrs-editorial--image-left .martyrs-editorial__title-block,
+  .martyrs-editorial--image-right .martyrs-editorial__title-block {
+    order: 1;
+    width: 100%;
+    padding: 3.6rem 1.1rem 1.8rem;
+    transform: none;
+  }
+
+  .martyrs-editorial__art {
+    order: 2;
+    width: 100%;
+  }
+
+  .martyrs-editorial__statement,
+  .martyrs-editorial--image-left .martyrs-editorial__statement,
+  .martyrs-editorial--image-right .martyrs-editorial__statement {
+    order: 3;
+    width: 100%;
+    padding: 2.7rem 1.35rem 6.5rem;
+  }
+
+  .martyrs-editorial__issue { margin-bottom: 2.1rem; }
+
+  .martyrs-editorial__title-block h1 {
+    max-width: 100%;
+    font-size: clamp(4rem, 18vw, 6.5rem);
+    line-height: 0.8;
+  }
+
+  .martyrs-editorial__kicker { margin-top: 1.7rem; }
+
+  .martyrs-editorial__statement > p {
+    max-width: 32rem;
+    font-size: clamp(1.02rem, 4.7vw, 1.25rem);
+  }
+
+  .martyrs-editorial__art figcaption {
+    right: 0.7rem;
+    bottom: 0.7rem;
+    font-size: 0.34rem;
+  }
+
+  .martyrs-editorial__next {
+    padding: 3.2rem 1.2rem max(5.5rem, calc(env(safe-area-inset-bottom) + 4.5rem));
+  }
+
+  .martyrs-editorial__next a { min-height: 4.4rem; }
+  .martyrs-editorial__next a span { font-size: clamp(3.3rem, 17vw, 5rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .martyrs-editorial__aperture { display: none; }
+
+  .martyrs-editorial__title-block {
+    animation: none;
+    filter: none;
+    opacity: 1;
+  }
 }
