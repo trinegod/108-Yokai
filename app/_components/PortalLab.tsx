@@ -119,13 +119,13 @@ export function PortalLab() {
           </ol>
         </nav>
 
-        <p className="portal-hero__counter" aria-hidden="true"><span>GATE</span><i /><span>01 / 12</span></p>
+        <p className="portal-hero__counter" aria-hidden="true"><span>GATE</span><i /><span>02 / 12</span></p>
         <p className="portal-hero__credit">Website created by Steven Adkins</p>
       </section>
 
       <section id="portal-gates" className="portal-chamber" aria-labelledby="portal-gates-title">
         <div className="portal-chamber__head">
-          <h2 id="portal-gates-title">The basement.</h2>
+          <h2 id="portal-gates-title"><span>The</span> basement.</h2>
           <p>Traces...</p>
         </div>
 

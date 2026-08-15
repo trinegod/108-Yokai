@@ -31,7 +31,7 @@ const routes = [
   ["/atlas", /Places, Paths &amp; Regions/, /Traditional regions · approximate placement/],
   ["/chronicles", /Chronicles/, /From Ashigara to the demon road/],
   ["/about", /Direction, System &amp; Method/, /Directed by Steven Adkins/],
-  ["/portal-lab", /108 Yōkai/, /The basement\./],
+  ["/portal-lab", /108 Yōkai/, /The[\s\S]*basement\./],
   ["/left-right", /LEFT \/ RIGHT/, /Gate 02 controls/],
   ["/martyrs", /MART¥RS/, /Sound control/],
 ];
