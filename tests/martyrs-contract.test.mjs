@@ -55,6 +55,9 @@ test("MART¥RS remains silent until its visible sound gesture", () => {
 test("MART¥RS cover exposes two modular editorial entrances", () => {
   assert.match(component, /aria-label="MART¥RS editorial contents"/);
   assert.match(component, /martyrsEditorials\.map/);
+  assert.match(component, /<a href=\{`\/martyrs\/\$\{editorial\.slug\}`\}/);
+  assert.doesNotMatch(component, /<Link href=\{`\/martyrs\/\$\{editorial\.slug\}`\}/);
+  assert.match(styles, /@media \(min-width: 700px\) \{[\s\S]*?\.martyrs-contents \{[\s\S]*?top: 37%;/);
   assert.match(editorialContent, /issue: "02\.01"[\s\S]*?title: "Persona"/);
   assert.match(editorialContent, /issue: "02\.02"[\s\S]*?title: "Unfinished"/);
   assert.doesNotMatch(editorialContent, /—| - /);

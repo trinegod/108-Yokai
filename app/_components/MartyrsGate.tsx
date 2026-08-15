@@ -95,11 +95,11 @@ export function MartyrsGate() {
       <nav className="martyrs-contents" aria-label="MART¥RS editorial contents">
         <p>Contents / private edition</p>
         {martyrsEditorials.map((editorial) => (
-          <Link href={`/martyrs/${editorial.slug}`} key={editorial.slug}>
+          <a href={`/martyrs/${editorial.slug}`} key={editorial.slug}>
             <span>{editorial.issue}</span>
             <strong>{editorial.title}</strong>
             <small>{editorial.kicker}</small>
-          </Link>
+          </a>
         ))}
       </nav>
 

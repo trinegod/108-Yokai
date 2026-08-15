@@ -5316,6 +5316,7 @@ html[data-locale="ja"] .case-study-section h2 {
   border-top: 1px solid rgba(8, 8, 8, 0.25);
   color: inherit;
   text-decoration: none;
+  touch-action: manipulation;
 }
 
 .martyrs-contents a:last-child {
@@ -5379,6 +5380,17 @@ html[data-locale="ja"] .case-study-section h2 {
 .martyrs-contents a:focus-visible strong {
   letter-spacing: -0.075em;
   transform: translateX(0.2rem);
+}
+
+@media (min-width: 700px) {
+  .martyrs-contents {
+    top: 37%;
+  }
+
+  .martyrs-contents a {
+    min-height: 2.9rem;
+    padding-block: 0.32rem 0.38rem;
+  }
 }
 
 .martyrs-controls {
