@@ -21,12 +21,11 @@ function getReducedMotion() {
 export function MartyrsGate() {
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioFadeRef = useRef(0);
-  const [motionEnabled, setMotionEnabled] = useState(true);
   const [soundEnabled, setSoundEnabled] = useState(false);
   const [soundLoading, setSoundLoading] = useState(false);
   const [soundError, setSoundError] = useState(false);
   const reduceMotion = useSyncExternalStore(subscribeToReducedMotion, getReducedMotion, () => false);
-  const motionActive = motionEnabled && !reduceMotion;
+  const motionActive = !reduceMotion;
 
   useEffect(() => {
     const audio = audioRef.current;
@@ -81,16 +80,12 @@ export function MartyrsGate() {
     }
   }
 
-  function toggleMotion() {
-    setMotionEnabled((current) => !current);
-  }
-
   return (
     <main
       className="martyrs-gate"
       data-motion={motionActive ? "on" : "still"}
     >
-      <a className="skip-link" href="#martyrs-controls">Skip to controls</a>
+      <a className="skip-link" href="#martyrs-controls">Skip to sound control</a>
       <p className="sr-only">{martyrsGate.background.alt}</p>
 
       <div className="martyrs-scene" aria-hidden="true">
@@ -137,7 +132,6 @@ export function MartyrsGate() {
           <span aria-hidden="true">←</span>
           <span>108Y</span>
         </a>
-        <p><span>Gate</span> {martyrsGate.gate}</p>
       </header>
 
       <section className="martyrs-title" aria-labelledby="martyrs-heading">
@@ -163,12 +157,19 @@ export function MartyrsGate() {
         <span>Private threshold</span>
       </aside>
 
-      <section id="martyrs-controls" className="martyrs-controls" aria-label="Gate 02 controls">
-        <button type="button" aria-pressed={motionActive} onClick={toggleMotion}>
-          Motion / {motionActive ? "On" : "Still"}
-        </button>
-        <button type="button" aria-pressed={soundEnabled} onClick={toggleSound} disabled={soundLoading}>
-          Sound / {soundLoading ? "Loading" : soundEnabled ? "On" : "Off"}
+      <section id="martyrs-controls" className="martyrs-controls" aria-label="Sound control">
+        <button
+          className="martyrs-sound-control"
+          type="button"
+          aria-label={soundLoading ? "Sound loading" : soundEnabled ? "Turn sound off" : "Turn sound on"}
+          aria-pressed={soundEnabled}
+          onClick={toggleSound}
+          disabled={soundLoading}
+        >
+          <span className="martyrs-sound-icon" aria-hidden="true">
+            <span className="martyrs-sound-icon__speaker" />
+            <span className="martyrs-sound-icon__signal" />
+          </span>
         </button>
       </section>
 

@@ -33,7 +33,7 @@ const routes = [
   ["/about", /Direction, System &amp; Method/, /Directed by Steven Adkins/],
   ["/portal-lab", /108 Yōkai/, /back wall\./],
   ["/left-right", /LEFT \/ RIGHT/, /Gate 02 controls/],
-  ["/martyrs", /MART¥RS/, /Gate 02 controls/],
+  ["/martyrs", /MART¥RS/, /Sound control/],
 ];
 
 for (const [pathname, heading, content] of routes) {

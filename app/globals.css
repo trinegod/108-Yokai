@@ -5347,7 +5347,7 @@ html[data-locale="ja"] .case-study-section h2 {
   left: clamp(1.35rem, 2.4vw, 2.5rem);
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   pointer-events: none;
 }
 
@@ -5384,18 +5384,6 @@ html[data-locale="ja"] .case-study-section h2 {
   background: rgba(242, 240, 233, 0.94);
   transform: translateY(-1px);
 }
-
-.martyrs-header p {
-  margin: 0;
-  color: rgba(8, 8, 8, 0.62);
-  font-family: var(--mono);
-  font-size: 0.56rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.martyrs-header p span { color: var(--martyrs-proof); }
 
 .martyrs-title {
   position: absolute;
@@ -5445,6 +5433,7 @@ html[data-locale="ja"] .case-study-section h2 {
   font-weight: 800;
   letter-spacing: 0.19em;
   text-transform: uppercase;
+  transform: translateY(0.4rem);
 }
 
 .martyrs-proof {
@@ -5477,25 +5466,75 @@ html[data-locale="ja"] .case-study-section h2 {
   z-index: 32;
   bottom: max(1.5rem, calc(env(safe-area-inset-bottom) + 0.9rem));
   left: clamp(1.35rem, 2.4vw, 2.5rem);
-  display: flex;
-  gap: 0.45rem;
+  display: block;
 }
 
 .martyrs-controls button {
-  min-width: clamp(7.5rem, 9vw, 9.3rem);
+  display: inline-grid;
+  width: 2.75rem;
+  min-width: 2.75rem;
   min-height: 2.75rem;
-  padding: 0.62rem 0.8rem;
+  place-items: center;
+  padding: 0;
   border: 1px solid rgba(8, 8, 8, 0.34);
-  background: rgba(236, 234, 227, 0.74);
+  background: rgba(236, 234, 227, 0.58);
   color: rgba(8, 8, 8, 0.7);
-  font-family: var(--mono);
-  font-size: clamp(0.47rem, 0.53vw, 0.6rem);
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   backdrop-filter: blur(11px);
   cursor: pointer;
   transition: border-color 170ms ease, background 170ms ease, color 170ms ease, transform 170ms ease;
+}
+
+.martyrs-sound-icon {
+  position: relative;
+  display: block;
+  width: 1.15rem;
+  height: 1rem;
+}
+
+.martyrs-sound-icon__speaker,
+.martyrs-sound-icon__speaker::before,
+.martyrs-sound-icon__signal {
+  position: absolute;
+  display: block;
+}
+
+.martyrs-sound-icon__speaker {
+  top: 0.32rem;
+  left: 0;
+  width: 0.32rem;
+  height: 0.38rem;
+  background: currentColor;
+}
+
+.martyrs-sound-icon__speaker::before {
+  content: "";
+  top: -0.22rem;
+  left: 0.22rem;
+  width: 0.54rem;
+  height: 0.82rem;
+  background: currentColor;
+  clip-path: polygon(0 33%, 100% 0, 100% 100%, 0 67%);
+}
+
+.martyrs-sound-icon__signal {
+  top: 0.2rem;
+  right: 0;
+  width: 0.34rem;
+  height: 0.62rem;
+  border: 1.5px solid currentColor;
+  border-left: 0;
+  border-radius: 0 100% 100% 0;
+}
+
+.martyrs-sound-control[aria-pressed="false"] .martyrs-sound-icon__signal {
+  top: 0.45rem;
+  right: -0.02rem;
+  width: 1.2rem;
+  height: 1.5px;
+  border: 0;
+  border-radius: 0;
+  background: var(--martyrs-proof);
+  transform: rotate(-45deg);
 }
 
 .martyrs-controls button:hover,
@@ -5503,7 +5542,7 @@ html[data-locale="ja"] .case-study-section h2 {
   border-color: rgba(8, 8, 8, 0.76);
   background: rgba(242, 240, 233, 0.96);
   color: #000;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .martyrs-controls button[aria-pressed="true"] {
@@ -5593,8 +5632,6 @@ html[data-locale="ja"] .case-study-section h2 {
     font-size: 0.52rem;
   }
 
-  .martyrs-header p { font-size: 0.48rem; }
-
   .martyrs-title {
     top: 14%;
     right: 3vw;
@@ -5605,6 +5642,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-title__index {
     margin-bottom: 1.3rem;
     font-size: 0.42rem;
+    transform: translateY(0.45rem);
   }
 
   .martyrs-lockup {
@@ -5615,19 +5653,16 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-proof { display: none; }
 
   .martyrs-controls {
-    right: 1rem;
     bottom: max(1rem, calc(env(safe-area-inset-bottom) + 0.6rem));
     left: 1rem;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.4rem;
+    display: block;
   }
 
   .martyrs-controls button {
-    min-width: 0;
-    min-height: 2.7rem;
-    padding: 0.5rem 0.35rem;
-    font-size: 0.46rem;
+    width: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0;
   }
 
   .martyrs-credit { display: none; }

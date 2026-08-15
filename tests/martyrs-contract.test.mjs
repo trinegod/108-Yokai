@@ -22,6 +22,9 @@ test("MART¥RS keeps the requested image wordmark and portal identity", () => {
 
 test("MART¥RS remains silent until its visible sound gesture", () => {
   assert.match(component, /<button[^>]+aria-pressed=\{soundEnabled\}/s);
+  assert.match(component, /className="martyrs-sound-control"/);
+  assert.match(component, /className="martyrs-sound-icon"/);
+  assert.doesNotMatch(component, />\s*Sound\s*\//);
   assert.match(component, /<audio ref=\{audioRef\} loop preload="none"/);
   assert.doesNotMatch(component, /\bautoPlay\b|\bautoplay\b/);
   assert.match(component, /await audio\.play\(\)/);
@@ -43,6 +46,8 @@ test("MART¥RS uses an independent portrait master on phones", () => {
 test("MART¥RS motion is optional and reduced-motion safe", () => {
   assert.match(styles, /martyrsFluorescent/);
   assert.match(styles, /martyrsFluorescent 10\.8s/);
+  assert.doesNotMatch(component, /toggleMotion|Motion \/ \{/);
+  assert.doesNotMatch(component, /<p><span>Gate<\/span>/);
   assert.doesNotMatch(component, /martyrs-scene__slice/);
   assert.doesNotMatch(styles, /martyrsSliceOne|martyrsSliceTwo|martyrsSliceThree|martyrsWordmarkBlur/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-scene__fluorescent \{ display: none; \}/);
