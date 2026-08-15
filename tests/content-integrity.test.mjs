@@ -85,6 +85,13 @@ test("all canonical source masters and optimized runtime assets exist separately
     access(new URL("../public/assets/portraits/usui-sadamitsu-archive-360.avif", import.meta.url)),
     access(new URL("../public/assets/portraits/urabe-no-suetake-archive-360.avif", import.meta.url)),
     access(new URL("../public/assets/portraits/sakata-no-kintoki-archive-360.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/left-right/left-right-crossing-1920.avif", import.meta.url)),
+    access(new URL("../public/assets/audio/left-right-signal-loop.wav", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/martyrs/martyrs-desktop-1920.avif", import.meta.url)),
+    access(new URL("../public/assets/backgrounds/martyrs/martyrs-mobile-720.avif", import.meta.url)),
+    access(new URL("../public/assets/wordmarks/martyrs/martyrs-wordmark-1200.webp", import.meta.url)),
+    access(new URL("../public/assets/wordmarks/martyrs/martyrs-wordmark-1200.png", import.meta.url)),
+    access(new URL("../public/assets/audio/martyrs-master.wav", import.meta.url)),
   ]);
 });
 

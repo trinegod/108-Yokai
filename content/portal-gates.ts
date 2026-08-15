@@ -16,8 +16,15 @@ export const portalGates: readonly PortalGate[] = [
     href: "/",
     status: "open",
   },
-  ...Array.from({ length: 11 }, (_, index) => ({
-    number: String(index + 2).padStart(2, "0"),
+  {
+    number: "02",
+    title: "MART¥RS",
+    subtitle: "Fashion editorial study",
+    href: "/martyrs",
+    status: "open",
+  },
+  ...Array.from({ length: 10 }, (_, index) => ({
+    number: String(index + 3).padStart(2, "0"),
     title: "Unwritten",
     subtitle: "Signal sealed",
     status: "sealed" as const,

@@ -11,6 +11,8 @@ async function ensureDirectories() {
   await Promise.all([
     mkdir(output("backgrounds", "threshold"), { recursive: true }),
     mkdir(output("backgrounds", "portal"), { recursive: true }),
+    mkdir(output("backgrounds", "left-right"), { recursive: true }),
+    mkdir(output("backgrounds", "martyrs"), { recursive: true }),
     mkdir(output("backgrounds", "atlas"), { recursive: true }),
     mkdir(output("stickers", "portal"), { recursive: true }),
     mkdir(output("relics"), { recursive: true }),
@@ -136,6 +138,24 @@ await Promise.all([
     directory: path.join("backgrounds", "portal"),
     stem: "108-yokai-analog-street-mobile",
     widths: [640, 720, 941],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("left-right", "left-right-ground-cleanup-4k-master.png"),
+    directory: path.join("backgrounds", "left-right"),
+    stem: "left-right-crossing",
+    widths: [720, 1280, 1920, 2560],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("martyrs", "martyrs-desktop-master.png"),
+    directory: path.join("backgrounds", "martyrs"),
+    stem: "martyrs-desktop",
+    widths: [960, 1440, 1920, 2560],
+  }),
+  responsiveIllustration({
+    sourceName: path.join("martyrs", "martyrs-mobile-master.png"),
+    directory: path.join("backgrounds", "martyrs"),
+    stem: "martyrs-mobile",
+    widths: [480, 720, 1080, 1440],
   }),
   responsiveIllustration({
     sourceName: path.join("atlas", "ashigara-atlas-desktop-master.jpg"),

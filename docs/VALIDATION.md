@@ -1,6 +1,6 @@
 # Validation record
 
-Validation date: 2026-08-11
+Validation dates: 2026-08-11, 2026-08-13, and 2026-08-14
 
 ## Automated checks
 
@@ -9,8 +9,8 @@ Validation date: 2026-08-11
 | `npm run typecheck` | Passed |
 | `npm run lint` | Passed with zero warnings/errors |
 | `npm run test:content` | Passed, 4/4 |
-| `npm test` | Passed, 13/13, including a fresh production build |
-| `npm run build` | Passed; all five app routes emitted |
+| `npm test` | Passed, 20/20, including a fresh production build |
+| `npm run build` | Passed; all eight app routes emitted |
 | `npm audit --omit=dev --audit-level=high` | Passed; zero production dependency vulnerabilities reported |
 
 The full dependency tree audit initially reported 17 vulnerabilities. A non-breaking `npm audit fix` reduced that to 11 (1 low, 10 high), all in the Vinext/Vite/Cloudflare development and build toolchain. The remaining suggested fixes require breaking/out-of-range changes; they were not force-applied. Re-evaluate the bundled Sites stack before publication.
@@ -98,3 +98,36 @@ An earlier controlled tab was replaced by the browser's own connection-error pag
 - Run Lighthouse and a mid-range Android trace under a representative mobile network.
 - Re-audit the development toolchain after compatible Vinext/Sites dependency updates.
 - Confirm final domain metadata and security headers.
+
+## Gate 02 local study — 2026-08-13
+
+- The owner-supplied 3840 × 2160 PNG and 32-second stereo WAV were copied to canonical `source-art/left-right/` paths without modification; SHA-256 values are recorded in the asset manifest.
+- Separate 720, 1280, 1920, and 2560-pixel AVIF/WebP environment derivatives were generated. The 1920-pixel AVIF is 70,153 bytes and its WebP fallback is 133,786 bytes.
+- A separate 30-second WAV loop was generated with a two-second crossfade. It uses `preload="none"`, remains silent on initial load, and starts only after the visible Sound control is pressed.
+- Native WebGL rain initialized successfully in the controlled browser. The canvas is decorative, device-pixel ratio is capped at 1.5, and the route remains usable without it.
+- At 1440 × 900 and 390 × 844, `/left-right` rendered with no horizontal overflow. A 375 × 667 phone check also kept the title and controls within the viewport.
+- Pointer movement, explicit Left/Right selection, motion toggle, sound fade-in/fade-out, portal return, and keyboard-visible controls were exercised in the running local site.
+- Reduced-motion logic removes rain, pointer separation, and animated texture without removing any control or navigation path.
+- `/`, `/archive`, `/atlas`, `/chronicles`, `/about`, `/portal-lab`, and `/left-right` were rechecked at 1440 × 900 and 390 × 844 with no horizontal overflow.
+- Real browser screenshots were saved as `artifacts/screenshots/left-right-desktop-1440x900.png` and `artifacts/screenshots/left-right-mobile-390x844.png`.
+- The phone presentation remains a temporary CSS composition from the supplied desktop artwork; no dedicated mobile master is claimed.
+
+## MART¥RS Gate 02 direction — 2026-08-14
+
+- The approved 3840 × 2160 PNG was copied to `source-art/martyrs/martyrs-desktop-master.png` without modification. Its recorded SHA-256 is `c4c66d58731f5687b0c1609976e5673c0151b9840a8520a85c1872c464539579`.
+- The independently composed 1440 × 3120 mobile PNG was copied to `source-art/martyrs/martyrs-mobile-master.png` without modification. Its recorded SHA-256 is `5abc52bb6e3b3d50f0d03dd0cd8e09fcace7d063a121222021ce57fe4f9c4749`.
+- The supplied 2048 × 2048 transparent `(S)` sticker was copied byte-for-byte to `source-art/martyrs/martyrs-s-sticker-upload.png`; its SHA-256 is `523305df49a2b0087fd7093c251563f7c856d90c3a0525b473047419c22d86f9`. The source file remains untouched. A separate 1254 × 1254 owner-directed restoration, SHA-256 `96eac3c3d6096c70afdd5783678a5b0b870604827232c04e4d2e32295b45ba1d`, completes the black S where the original composition reached and was cropped by its lower canvas edge.
+- The two owner-supplied typography screenshots are preserved as style references under `source-art/martyrs/references/`; their SHA-256 values are `d923e64d72e27eeec86d23235a0b02ddb502a3eca38c504039528e6d8f3b9867` and `a803e0700fd027791e0e8cc2c7ea5d627b9159a53cf10a2c2e8d0b0a526ea874`. They are not runtime assets.
+- The generated 1983 × 793 `MART¥RS` wordmark master is preserved byte-for-byte at `source-art/martyrs/martyrs-wordmark-generated-master.png`, SHA-256 `b3cf479865fd1ae71f607b27c9ffabc116495d1f5fc92feffa178d2d80061839`. Neutral-matte extraction produces a transparent 1944 × 253 archival PNG and 1200 × 156 PNG/WebP runtime derivatives.
+- Separate 960, 1440, 1920, and 2560-pixel AVIF/WebP desktop derivatives were generated. The 1920-pixel AVIF is 150,138 bytes and its WebP fallback is 246,002 bytes.
+- Separate 480, 720, 1080, and 1440-pixel AVIF/WebP mobile derivatives were generated. The 720-pixel AVIF is 58,539 bytes and its WebP fallback is 96,086 bytes.
+- The approved 28.656708-second, stereo, 48 kHz, 16-bit PCM WAV was copied to both canonical source and runtime paths byte-for-byte. All copies match SHA-256 `179e2748a7219f56214c5807278f0d4c7b0ccdafb37df5cc5a5b3be0eb86db9b`.
+- `/martyrs` returned HTTP 200 from the running local development server and exposed the complete `MART¥RS` heading, generated image masthead, visible Motion and Sound controls, and `preload="none"` audio source in rendered HTML.
+- Contract tests verify that no autoplay attribute exists, playback is initiated only inside the visible sound control handler, the desktop sources are guarded by a 700px minimum-width media condition, and the mobile fallback cannot request the desktop art.
+- Reduced-motion CSS removes fluorescent flicker and displaced image slices. The visible motion control can also disable the treatment independently.
+- `npm run lint`, `npm run typecheck`, `npm run test:content`, `npm run build`, and `npm test` all passed. The complete suite reports 20/20 passing tests and emits eight routes including `/martyrs`.
+- Browser acceptance at 1440 × 900 selected the 1440-pixel desktop AVIF; 390 × 844 and 430 × 932 selected the 480-pixel mobile AVIF. All three viewports reported zero horizontal and vertical overflow.
+- At 390 × 844 the wordmark ended above the subject zone, the two controls remained inside the lower safe area, and the full independent portrait composition remained visible without substituting the desktop image.
+- The current masthead removes the stacked rows, parentheses, sticker, and condensed coded type entirely. At 1440 × 900 the straight image spans x=92–711 and y=213–293, ending before the subject silhouette; at 390 × 844 its independently preserved mobile treatment spans x=15–379 and y=141–196. Both viewports load the 1200-pixel WebP, report zero overflow, and retain the complete accessible `MART¥RS` heading.
+- The Sound control started the WAV after its click, advanced playback, and then faded to a paused state on the second click. The Motion control changed between `on` and `still`. No browser warning or error was recorded.
+- Real screenshots are saved as `artifacts/screenshots/martyrs-desktop-1440x900.png`, `artifacts/screenshots/martyrs-mobile-390x844.png`, and `artifacts/screenshots/martyrs-mobile-fault-390x844.png`.

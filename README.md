@@ -2,7 +2,7 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated, unpublished global-portal interaction study now exists locally; it is not the approved site entrance. Its approved study masters use independent monochrome desktop and mobile compositions, with code-aligned street tags and one functional Gate 01 marker. Later gates remain planned.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated global-portal study and an unpublished Gate 02 direction now exist alongside it. The global portal uses independent monochrome desktop and mobile compositions; Gate 02 is now **MART¥RS**, an aggressive fashion-editorial threshold with a generated modular magazine masthead, rare fluorescent/image-slice instability, and gesture-only dark-techno sound. The earlier **LEFT / RIGHT** study remains preserved locally. Neither study replaces the approved Gate 01 entrance.
 
 > Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) includes the isolated `/portal-lab` study for review while the approved Gate 01 threshold remains the site entrance. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
@@ -31,6 +31,22 @@ Real local 1440 × 900 capture of the adult Sakata no Kintoki chamber added in t
 Real local 390 × 844 capture of the illustrated Watanabe no Tsuna chamber:
 
 ![Watanabe no Tsuna archive chamber at a 390 by 844 phone viewport](docs/screenshots/archive-watanabe-record-mobile-390x844.png)
+
+Real local development capture of the unpublished Gate 02 study at 1440 × 900:
+
+![LEFT RIGHT Gate 02 desktop study with split typography, central figure, and directional controls](artifacts/screenshots/left-right-desktop-1440x900.png)
+
+Real local development capture of the temporary 390 × 844 Gate 02 phone composition:
+
+![LEFT RIGHT Gate 02 phone study with a close central crop and accessible controls](artifacts/screenshots/left-right-mobile-390x844.png)
+
+Real local 1440 × 900 capture of the current MART¥RS desktop direction:
+
+![MART¥RS desktop fashion-editorial threshold with a modular black image masthead and seated woman in a white padded room](artifacts/screenshots/martyrs-desktop-1440x900.png)
+
+Real local 390 × 844 capture using the independent MART¥RS portrait master:
+
+![MART¥RS mobile fashion-editorial threshold with the modular image masthead above the seated woman](artifacts/screenshots/martyrs-mobile-390x844.png)
 
 ## Creative and product direction
 
@@ -82,6 +98,26 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 - One finite eleven-record chronicle with institutional source trail.
 - Focused Gate 01 case study covering the creative brief, experience design, visual authorities, actual technology, authorship, AI assistance, implemented work, and current limits.
 
+### Gate 02: MART¥RS
+
+- The owner-approved 3840 × 2160 white padded-room master is preserved untouched and rendered uncropped through 960, 1440, 1920, and 2560-pixel AVIF/WebP derivatives.
+- The custom title is a generated transparent `MART¥RS` image masthead: a wide modular techno construction informed by the owner's blurred-futurist and Japanese-poster references without reproducing their source text.
+- The parentheses are removed. The yen is a custom Y-form with two short bars integrated low on its stem. A separate composited black blur echo adds the requested optical softness while the core wordmark stays sharp.
+- Rare fluorescent flicker is synchronized with three narrow displaced image slices. Restrained grain and shallow type response complete the treatment; there is no rain.
+- The approved 28.656708-second stereo 48 kHz WAV is copied byte-for-byte, remains silent by default, uses `preload="none"`, and starts only after the visible Sound control is pressed.
+- Reduced motion removes pointer response, flicker, displaced slices, and grain animation without removing navigation or sound control.
+- The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own flicker map and its narrow displaced slices use portrait derivatives rather than the desktop art.
+
+### Preserved LEFT / RIGHT study
+
+- A route-scoped 4K environment with generated 720, 1280, 1920, and 2560-pixel AVIF/WebP derivatives; the source PNG remains untouched.
+- An asymmetric typographic object rather than a conventional hero lockup: filled italic `LEFT`, condensed outlined `RIGHT`, and a directional slash that changes tension without changing the page structure.
+- Pointer-responsive image and type separation capped to a shallow range, plus explicit Left and Right states that can also be selected with a keyboard.
+- Native WebGL rain as a progressive enhancement with no 3D library, model, or canvas-dependent content. CSS texture and the complete interface remain when WebGL is unavailable.
+- Optional owner-supplied signal music that is silent by default, loads only after a deliberate gesture, fades in and out, and can be disabled from the visible control strip.
+- A motion toggle and `prefers-reduced-motion` path that remove rain, pointer parallax, and animated grain while preserving the title, background, direction controls, sound control, and portal return.
+- A temporary phone composition derived through responsive layout only. It is explicitly not presented as the final mobile master.
+
 ## Routes
 
 | Route | Purpose | Current state |
@@ -92,6 +128,8 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented and browser-tested at desktop and phone sizes |
 | `/about` | Gate 01 creative direction, system, method, and status | Implemented and browser-tested at desktop and phone sizes |
 | `/portal-lab` | Isolated global 108 Yōkai analog-street typography and gate-system study | Published review study using owner-approved art; not linked from the Gate 01 experience or approved as the final collection entrance |
+| `/martyrs` | Current Gate 02 aggressive fashion-editorial threshold and gesture-only dark-techno loop | Independent desktop/mobile masters integrated in local validation; not published |
+| `/left-right` | Preserved prior Gate 02 typography, rain, direction, and sound study | Implemented and browser-tested locally; retained as a legacy study and no longer linked from the portal index |
 
 ## Architecture
 
@@ -99,6 +137,8 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 app/
 ├── page.tsx                    permanent threshold
 ├── portal-lab/page.tsx         isolated future collection study
+├── martyrs/page.tsx            current unpublished Gate 02 direction
+├── left-right/page.tsx         preserved prior Gate 02 interaction study
 ├── archive/page.tsx            searchable record index
 ├── atlas/page.tsx              narrative spatial view
 ├── chronicles/page.tsx         finite exhibition
@@ -119,6 +159,7 @@ source-art/                     untouched canonical source PNGs and JPEGs
 derived-art/clean-plates/       versioned AI-assisted actorless working derivatives
 public/assets/                  generated AVIF/WebP derivatives
 scripts/process-assets.mjs      nondestructive derivative pipeline
+scripts/process-left-right-audio.mjs  nondestructive Gate 02 loop builder
 tests/                          content, threshold-contract, and SSR checks
 docs/                           creative, editorial, performance, decisions
 ```
@@ -157,6 +198,7 @@ Regenerate web derivatives without touching the source masters:
 
 ```bash
 npm run assets:build
+npm run assets:audio
 ```
 
 ## Content workflow
@@ -171,7 +213,7 @@ The current sample uses institutional pathways from Japan Search / National Diet
 
 ## Asset workflow
 
-The ten owner-supplied PNG and JPEG files are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated masked subject layers can be composited over the scene. Runtime AVIF/WebP assets are generated separately at conservative sizes.
+Owner-supplied PNG, JPEG, and WAV sources are retained byte-for-byte under canonical names in `source-art/`, with SHA-256 hashes documented in [`docs/asset-manifest.md`](docs/asset-manifest.md). AI-assisted actorless clean plates are versioned separately in `derived-art/clean-plates/`; they remove only the baked-in Kintarō/Hōju copies so isolated masked subject layers can be composited over the scene. Runtime AVIF/WebP assets and Gate 02 audio copies/derivatives are generated without writing into `source-art/`.
 
 The four added archive portraits remain untouched under `source-art/archive/`. Separate 360 and 720-pixel AVIF/WebP versions supply the portrait-led Living Index and detail chambers without modifying the source files.
 
@@ -188,7 +230,7 @@ The current Kintarō and Hōju reference sheets are opaque and not production at
 - Map has a complete text/list alternative.
 - No audible autoplay; silence is the default complete experience.
 - `prefers-reduced-motion` removes decorative motion and camera push.
-- No WebGL/GPU dependency; content does not depend on a canvas.
+- Gate 01 and MART¥RS have no WebGL/GPU dependency. The preserved LEFT / RIGHT study uses a small native WebGL rain enhancement, but its artwork, title, controls, audio, and navigation do not depend on the canvas.
 - Generous touch-target minimums and safe-area-aware mobile controls.
 
 A hands-on VoiceOver and cross-browser screen-reader pass is planned before publication; automated/source checks are not presented as a substitute.
@@ -199,9 +241,9 @@ Final automated results:
 
 - TypeScript: passed.
 - ESLint: passed with zero warnings/errors.
-- Node tests: 13/13 passed.
+- Node tests: 20/20 passed.
 - Content integrity: 4/4 passed.
-- Production build: passed; five routes emitted.
+- Production build: passed; eight routes emitted.
 - Production dependency audit: zero vulnerabilities reported.
 - Full development/build dependency audit: 11 remaining advisories after non-breaking fixes (1 low, 10 high), all in the Vinext/Vite/Cloudflare toolchain; breaking force-fixes were not applied.
 
@@ -228,6 +270,8 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 - Japanese is available across all routes as a visibly provisional draft and still awaits fluent editorial review before it can be described as reviewed or authoritative.
 - Desktop and 390 × 844 browser acceptance are complete for all routes and the expanded Yamauba chamber; broader phone/tablet hardware coverage remains open.
 - Full development-toolchain audit still has 11 advisories requiring coordinated breaking upgrades.
+- MART¥RS is an atmospheric landing study rather than a completed destination; its interior purpose and content architecture are intentionally undecided.
+- MART¥RS now uses separate desktop and portrait authorities; broader device and owner-acceptance tuning remains open.
 
 ## Roadmap
 
@@ -236,7 +280,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 3. Replace still/composite masks with layered threshold art and approved transparent idle frames.
 4. Complete fluent editorial review of the provisional Japanese layer, then expand records in reviewed batches and add production character art.
 5. Complete Gate 01's artwork, records, atlas, chronicles, and interactive-scene foundation.
-6. Design the separate 108 Yōkai portal hub, then develop Gate 02 as an independent UX case study.
+6. Complete the separate 108 Yōkai portal hub, finish MART¥RS desktop/mobile acceptance tuning, and define the gate's content architecture beyond its implemented atmospheric threshold.
 7. Introduce richer atlas relationships and optional future gate collections without claiming a fixed folklore canon.
 8. Evaluate an isolated GPU Hōju model only if owner-approved layered/model assets arrive and profiling demonstrates a material visual benefit over the current interactive 2.5D planes.
 9. Resolve compatible Sites/Vinext toolchain upgrades, then run Lighthouse/mobile hardware tests.

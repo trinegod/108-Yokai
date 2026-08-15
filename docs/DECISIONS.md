@@ -45,3 +45,21 @@ The app remained local until the owner explicitly authorized a public preview an
 ## ADR-011 — ASHIGARA is Gate 01
 
 `108 Yōkai` is the planned umbrella collection and future portal identity; it is not a claim about a fixed folklore canon. ASHIGARA remains the product title and becomes Gate 01. Its threshold and four internal content routes stay cohesive, while later gates will be sibling experiences reached from a future global portal rather than nested inside ASHIGARA's navigation.
+
+## ADR-012 — LEFT / RIGHT is an isolated Gate 02 atmospheric study
+
+Gate 02 is implemented at `/left-right` as a sibling experience, not as a reskin of ASHIGARA. Its current proof is intentionally narrow: one preserved environment, an asymmetric split-title system, selectable directional tension, restrained pointer separation, rain, and optional sound. No archive schema or invented subject matter is attached before the owner chooses the gate's purpose. The supplied wide master is authoritative for the local desktop study; the phone treatment is clearly documented as temporary until an independent portrait authority arrives.
+
+## ADR-013 — native rain enhancement and gesture-only source audio
+
+LEFT / RIGHT uses a small route-local WebGL shader for transparent rain. It has no 3D library, model, physics engine, or semantic responsibility; device-pixel ratio is capped, animation pauses when hidden, and reduced motion removes the canvas. If context creation fails, the artwork, typographic object, controls, sound, and navigation remain complete.
+
+The owner-supplied 32-second stereo WAV is preserved unchanged. A separate 30-second derivative crossfades its last two seconds into its beginning. The browser does not preload or autoplay it: playback starts only from the visible sound control, fades in and out, and remains optional.
+
+## ADR-014 — MART¥RS becomes the current Gate 02 direction
+
+MART¥RS supersedes LEFT / RIGHT in the portal index without deleting the earlier local route or its preserved source material. The current implementation lives at `/martyrs` as a sibling to ASHIGARA. Its visible title is a generated transparent image wordmark informed by the owner's blurred-futurist and modular Japanese-poster references. It reads `MART¥RS` without parentheses, uses a custom low-bar yen, and no longer shares the condensed 108 Yōkai type family. A CSS-composited black blur echo is removable independently of the crisp image. The semantic heading retains the complete title. The abandoned sticker experiment remains preserved in `source-art/` but is not loaded by the route.
+
+The owner-supplied 3840 × 2160 padded-room master is the desktop authority and the separately supplied 1440 × 3120 plate is the mobile authority. Neither is cropped, repainted, recolored, or generatively changed. Responsive `<picture>` sources select the portrait master below 700px and the wide master above it. Motion is dependency-free CSS compositing: breakpoint-specific fluorescent flicker, three narrow displaced image slices, brief type-registration faults, restrained grain, and shallow typographic pointer response. Reduced motion removes all of those loops.
+
+The owner-approved 28.656708-second stereo WAV is both the runtime loop and the MART¥RS sonic reference. It is copied byte-for-byte, uses `preload="none"`, never autoplays, and begins only from the visible sound button with guarded activation and a short fade. The preference is stored locally, but stored preference never bypasses the required gesture.

@@ -16,6 +16,13 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `shuten-doji-archive-portrait` | `archive/shuten-doji-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
 | `ibaraki-doji-archive-portrait` | `archive/ibaraki-doji-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
 | `minamoto-yorimitsu-archive-portrait` | `archive/minamoto-yorimitsu-archive-master.jpg` | Character illustration | 720 × 1280, single portrait | No | Living Index card and record chamber | Approved reference |
+| `left-right-gate-02-environment` | `left-right/left-right-ground-cleanup-4k-master.png` | Gate environment | 3840 × 2160, single desktop composition | No | Gate 02 atmospheric landing study | Approved reference |
+| `left-right-signal-audio` | `left-right/audio/left-right-signal-master.wav` | Atmosphere audio | 32 seconds, stereo 48 kHz PCM | N/A | Gesture-only Gate 02 signal loop | Approved reference |
+| `martyrs-gate-02-environment` | `martyrs/martyrs-desktop-master.png` | Gate environment | 3840 × 2160, single desktop composition | No | MART¥RS desktop fashion-editorial threshold | Approved reference |
+| `martyrs-gate-02-mobile-environment` | `martyrs/martyrs-mobile-master.png` | Gate environment | 1440 × 3120, independent 6:13 portrait composition | No | MART¥RS mobile fashion-editorial threshold | Approved reference |
+| `martyrs-gate-02-s-sticker` | `martyrs/martyrs-s-sticker-upload.png` | Portal sticker | 2048 × 2048, single transparent composition | Yes | Preserved superseded suffix exploration; not loaded | Superseded reference |
+| `martyrs-gate-02-wordmark` | `martyrs/martyrs-wordmark-generated-master.png` | Portal sticker | 1983 × 793, single generated landscape wordmark | Runtime derivatives | MART¥RS responsive image masthead | Prototype |
+| `martyrs-gate-02-audio` | `martyrs/audio/martyrs-master.wav` | Atmosphere audio | 28.656708 seconds, stereo 48 kHz 16-bit PCM | N/A | Gesture-only MART¥RS dark-techno loop and sonic authority | Approved reference |
 
 ## Source integrity
 
@@ -35,6 +42,16 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 | `archive/usui-sadamitsu-archive-master.jpg` | `20b022ff103275046195f2f9e49f8fd877da651141fb0f485bba634e2ab2160f` |
 | `archive/urabe-no-suetake-archive-master.jpg` | `5bb1e12f71ed0eeb541610f60ca63ec0c1002b157c991302f1c465e304f49caf` |
 | `archive/sakata-no-kintoki-archive-master.jpg` | `2d5a336db647ab4a13242a86c704b23e284f94e463dad698e35ce4c8ddbac77b` |
+| `left-right/left-right-ground-cleanup-4k-master.png` | `ec64b75f3547b653042b4817ed7b3503eeda2a1fa60dab2f63a9c924cc0690cb` |
+| `left-right/audio/left-right-signal-master.wav` | `9cafba8ea16fb847ee86ad3049444be9047f0659d0c8cefe0faabf1c21bdde87` |
+| `martyrs/martyrs-desktop-master.png` | `c4c66d58731f5687b0c1609976e5673c0151b9840a8520a85c1872c464539579` |
+| `martyrs/martyrs-mobile-master.png` | `5abc52bb6e3b3d50f0d03dd0cd8e09fcace7d063a121222021ce57fe4f9c4749` |
+| `martyrs/martyrs-s-sticker-upload.png` | `523305df49a2b0087fd7093c251563f7c856d90c3a0525b473047419c22d86f9` |
+| `martyrs/martyrs-s-sticker-restored-master.png` | `96eac3c3d6096c70afdd5783678a5b0b870604827232c04e4d2e32295b45ba1d` |
+| `martyrs/references/typography-reference-blur.jpg` | `d923e64d72e27eeec86d23235a0b02ddb502a3eca38c504039528e6d8f3b9867` |
+| `martyrs/references/typography-reference-modular.jpg` | `a803e0700fd027791e0e8cc2c7ea5d627b9159a53cf10a2c2e8d0b0a526ea874` |
+| `martyrs/martyrs-wordmark-generated-master.png` | `b3cf479865fd1ae71f607b27c9ffabc116495d1f5fc92feffa178d2d80061839` |
+| `martyrs/audio/martyrs-master.wav` | `179e2748a7219f56214c5807278f0d4c7b0ccdafb37df5cc5a5b3be0eb86db9b` |
 
 ## Runtime derivatives
 
@@ -45,10 +62,17 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 - Kintarō identity: 480 and 720-pixel AVIF/WebP.
 - Kintarō directional reference: 724 and 1448-pixel AVIF/WebP; documentation/reference only.
 - Yamauba, Shuten-dōji, Ibaraki-dōji, and Minamoto no Yorimitsu archive portraits: 360 and 720-pixel AVIF/WebP.
+- LEFT / RIGHT environment: 720, 1280, 1920, and 2560-pixel AVIF/WebP.
+- LEFT / RIGHT signal: separate 30-second PCM loop with a two-second head/tail crossfade; it is requested only after a deliberate sound gesture.
+- MART¥RS desktop environment: 960, 1440, 1920, and 2560-pixel AVIF/WebP.
+- MART¥RS mobile environment: 480, 720, 1080, and 1440-pixel AVIF/WebP from the independent 1440 × 3120 portrait authority. It is selected below 700px without cropping the desktop master.
+- MART¥RS wordmark: transparent-trimmed 1944 × 253 archival PNG and 1200 × 156 lossless PNG/WebP runtime derivatives. The same WebP supplies a restrained CSS blur echo behind the crisp image.
+- MART¥RS suffix sticker archive: the supplied 2048 × 2048 source stream and separate 1254 × 1254 restoration remain preserved. Its generated PNG/WebP files are historical derivatives only; the current image masthead does not request them.
+- MART¥RS sound: exact runtime copy of the approved 28.656708-second PCM master. It uses `preload="none"` and is requested only after a deliberate sound gesture.
 - Social preview: 1200 × 630 JPEG crop from the approved desktop threshold.
 - Favicon: 96 × 96 PNG derivative from the approved Hōju concept.
 
-Regenerate with `npm run assets:build`.
+Regenerate visual derivatives with `npm run assets:build`, the MART¥RS wordmark with `npm run assets:wordmark:martyrs`, the preserved suffix exploration with `npm run assets:sticker:martyrs`, the legacy LEFT / RIGHT loop with `npm run assets:audio`, and the approved MART¥RS master copy with `npm run assets:audio:martyrs`.
 
 ## Rights status
 
@@ -62,3 +86,4 @@ The files were supplied by the project owner for this local Phase One build. A f
 4. Separate full-height planted axe and crater matte matching both threshold masters.
 5. Optional owner-approved ambient loop. The current axe impact is original procedural synthesis and requires no bundled audio asset.
 6. Production art for the remaining non-illustrated archive records. Ten records now have owner-supplied project art; current geometric sigils remain controlled placeholders where no approved artwork exists.
+7. Final owner review of MART¥RS desktop/mobile wordmark placement and effect intensity across the target device matrix.

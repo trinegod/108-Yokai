@@ -13,7 +13,11 @@
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "typecheck": "tsc --noEmit",
     "test:content": "node --test tests/content-integrity.test.mjs",
-    "assets:build": "node scripts/process-assets.mjs"
+    "assets:build": "node scripts/process-assets.mjs",
+    "assets:audio": "node scripts/process-left-right-audio.mjs",
+    "assets:audio:martyrs": "node scripts/process-martyrs-audio.mjs",
+    "assets:sticker:martyrs": "node scripts/process-martyrs-sticker.mjs",
+    "assets:wordmark:martyrs": "node scripts/process-martyrs-wordmark.mjs"
   },
   "dependencies": {
     "react": "19.2.6",

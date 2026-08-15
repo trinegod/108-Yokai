@@ -104,12 +104,22 @@ export type AssetRecord = {
   sourceFilename: string;
   canonicalSourceName: string;
   sourcePath: string;
-  type: "background" | "portal-environment" | "relic" | "sprite-reference" | "character-reference";
+  type:
+    | "background"
+    | "atlas-environment"
+    | "portal-environment"
+    | "portal-sticker"
+    | "gate-environment"
+    | "atmosphere-audio"
+    | "relic"
+    | "sprite-reference"
+    | "character-reference";
   association: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
+  durationSeconds?: number;
   frameLayout: string;
-  transparency: "opaque" | "transparent";
+  transparency: "opaque" | "transparent" | "transparent RGBA" | "not-applicable";
   intendedUse: string;
   rightsStatus: string;
   optimization: string;

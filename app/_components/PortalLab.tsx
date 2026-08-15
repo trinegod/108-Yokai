@@ -233,7 +233,7 @@ function HeroGateTag({
   } as CSSProperties;
 
   return (
-    <li className={`portal-street-tag portal-street-tag--${gate.status}`} style={style}>
+    <li className={`portal-street-tag portal-street-tag--${gate.status} portal-street-tag--${gate.number}`} style={style}>
       {gate.href ? (
         <a
           href={gate.href}
@@ -243,22 +243,28 @@ function HeroGateTag({
           onFocus={() => onActiveChange?.(true)}
           onBlur={() => onActiveChange?.(false)}
         >
-          <picture className="portal-street-tag__sticker">
-            <source
-              type="image/webp"
-              srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.webp 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.webp 512w"
-              sizes="(max-width: 699px) 92px, 112px"
-            />
-            <img
-              src="/assets/stickers/portal/gate-01-brutal-calligraphy-512.png"
-              srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.png 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.png 512w"
-              sizes="(max-width: 699px) 92px, 112px"
-              alt=""
-              width="512"
-              height="512"
-              decoding="async"
-            />
-          </picture>
+          {gate.number === "01" ? (
+            <picture className="portal-street-tag__sticker">
+              <source
+                type="image/webp"
+                srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.webp 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.webp 512w"
+                sizes="(max-width: 699px) 92px, 112px"
+              />
+              <img
+                src="/assets/stickers/portal/gate-01-brutal-calligraphy-512.png"
+                srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.png 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.png 512w"
+                sizes="(max-width: 699px) 92px, 112px"
+                alt=""
+                width="512"
+                height="512"
+                decoding="async"
+              />
+            </picture>
+          ) : (
+            <span className="portal-street-tag__type" aria-hidden="true">
+              <b>02</b><i>M¥R(S)</i>
+            </span>
+          )}
         </a>
       ) : (
         <span aria-label={`Gate ${gate.number}, sealed`}><b>{gate.number}</b><i /></span>

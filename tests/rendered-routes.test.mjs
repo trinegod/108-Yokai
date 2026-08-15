@@ -32,6 +32,8 @@ const routes = [
   ["/chronicles", /Chronicles/, /From Ashigara to the demon road/],
   ["/about", /Direction, System &amp; Method/, /Directed by Steven Adkins/],
   ["/portal-lab", /108 Yōkai/, /back wall\./],
+  ["/left-right", /LEFT \/ RIGHT/, /Gate 02 controls/],
+  ["/martyrs", /MART¥RS/, /Gate 02 controls/],
 ];
 
 for (const [pathname, heading, content] of routes) {
@@ -42,7 +44,7 @@ for (const [pathname, heading, content] of routes) {
     const html = await response.text();
     assert.match(html, heading);
     assert.match(html, content);
-    if (pathname !== "/" && pathname !== "/portal-lab") {
+    if (pathname !== "/" && pathname !== "/portal-lab" && pathname !== "/left-right" && pathname !== "/martyrs") {
       assert.match(html, /Return to Gate 01/i);
       assert.doesNotMatch(html, />Threshold</i);
     }

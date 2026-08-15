@@ -57,3 +57,17 @@ Reduced motion removes parallax, idle loops, mist, motes, and long camera motion
 - Use random torii, cherry blossoms, parchment, fake RPG statistics, loot UI, scroll hijacking, or particle storms.
 - Present provisional Japanese text as definitive.
 - Present ASHIGARA fiction as historical belief.
+
+## Gate 02 — MART¥RS direction
+
+MART¥RS is the current Gate 02 identity and supersedes LEFT / RIGHT in the portal index while the earlier route remains preserved as a local study. Its dominant language is aggressive high-fashion editorial: severe black typography over a sterile white padded-room composition, restrained proofreader red, damaged registration, and rare image discontinuity. Graffiti is an undertone in the hand and attitude, not a literal street-lettering treatment.
+
+- The wordmark is a generated transparent `MART¥RS` image in one uninterrupted line, scaled as an aggressive magazine masthead rather than a stacked logo.
+- Its construction combines wide futuristic geometry with modular poster-like cuts and notches. It deliberately avoids the condensed ASHIGARA/108 Yōkai typography family. There are no parentheses.
+- `¥` is a custom Y-form with two short bars integrated low on the stem. A blurred black duplicate sits behind the crisp image as a restrained, removable optical treatment. The earlier red-and-black sticker experiment remains archived but is not a runtime layer.
+- The 3840 × 2160 desktop master and independent 1440 × 3120 portrait master are preserved and selected at their respective breakpoints without substituting a center crop.
+- Motion is rare fluorescent instability paired with three narrow displaced image slices, brief type-registration faults, and restrained grain. The effects are independently composed around the lighting and safe areas in each master. There is no rain.
+- The approved 28.656708-second audio master defines the sonic language: minimal/progressive dark techno, deep spacious low end, an audible analog-menace bed, and a distorted two-beat electric signal. It is the reference for future MART¥RS sound work.
+- Audio remains optional, gesture-only, visibly controllable, locally remembered, and silent on first load. Reduced motion removes flicker, slices, grain movement, and pointer response without removing controls or navigation.
+
+An exploratory future structure may treat MART¥RS as a sequence of brutal fashion-editorial chapters, each built around a different woman, outfit, environment, and visual disturbance. Character names and narrative identities remain intentionally undefined until the owner chooses whether these are named figures, anonymous editorials, or both.
