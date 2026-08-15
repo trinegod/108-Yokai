@@ -5562,6 +5562,8 @@ html[data-locale="ja"] .case-study-section h2 {
     transform-origin: center;
   }
 
+  .martyrs-scene img { object-fit: cover; }
+
   .martyrs-scene__grade {
     display: block;
     background:
