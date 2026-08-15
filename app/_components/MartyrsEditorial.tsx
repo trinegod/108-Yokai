@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { MartyrsEditorial as MartyrsEditorialRecord } from "@/content/martyrs-editorials";
 
 export function MartyrsEditorial({ editorial }: { editorial: MartyrsEditorialRecord }) {
@@ -12,13 +11,13 @@ export function MartyrsEditorial({ editorial }: { editorial: MartyrsEditorialRec
       <a className="skip-link" href="#editorial-statement">Skip to editorial statement</a>
 
       <header className="martyrs-editorial__masthead">
-        <Link href="/martyrs" className="martyrs-editorial__return" aria-label="Return to the MART¥RS cover">
+        <a href="/martyrs" className="martyrs-editorial__return" aria-label="Return to the MART¥RS cover">
           MART¥RS
-        </Link>
+        </a>
         <p>Private edition / {editorial.issue}</p>
-        <Link href="/portal-lab" className="martyrs-editorial__portal" aria-label="Return to the 108 Yōkai gate index">
+        <a href="/portal-lab" className="martyrs-editorial__portal" aria-label="Return to the 108 Yōkai gate index">
           108Y
-        </Link>
+        </a>
       </header>
 
       <article className="martyrs-editorial__spread">
@@ -69,21 +68,22 @@ export function MartyrsEditorial({ editorial }: { editorial: MartyrsEditorialRec
 
         <section className="martyrs-editorial__statement" id="editorial-statement" aria-label={`${editorial.title} editorial statement`}>
           <p>{editorial.statement}</p>
+          <p>{editorial.continuation}</p>
           <div className="martyrs-editorial__folio" aria-hidden="true">
             <span>{editorial.issue}</span>
             <i />
             <span>MART¥RS</span>
           </div>
         </section>
-      </article>
 
-      <nav className="martyrs-editorial__next" aria-label="Next MART¥RS editorial">
-        <p>Next editorial</p>
-        <Link href={`/martyrs/${editorial.nextSlug}`}>
-          <span>{editorial.nextTitle}</span>
-          <i aria-hidden="true">↗</i>
-        </Link>
-      </nav>
+        <nav className="martyrs-editorial__next" aria-label="Next MART¥RS editorial">
+          <p>Next editorial</p>
+          <a href={`/martyrs/${editorial.nextSlug}`}>
+            <span>{editorial.nextTitle}</span>
+            <i aria-hidden="true">↗</i>
+          </a>
+        </nav>
+      </article>
     </main>
   );
 }

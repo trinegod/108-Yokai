@@ -69,8 +69,17 @@ test("MART¥RS editorials preserve breakpoint masters and reduced motion", () =>
   assert.match(editorial, /-desktop-1920\.webp/);
   assert.match(editorial, /className="martyrs-editorial__aperture/);
   assert.match(styles, /martyrsEditorialApertureLeft/);
+  assert.match(styles, /@keyframes martyrsEditorialApertureLeft \{[\s\S]*?0%, 14% \{ transform: translateX\(0\); \}[\s\S]*?100% \{ transform: translateX\(-102%\); \}/);
+  assert.match(styles, /\.martyrs-editorial__kicker \{[\s\S]*?margin-right: auto;[\s\S]*?margin-left: auto;[\s\S]*?text-align: center;/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-editorial__aperture \{ display: none; \}/);
   assert.match(styles, /Didot, "Bodoni 72", "Bodoni MT"/);
+});
+
+test("MART¥RS editorial navigation uses reliable browser links", () => {
+  assert.match(editorial, /<a href="\/martyrs" className="martyrs-editorial__return"/);
+  assert.match(editorial, /<a href="\/portal-lab" className="martyrs-editorial__portal"/);
+  assert.match(editorial, /<a href=\{`\/martyrs\/\$\{editorial\.nextSlug\}`\}/);
+  assert.doesNotMatch(editorial, /import Link from "next\/link"/);
 });
 
 test("MART¥RS uses an independent portrait master on phones", () => {
