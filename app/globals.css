@@ -5562,7 +5562,7 @@ html[data-locale="ja"] .case-study-section h2 {
     transform-origin: center;
   }
 
-  .martyrs-scene img { object-fit: cover; }
+  .martyrs-scene img { object-fit: contain; }
 
   .martyrs-scene__grade {
     display: block;

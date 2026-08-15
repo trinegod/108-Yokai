@@ -37,7 +37,7 @@ test("MART¥RS uses an independent portrait master on phones", () => {
   assert.match(component, /src="data:image\/gif;base64,/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-gate::before \{ display: none; \}/);
   assert.match(styles, /\.martyrs-scene picture \{[\s\S]*?transform: scale\(1\.002\);/);
-  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-scene img \{ object-fit: cover; \}/);
+  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-scene img \{ object-fit: contain; \}/);
 });
 
 test("MART¥RS motion is optional and reduced-motion safe", () => {
