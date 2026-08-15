@@ -66,7 +66,7 @@ All originals live in `source-art/`. Optimized runtime derivatives live in `publ
 - LEFT / RIGHT signal: separate 30-second PCM loop with a two-second head/tail crossfade; it is requested only after a deliberate sound gesture.
 - MART¥RS desktop environment: 960, 1440, 1920, and 2560-pixel AVIF/WebP.
 - MART¥RS mobile environment: 480, 720, 1080, and 1440-pixel AVIF/WebP from the independent 1440 × 3120 portrait authority. It is selected below 700px without cropping the desktop master.
-- MART¥RS wordmark: transparent-trimmed 1944 × 253 archival PNG and 1200 × 156 lossless PNG/WebP runtime derivatives. The same WebP supplies a stronger continuously shifting CSS blur echo behind the crisp image.
+- MART¥RS wordmark: transparent-trimmed 1944 × 253 archival PNG and 1200 × 156 lossless PNG/WebP runtime derivatives. The same WebP supplies a strong static CSS blur bloom around and slightly below the crisp image.
 - MART¥RS suffix sticker archive: the supplied 2048 × 2048 source stream and separate 1254 × 1254 restoration remain preserved. Its generated PNG/WebP files are historical derivatives only; the current image masthead does not request them.
 - MART¥RS sound: the exact runtime copy of the approved 28.656708-second PCM master remains preserved; playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade. It uses `preload="none"` and is requested only after a deliberate sound gesture.
 - Social preview: 1200 × 630 JPEG crop from the approved desktop threshold.

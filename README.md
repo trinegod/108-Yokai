@@ -2,7 +2,7 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated global-portal study and an evolving Gate 02 direction now exist alongside it. The global portal uses independent monochrome desktop and mobile compositions; Gate 02 is now **MART¥RS**, an aggressive fashion-editorial threshold with a generated modular magazine masthead, continuous fluorescent/image-slice instability, and gesture-only dark-techno sound. The earlier **LEFT / RIGHT** study remains preserved locally. Neither study replaces the approved Gate 01 entrance.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated global-portal study and an evolving Gate 02 direction now exist alongside it. The global portal uses independent monochrome desktop and mobile compositions; Gate 02 is now **MART¥RS**, an aggressive fashion-editorial threshold with a generated modular magazine masthead, a strong static blur bloom, one rare fluorescent failure, and gesture-only dark-techno sound. The earlier **LEFT / RIGHT** study remains preserved locally. Neither study replaces the approved Gate 01 entrance.
 
 > Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) includes `/portal-lab` and the evolving `/martyrs` Gate 02 threshold for review while the approved Gate 01 threshold remains the site entrance. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
@@ -102,11 +102,11 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 
 - The owner-approved 3840 × 2160 white padded-room master is preserved untouched and rendered uncropped through 960, 1440, 1920, and 2560-pixel AVIF/WebP derivatives.
 - The custom title is a generated transparent `MART¥RS` image masthead: a wide modular techno construction informed by the owner's blurred-futurist and Japanese-poster references without reproducing their source text.
-- The parentheses are removed. The yen is a custom Y-form with two short bars integrated low on its stem. A stronger continuously shifting black blur echo adds the requested optical softness while the core wordmark stays sharp.
-- Persistent fluorescent instability is layered with three continuously displaced image slices. Stronger moving grain and shallow type response complete the treatment; there is no rain.
+- The parentheses are removed. The yen is a custom Y-form with two short bars integrated low on its stem. A strong static black blur bloom surrounds and falls slightly below the wordmark while its core stays sharp.
+- A single fluorescent failure occurs around the eighth second of a 10.8-second cycle. Image-slice glitching, type drift, scene warping, moving grain, and rain are absent.
 - The approved 28.656708-second stereo 48 kHz WAV remains preserved byte-for-byte. Playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade, remains silent by default, uses `preload="none"`, and starts only after the visible Sound control is pressed.
-- Reduced motion removes pointer response, flicker, displaced slices, and grain animation without removing navigation or sound control.
-- The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own flicker map and its narrow displaced slices use portrait derivatives rather than the desktop art.
+- Reduced motion removes the rare flicker without removing navigation, the static wordmark bloom, or sound control.
+- The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own rare flicker map without loading or cropping the desktop art.
 
 ### Preserved LEFT / RIGHT study
 

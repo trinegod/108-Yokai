@@ -5255,8 +5255,6 @@ html[data-locale="ja"] .case-study-section h2 {
 /* Gate 02 — MART¥RS */
 
 .martyrs-gate {
-  --martyrs-x: 0;
-  --martyrs-y: 0;
   --martyrs-ink: #090909;
   --martyrs-bone: #e8e6df;
   --martyrs-proof: #71141a;
@@ -5286,7 +5284,6 @@ html[data-locale="ja"] .case-study-section h2 {
 .martyrs-scene img,
 .martyrs-scene__grade,
 .martyrs-scene__fluorescent,
-.martyrs-scene__slice,
 .martyrs-scene__grain {
   position: absolute;
   inset: 0;
@@ -5325,33 +5322,7 @@ html[data-locale="ja"] .case-study-section h2 {
 }
 
 .martyrs-gate[data-motion="on"] .martyrs-scene__fluorescent {
-  animation: martyrsFluorescent 4.8s steps(1, end) infinite;
-}
-
-.martyrs-scene__slice {
-  z-index: 3;
-  background-image: url("/assets/backgrounds/martyrs/martyrs-desktop-1920.webp");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: contain;
-  opacity: 0;
-  pointer-events: none;
-}
-
-.martyrs-scene__slice--one { clip-path: inset(0 44.1% 0 55.25%); }
-.martyrs-scene__slice--two { clip-path: inset(0 28.9% 0 70.55%); }
-.martyrs-scene__slice--three { clip-path: inset(0 15.1% 0 84.25%); }
-
-.martyrs-gate[data-motion="on"] .martyrs-scene__slice--one {
-  animation: martyrsSliceOne 3.8s steps(1, end) infinite;
-}
-
-.martyrs-gate[data-motion="on"] .martyrs-scene__slice--two {
-  animation: martyrsSliceTwo 4.4s steps(1, end) -1.1s infinite;
-}
-
-.martyrs-gate[data-motion="on"] .martyrs-scene__slice--three {
-  animation: martyrsSliceThree 5.2s steps(1, end) -2.4s infinite;
+  animation: martyrsFluorescent 10.8s steps(1, end) infinite;
 }
 
 .martyrs-scene__grain {
@@ -5364,12 +5335,8 @@ html[data-locale="ja"] .case-study-section h2 {
     repeating-radial-gradient(circle at 71% 63%, rgba(255, 255, 255, 0.32) 0 0.45px, transparent 0.7px 3.2px);
   background-size: 5px 5px, 4px 4px;
   mix-blend-mode: soft-light;
-  opacity: 0.16;
+  opacity: 0.09;
   pointer-events: none;
-}
-
-.martyrs-gate[data-motion="on"] .martyrs-scene__grain {
-  animation: martyrsGrain 180ms steps(2, end) infinite;
 }
 
 .martyrs-header {
@@ -5446,7 +5413,7 @@ html[data-locale="ja"] .case-study-section h2 {
   display: block;
   isolation: isolate;
   width: min(43vw, 43rem);
-  transform: translate3d(calc(var(--martyrs-x) * -3px), calc(var(--martyrs-y) * -2px), 0);
+  transform: none;
   transform-origin: left center;
   transition: transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -5457,9 +5424,9 @@ html[data-locale="ja"] .case-study-section h2 {
   z-index: -1;
   inset: 0;
   background: url("/assets/wordmarks/martyrs/martyrs-wordmark-1200.webp") center / 100% 100% no-repeat;
-  filter: blur(clamp(7px, 0.78vw, 13px));
-  opacity: 0.42;
-  transform: translate(0.7%, 10%) scale(1.022, 1.12);
+  filter: blur(clamp(8px, 0.8vw, 13px));
+  opacity: 0.5;
+  transform: translateY(7%) scale(1.035, 1.14);
   transform-origin: center;
 }
 
@@ -5468,10 +5435,6 @@ html[data-locale="ja"] .case-study-section h2 {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.martyrs-gate[data-motion="on"] .martyrs-lockup::before {
-  animation: martyrsWordmarkBlur 4.6s steps(1, end) infinite;
 }
 
 .martyrs-title__index {
@@ -5577,60 +5540,11 @@ html[data-locale="ja"] .case-study-section h2 {
 }
 
 @keyframes martyrsFluorescent {
-  0% { opacity: 0.12; }
-  12% { opacity: 0.28; }
-  20% { opacity: 0.08; }
-  34% { opacity: 0.2; }
-  49% { opacity: 0.34; }
-  56% { opacity: 0.13; }
-  72% { opacity: 0.25; }
-  86% { opacity: 0.09; }
-  100% { opacity: 0.18; }
-}
-
-@keyframes martyrsSliceOne {
-  0% { opacity: 0.09; transform: translateX(2px); }
-  16% { opacity: 0.22; transform: translateX(14px); }
-  31% { opacity: 0.11; transform: translateX(-5px); }
-  48% { opacity: 0.27; transform: translateX(18px); }
-  64% { opacity: 0.1; transform: translateX(-11px); }
-  82% { opacity: 0.2; transform: translateX(9px); }
-  100% { opacity: 0.09; transform: translateX(2px); }
-}
-
-@keyframes martyrsSliceTwo {
-  0% { opacity: 0.08; transform: translateX(-2px); }
-  19% { opacity: 0.19; transform: translateX(-17px); }
-  36% { opacity: 0.1; transform: translateX(7px); }
-  53% { opacity: 0.24; transform: translateX(15px); }
-  71% { opacity: 0.09; transform: translateX(-8px); }
-  88% { opacity: 0.18; transform: translateX(11px); }
-  100% { opacity: 0.08; transform: translateX(-2px); }
-}
-
-@keyframes martyrsSliceThree {
-  0% { opacity: 0.07; transform: translateX(1px); }
-  18% { opacity: 0.16; transform: translateX(10px); }
-  39% { opacity: 0.09; transform: translateX(-6px); }
-  57% { opacity: 0.2; transform: translateX(-14px); }
-  76% { opacity: 0.08; transform: translateX(7px); }
-  91% { opacity: 0.17; transform: translateX(-9px); }
-  100% { opacity: 0.07; transform: translateX(1px); }
-}
-
-@keyframes martyrsGrain {
-  0% { transform: translate3d(-0.8%, -0.5%, 0); }
-  50% { transform: translate3d(0.7%, 0.8%, 0); }
-  100% { transform: translate3d(-0.8%, -0.5%, 0); }
-}
-
-@keyframes martyrsWordmarkBlur {
-  0% { opacity: 0.38; transform: translate(0.5%, 9%) scale(1.02, 1.11); }
-  18% { opacity: 0.55; transform: translate(1.5%, 12%) scale(1.035, 1.16); }
-  37% { opacity: 0.42; transform: translate(-0.5%, 10%) scale(1.026, 1.13); }
-  58% { opacity: 0.6; transform: translate(1%, 13%) scale(1.04, 1.18); }
-  79% { opacity: 0.45; transform: translate(-0.8%, 8%) scale(1.03, 1.14); }
-  100% { opacity: 0.38; transform: translate(0.5%, 9%) scale(1.02, 1.11); }
+  0%, 71%, 73.4%, 75.1%, 76.2%, 100% { opacity: 0; }
+  71.35% { opacity: 0.42; }
+  72.05% { opacity: 0.08; }
+  74.15% { opacity: 0.6; }
+  75.55% { opacity: 0.22; }
 }
 
 @media (max-width: 699px) {
@@ -5659,17 +5573,7 @@ html[data-locale="ja"] .case-study-section h2 {
     background: radial-gradient(ellipse at 72% 10%, rgba(18, 21, 25, 0.52), rgba(18, 21, 25, 0.18) 6%, transparent 13%);
   }
 
-  .martyrs-scene__slice {
-    display: block;
-    background-image: url("/assets/backgrounds/martyrs/martyrs-mobile-720.webp");
-    filter: drop-shadow(2px 0 rgba(113, 20, 26, 0.42));
-  }
-
-  .martyrs-scene__slice--one { clip-path: inset(0 43.7% 0 54.7%); }
-  .martyrs-scene__slice--two { clip-path: inset(0 28.5% 0 69.9%); }
-  .martyrs-scene__slice--three { clip-path: inset(0 14.7% 0 83.7%); }
-
-  .martyrs-scene__grain { opacity: 0.13; }
+  .martyrs-scene__grain { opacity: 0.07; }
 
   .martyrs-header {
     top: max(1rem, env(safe-area-inset-top));
@@ -5699,7 +5603,7 @@ html[data-locale="ja"] .case-study-section h2 {
 
   .martyrs-lockup {
     width: 100%;
-    transform: translate3d(calc(var(--martyrs-x) * -3px), calc(var(--martyrs-y) * -2px), 0) rotate(-1.2deg);
+    transform: rotate(-1.2deg);
   }
 
   .martyrs-proof { display: none; }
@@ -5733,14 +5637,10 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-lockup { transform: none !important; }
 
   .martyrs-lockup::before {
-    animation: none !important;
-    opacity: 0.18;
+    opacity: 0.5;
   }
 
-  .martyrs-scene__fluorescent,
-  .martyrs-scene__slice {
-    display: none;
-  }
+  .martyrs-scene__fluorescent { display: none; }
 }
 
 @media (max-width: 699px) and (prefers-reduced-motion: reduce) {

@@ -14,7 +14,8 @@ test("MART¥RS keeps the requested image wordmark and portal identity", () => {
   assert.doesNotMatch(component, /martyrs-lockup__yen/);
   assert.doesNotMatch(component, /martyrs-lockup__row--top|martyrs-lockup__row--bottom|martyrs-lockup__suffix/);
   assert.doesNotMatch(component, /martyrs-s-sticker/);
-  assert.match(styles, /martyrsWordmarkBlur/);
+  assert.match(styles, /filter: blur\(clamp\(8px, 0\.8vw, 13px\)\)/);
+  assert.match(styles, /\.martyrs-lockup::before[\s\S]*?opacity: 0\.5;/);
   assert.match(portalGates, /title: "MART¥RS"/);
   assert.match(portalGates, /href: "\/martyrs"/);
 });
@@ -31,16 +32,15 @@ test("MART¥RS remains silent until its visible sound gesture", () => {
 test("MART¥RS uses an independent portrait master on phones", () => {
   assert.match(component, /media="\(max-width: 699px\)"/);
   assert.match(component, /martyrs-mobile-480\.avif/);
+  assert.match(component, /martyrs-mobile-720\.webp/);
   assert.match(component, /media="\(min-width: 700px\)"/);
   assert.match(component, /src="data:image\/gif;base64,/);
-  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?martyrs-mobile-720\.webp/);
 });
 
 test("MART¥RS motion is optional and reduced-motion safe", () => {
   assert.match(styles, /martyrsFluorescent/);
-  assert.match(styles, /martyrsSliceOne/);
-  assert.match(styles, /martyrsFluorescent 4\.8s/);
-  assert.match(styles, /martyrsSliceOne 3\.8s/);
-  assert.match(styles, /martyrsWordmarkBlur 4\.6s/);
-  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-scene__slice[\s\S]*?display: none;/);
+  assert.match(styles, /martyrsFluorescent 10\.8s/);
+  assert.doesNotMatch(component, /martyrs-scene__slice/);
+  assert.doesNotMatch(styles, /martyrsSliceOne|martyrsSliceTwo|martyrsSliceThree|martyrsWordmarkBlur/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-scene__fluorescent \{ display: none; \}/);
 });

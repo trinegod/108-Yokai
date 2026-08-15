@@ -5,7 +5,6 @@ import {
   useRef,
   useState,
   useSyncExternalStore,
-  type PointerEvent,
 } from "react";
 import { martyrsGate } from "@/content/martyrs";
 
@@ -20,7 +19,6 @@ function getReducedMotion() {
 }
 
 export function MartyrsGate() {
-  const rootRef = useRef<HTMLElement>(null);
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioFadeRef = useRef(0);
   const [motionEnabled, setMotionEnabled] = useState(true);
@@ -37,20 +35,6 @@ export function MartyrsGate() {
       audio?.pause();
     };
   }, []);
-
-  function updatePointer(event: PointerEvent<HTMLElement>) {
-    if (!motionActive) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
-    const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
-    rootRef.current?.style.setProperty("--martyrs-x", x.toFixed(3));
-    rootRef.current?.style.setProperty("--martyrs-y", y.toFixed(3));
-  }
-
-  function resetPointer() {
-    rootRef.current?.style.setProperty("--martyrs-x", "0");
-    rootRef.current?.style.setProperty("--martyrs-y", "0");
-  }
 
   function fadeAudio(target: number, duration: number, onComplete?: () => void) {
     const audio = audioRef.current;
@@ -98,19 +82,13 @@ export function MartyrsGate() {
   }
 
   function toggleMotion() {
-    setMotionEnabled((current) => {
-      if (current) resetPointer();
-      return !current;
-    });
+    setMotionEnabled((current) => !current);
   }
 
   return (
     <main
-      ref={rootRef}
       className="martyrs-gate"
       data-motion={motionActive ? "on" : "still"}
-      onPointerMove={updatePointer}
-      onPointerLeave={resetPointer}
     >
       <a className="skip-link" href="#martyrs-controls">Skip to controls</a>
       <p className="sr-only">{martyrsGate.background.alt}</p>
@@ -151,9 +129,6 @@ export function MartyrsGate() {
         </picture>
         <div className="martyrs-scene__grade" />
         <div className="martyrs-scene__fluorescent" />
-        <div className="martyrs-scene__slice martyrs-scene__slice--one" />
-        <div className="martyrs-scene__slice martyrs-scene__slice--two" />
-        <div className="martyrs-scene__slice martyrs-scene__slice--three" />
         <div className="martyrs-scene__grain" />
       </div>
 
