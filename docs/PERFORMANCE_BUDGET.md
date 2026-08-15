@@ -12,7 +12,7 @@ The Gate 01 threshold should render a lightweight responsive poster immediately,
 - Tier D: semantic DOM content and five usable routes even if visual effects or audio APIs are unavailable.
 - Gate 02 Tier A: responsive environment, split typography, capped pointer separation, native rain, animated texture, directional controls, and gesture-only sound.
 - Gate 02 Tier B: static responsive environment and typography with complete direction, sound, and return controls when reduced motion is requested or WebGL is unavailable.
-- MART¥RS Tier A: uncropped responsive desktop art, generated image masthead with a restrained blur echo, capped type response, rare fluorescent/slice instability, restrained grain, and gesture-only sound.
+- MART¥RS Tier A: uncropped responsive desktop art, generated image masthead with a stronger blur echo, capped type response, continuous fluorescent/slice instability, moving grain, and gesture-only sound.
 - MART¥RS Tier B: static breakpoint-specific art and crisp image wordmark with complete sound and return controls.
 
 ## Targets
@@ -93,6 +93,7 @@ These are local raw/generated-file sizes, not field-transfer or Core Web Vitals 
 | MART¥RS image wordmark, 1200px lossless WebP | 66,448 B |
 | MART¥RS image wordmark, 1200px PNG fallback | 90,817 B |
 | Gesture-only 28.656708-second WAV master | 5,502,132 B |
+| Gesture-only 56.113417-second seamless WAV derivative | 10,773,820 B |
 
 ## Evidence not yet collected
 

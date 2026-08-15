@@ -5,6 +5,7 @@ import test from "node:test";
 const component = await readFile(new URL("../app/_components/MartyrsGate.tsx", import.meta.url), "utf8");
 const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
 const portalGates = await readFile(new URL("../content/portal-gates.ts", import.meta.url), "utf8");
+const martyrsContent = await readFile(new URL("../content/martyrs.ts", import.meta.url), "utf8");
 
 test("MART¥RS keeps the requested image wordmark and portal identity", () => {
   assert.match(component, /martyrs-wordmark-1200\.webp/);
@@ -23,6 +24,8 @@ test("MART¥RS remains silent until its visible sound gesture", () => {
   assert.match(component, /<audio ref=\{audioRef\} loop preload="none"/);
   assert.doesNotMatch(component, /\bautoPlay\b|\bautoplay\b/);
   assert.match(component, /await audio\.play\(\)/);
+  assert.match(martyrsContent, /martyrs-extended-loop\.wav/);
+  assert.match(martyrsContent, /durationSeconds: 56\.113417/);
 });
 
 test("MART¥RS uses an independent portrait master on phones", () => {
@@ -36,5 +39,8 @@ test("MART¥RS uses an independent portrait master on phones", () => {
 test("MART¥RS motion is optional and reduced-motion safe", () => {
   assert.match(styles, /martyrsFluorescent/);
   assert.match(styles, /martyrsSliceOne/);
+  assert.match(styles, /martyrsFluorescent 4\.8s/);
+  assert.match(styles, /martyrsSliceOne 3\.8s/);
+  assert.match(styles, /martyrsWordmarkBlur 4\.6s/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-scene__slice[\s\S]*?display: none;/);
 });

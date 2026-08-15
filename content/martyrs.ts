@@ -15,9 +15,9 @@ export const martyrsGate = {
     height: 3120,
   },
   audio: {
-    source: "/assets/audio/martyrs-master.wav",
+    source: "/assets/audio/martyrs-extended-loop.wav",
     label: "MART¥RS progressive dark techno loop",
-    durationSeconds: 28.656708,
+    durationSeconds: 56.113417,
   },
   credit: "Website created by Steven Adkins",
 } as const;
