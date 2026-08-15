@@ -73,4 +73,4 @@ MART¥RS is the current Gate 02 identity and supersedes LEFT / RIGHT in the port
 
 An exploratory future structure may treat MART¥RS as a sequence of brutal fashion-editorial chapters, each built around a different woman, outfit, environment, and visual disturbance. Character names and narrative identities remain intentionally undefined until the owner chooses whether these are named figures, anonymous editorials, or both.
 
-The Gate 02 portal marker currently uses the owner-supplied torn industrial `02` sticker as a reversible comparison. Its black, bone, yellow, and single red registration accent remain unaltered; a plain black `02` remains the fallback if the yellow competes with the portal composition.
+The Gate 02 portal marker uses the owner-supplied no-target torn industrial `02` sticker exactly as delivered: black, bone, and gray without the earlier yellow field or red target. Its visible interaction box now matches Gate 01 at both breakpoints. The earlier color version remains archived as a source-art variation and is not rendered.

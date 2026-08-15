@@ -70,4 +70,6 @@ The remaining MART¥RS interface chrome is intentionally unboxed. The return lin
 
 The mobile route omits the desktop editorial inset frame so the independent portrait artwork reaches the device edges. Because the 6:13 master and real phone viewports can differ by less than one CSS pixel, the owner approved a static 0.2% mobile-only bleed to cover any sub-pixel seam. This does not alter the canonical source file or change the subject composition perceptibly.
 
-Gate 02 uses the owner-supplied transparent industrial `02` sticker as a reversible portal comparison. The original square master remains unchanged in source art, while small lossless responsive derivatives occupy the existing Gate 02 marker footprint on both breakpoints. The yellow treatment is intentionally not recolored in code; replacing it with a black marker remains a future art-direction decision rather than a destructive asset edit.
+Gate 02 uses the owner-supplied no-target transparent industrial `02` sticker without code recoloring. The superseded yellow/red source remains archived, while small lossless derivatives of the black/bone/gray replacement use the same marker dimensions as Gate 01 on desktop and mobile.
+
+The Portal Lab no longer renders Wall or Motion controls. Motion runs by default with no visible switch while the required reduced-motion preference still disables nonessential animation and pointer parallax. The gate index follows naturally below the hero under the single-line heading `THE BASEMENT.`

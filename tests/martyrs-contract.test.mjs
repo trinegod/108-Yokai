@@ -23,6 +23,15 @@ test("MART¥RS keeps the requested image wordmark and portal identity", () => {
   assert.match(portalComponent, /gate-02-editorial-512\.png/);
 });
 
+test("Portal Lab keeps motion implicit and the Gate 02 marker aligned with Gate 01", () => {
+  assert.match(portalComponent, /const motionActive = !reduceMotion;/);
+  assert.doesNotMatch(portalComponent, /portal-invitation|toggleMotion|Motion \/|openChamber|chamberOpen/);
+  assert.match(portalComponent, /<h2 id="portal-gates-title">The basement\.<\/h2>/);
+  assert.match(styles, /\.portal-wordmark__final \{[\s\S]*?width: 0\.34em;[\s\S]*?clip-path: inset\(0 9% 0 0\);/);
+  assert.doesNotMatch(styles, /\.portal-street-tag--02 > a/);
+  assert.doesNotMatch(styles, /\.portal-utility|\.portal-invitation/);
+});
+
 test("MART¥RS remains silent until its visible sound gesture", () => {
   assert.match(component, /<button[^>]+aria-pressed=\{soundEnabled\}/s);
   assert.match(component, /className="martyrs-sound-control"/);
