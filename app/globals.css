@@ -5381,7 +5381,22 @@ html[data-locale="ja"] .case-study-section h2 {
   transition: opacity 170ms ease;
 }
 
-.martyrs-back span:last-child { color: #d7b900; }
+.martyrs-back span:last-child {
+  display: inline-block;
+  margin-left: 0.04em;
+  color: #ffd400;
+  font-size: 1.6em;
+  font-weight: 950;
+  letter-spacing: 0;
+  line-height: 1;
+  -webkit-text-stroke: 0.9px #090909;
+  paint-order: stroke fill;
+  text-shadow:
+    0 1px 0 rgba(0, 0, 0, 0.95),
+    0 0 5px rgba(255, 212, 0, 0.42);
+  transform: translateY(0.015em);
+  transform-origin: left center;
+}
 
 .martyrs-back:hover,
 .martyrs-back:focus-visible {
