@@ -243,16 +243,22 @@ function HeroGateTag({
           onFocus={() => onActiveChange?.(true)}
           onBlur={() => onActiveChange?.(false)}
         >
-          {gate.number === "01" ? (
+          {gate.number === "01" || gate.number === "02" ? (
             <picture className="portal-street-tag__sticker">
               <source
                 type="image/webp"
-                srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.webp 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.webp 512w"
+                srcSet={gate.number === "01"
+                  ? "/assets/stickers/portal/gate-01-brutal-calligraphy-256.webp 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.webp 512w"
+                  : "/assets/stickers/portal/gate-02-editorial-256.webp 256w, /assets/stickers/portal/gate-02-editorial-512.webp 512w"}
                 sizes="(max-width: 699px) 92px, 112px"
               />
               <img
-                src="/assets/stickers/portal/gate-01-brutal-calligraphy-512.png"
-                srcSet="/assets/stickers/portal/gate-01-brutal-calligraphy-256.png 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.png 512w"
+                src={gate.number === "01"
+                  ? "/assets/stickers/portal/gate-01-brutal-calligraphy-512.png"
+                  : "/assets/stickers/portal/gate-02-editorial-512.png"}
+                srcSet={gate.number === "01"
+                  ? "/assets/stickers/portal/gate-01-brutal-calligraphy-256.png 256w, /assets/stickers/portal/gate-01-brutal-calligraphy-512.png 512w"
+                  : "/assets/stickers/portal/gate-02-editorial-256.png 256w, /assets/stickers/portal/gate-02-editorial-512.png 512w"}
                 sizes="(max-width: 699px) 92px, 112px"
                 alt=""
                 width="512"

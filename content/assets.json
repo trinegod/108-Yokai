@@ -90,6 +90,24 @@
     "runtimeAsset": true
   },
   {
+    "id": "portal-gate-02-editorial-sticker",
+    "sourceFilename": "GATE-02-EDITORIAL-STICKER-2048-TRANSPARENT.png",
+    "canonicalSourceName": "gate-02-editorial-master.png",
+    "sourcePath": "source-art/portal/stickers/gate-02-editorial-master.png",
+    "type": "portal-sticker",
+    "association": "Gate 02, MART¥RS",
+    "width": 2048,
+    "height": 2048,
+    "frameLayout": "single square torn industrial editorial marker",
+    "transparency": "transparent RGBA",
+    "intendedUse": "Responsive interactive Gate 02 marker in the desktop and mobile global portal",
+    "rightsStatus": "Owner-supplied AI-assisted artwork authorized for a published Gate 02 portal comparison on 2026-08-14.",
+    "optimization": "Nondestructive transparent PNG and lossless WebP derivatives; original retained byte-for-byte.",
+    "missingStates": "Final owner decision on retaining the yellow editorial treatment or replacing it with a black 02 marker.",
+    "approvalStatus": "prototype",
+    "runtimeAsset": true
+  },
+  {
     "id": "portal-relic-desktop-prototype",
     "sourceFilename": "ImageGen prototype 2026-08-12",
     "canonicalSourceName": "108-yokai-relic-desktop-master.png",

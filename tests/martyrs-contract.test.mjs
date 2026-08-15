@@ -4,6 +4,7 @@ import test from "node:test";
 
 const component = await readFile(new URL("../app/_components/MartyrsGate.tsx", import.meta.url), "utf8");
 const styles = await readFile(new URL("../app/globals.css", import.meta.url), "utf8");
+const portalComponent = await readFile(new URL("../app/_components/PortalLab.tsx", import.meta.url), "utf8");
 const portalGates = await readFile(new URL("../content/portal-gates.ts", import.meta.url), "utf8");
 const martyrsContent = await readFile(new URL("../content/martyrs.ts", import.meta.url), "utf8");
 
@@ -18,6 +19,8 @@ test("MART¥RS keeps the requested image wordmark and portal identity", () => {
   assert.match(styles, /\.martyrs-lockup::before[\s\S]*?opacity: 0\.5;/);
   assert.match(portalGates, /title: "MART¥RS"/);
   assert.match(portalGates, /href: "\/martyrs"/);
+  assert.match(portalComponent, /gate-02-editorial-256\.webp/);
+  assert.match(portalComponent, /gate-02-editorial-512\.png/);
 });
 
 test("MART¥RS remains silent until its visible sound gesture", () => {

@@ -72,3 +72,5 @@ MART¥RS is the current Gate 02 identity and supersedes LEFT / RIGHT in the port
 - Navigation and audio chrome remain unboxed: a black-and-bright-yellow `108Y` return mark and an icon-only speaker/mute target float directly on the composition. The `Y` retains the same typography, scale, weight, and spacing as the original treatment; only its yellow is brighter.
 
 An exploratory future structure may treat MART¥RS as a sequence of brutal fashion-editorial chapters, each built around a different woman, outfit, environment, and visual disturbance. Character names and narrative identities remain intentionally undefined until the owner chooses whether these are named figures, anonymous editorials, or both.
+
+The Gate 02 portal marker currently uses the owner-supplied torn industrial `02` sticker as a reversible comparison. Its black, bone, yellow, and single red registration accent remain unaltered; a plain black `02` remains the fallback if the yellow competes with the portal composition.

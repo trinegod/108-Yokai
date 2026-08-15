@@ -174,6 +174,11 @@ await Promise.all([
     stem: "gate-01-brutal-calligraphy",
     widths: [256, 512],
   }),
+  responsiveSticker({
+    sourceName: path.join("portal", "stickers", "gate-02-editorial-master.png"),
+    stem: "gate-02-editorial",
+    widths: [256, 512],
+  }),
   responsiveIllustration({
     sourceName: "hoju-concept-master.png",
     directory: "relics",

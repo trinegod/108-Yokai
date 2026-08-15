@@ -93,6 +93,8 @@ test("all canonical source masters and optimized runtime assets exist separately
     access(new URL("../public/assets/wordmarks/martyrs/martyrs-wordmark-1200.png", import.meta.url)),
     access(new URL("../public/assets/audio/martyrs-master.wav", import.meta.url)),
     access(new URL("../public/assets/audio/martyrs-extended-loop.wav", import.meta.url)),
+    access(new URL("../public/assets/stickers/portal/gate-02-editorial-256.webp", import.meta.url)),
+    access(new URL("../public/assets/stickers/portal/gate-02-editorial-512.png", import.meta.url)),
   ]);
 });
 
