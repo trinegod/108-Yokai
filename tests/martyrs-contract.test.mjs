@@ -35,6 +35,8 @@ test("MART¥RS uses an independent portrait master on phones", () => {
   assert.match(component, /martyrs-mobile-720\.webp/);
   assert.match(component, /media="\(min-width: 700px\)"/);
   assert.match(component, /src="data:image\/gif;base64,/);
+  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-gate::before \{ display: none; \}/);
+  assert.match(styles, /\.martyrs-scene picture \{[\s\S]*?transform: scale\(1\.002\);/);
 });
 
 test("MART¥RS motion is optional and reduced-motion safe", () => {

@@ -5554,9 +5554,13 @@ html[data-locale="ja"] .case-study-section h2 {
       var(--martyrs-bone);
   }
 
-  .martyrs-gate::before { inset: 0.42rem; }
+  .martyrs-gate::before { display: none; }
 
-  .martyrs-scene picture { display: block; }
+  .martyrs-scene picture {
+    display: block;
+    transform: scale(1.002);
+    transform-origin: center;
+  }
 
   .martyrs-scene__grade {
     display: block;

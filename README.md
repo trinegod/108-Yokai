@@ -106,7 +106,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 - A single fluorescent failure occurs around the eighth second of a 10.8-second cycle. Image-slice glitching, type drift, scene warping, moving grain, and rain are absent.
 - The approved 28.656708-second stereo 48 kHz WAV remains preserved byte-for-byte. Playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade, remains silent by default, uses `preload="none"`, and starts only after the visible Sound control is pressed.
 - Reduced motion removes the rare flicker without removing navigation, the static wordmark bloom, or sound control.
-- The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own rare flicker map without loading or cropping the desktop art.
+- The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own rare flicker map without loading the desktop art. The desktop editorial inset frame is removed on phones, and an owner-approved static 0.2% bleed prevents sub-pixel edge seams without perceptible distortion.
 
 ### Preserved LEFT / RIGHT study
 
