@@ -129,8 +129,8 @@ export function MartyrsGate() {
 
       <header className="martyrs-header">
         <a href="/portal-lab" className="martyrs-back" aria-label="Back to the 108 Yōkai gate index">
-          <span aria-hidden="true">←</span>
-          <span>108Y</span>
+          <span>108</span>
+          <span>Y</span>
         </a>
       </header>
 

@@ -127,7 +127,7 @@ export function PortalLab() {
         <div className="portal-wordmark" aria-hidden="true">
           <span className="portal-wordmark__number" data-text="108">108</span>
           <span className="portal-wordmark__name" data-text="YŌKAI">
-            YŌKAI
+            YŌKA<span className="portal-wordmark__final">I</span>
             <i className="portal-wordmark__sigil" />
           </span>
         </div>

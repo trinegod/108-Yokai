@@ -1006,7 +1006,7 @@ a {
   bottom: 28%;
   left: 10%;
   font-size: clamp(5.6rem, 12.4vw, 12.8rem);
-  letter-spacing: -0.075em;
+  letter-spacing: -0.06em;
   line-height: 0.78;
   color: #f5d000;
   padding: 0;
@@ -1020,6 +1020,16 @@ a {
     rotate(-5deg)
     skew(-8deg, 0deg);
   filter: drop-shadow(0.045em 0.055em 0 rgba(0, 0, 0, 0.94));
+}
+
+.portal-wordmark__final {
+  display: inline-block;
+  width: 0.2em;
+  overflow: hidden;
+  margin-left: 0.015em;
+  clip-path: inset(0 18% 0 0);
+  letter-spacing: 0;
+  vertical-align: baseline;
 }
 
 .portal-street .portal-wordmark__name::before {
@@ -5357,32 +5367,26 @@ html[data-locale="ja"] .case-study-section h2 {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.52rem 0.76rem;
-  border: 1px solid rgba(8, 8, 8, 0.34);
-  background: rgba(236, 234, 227, 0.72);
-  color: rgba(8, 8, 8, 0.9);
+  gap: 0.08em;
+  padding: 0 0.15rem;
+  border: 0;
+  background: transparent;
+  color: var(--martyrs-ink);
   font-family: var(--mono);
   font-size: 0.6rem;
   font-weight: 800;
   letter-spacing: 0.15em;
   text-decoration: none;
   text-transform: uppercase;
-  backdrop-filter: blur(11px);
-  transition: border-color 170ms ease, background 170ms ease, transform 170ms ease;
+  transition: opacity 170ms ease;
 }
 
-.martyrs-back span:first-child {
-  color: var(--martyrs-proof);
-  font-size: 1.05rem;
-  line-height: 0;
-}
+.martyrs-back span:last-child { color: #d7b900; }
 
 .martyrs-back:hover,
 .martyrs-back:focus-visible {
-  border-color: rgba(8, 8, 8, 0.76);
-  background: rgba(242, 240, 233, 0.94);
-  transform: translateY(-1px);
+  background: transparent;
+  opacity: 0.68;
 }
 
 .martyrs-title {
@@ -5433,7 +5437,7 @@ html[data-locale="ja"] .case-study-section h2 {
   font-weight: 800;
   letter-spacing: 0.19em;
   text-transform: uppercase;
-  transform: translateY(0.4rem);
+  transform: translateY(0.65rem);
 }
 
 .martyrs-proof {
@@ -5476,12 +5480,11 @@ html[data-locale="ja"] .case-study-section h2 {
   min-height: 2.75rem;
   place-items: center;
   padding: 0;
-  border: 1px solid rgba(8, 8, 8, 0.34);
-  background: rgba(236, 234, 227, 0.58);
+  border: 0;
+  background: transparent;
   color: rgba(8, 8, 8, 0.7);
-  backdrop-filter: blur(11px);
   cursor: pointer;
-  transition: border-color 170ms ease, background 170ms ease, color 170ms ease, transform 170ms ease;
+  transition: color 170ms ease, opacity 170ms ease;
 }
 
 .martyrs-sound-icon {
@@ -5539,17 +5542,15 @@ html[data-locale="ja"] .case-study-section h2 {
 
 .martyrs-controls button:hover,
 .martyrs-controls button:focus-visible {
-  border-color: rgba(8, 8, 8, 0.76);
-  background: rgba(242, 240, 233, 0.96);
+  background: transparent;
   color: #000;
-  transform: translateY(-1px);
+  opacity: 0.68;
 }
 
 .martyrs-controls button[aria-pressed="true"] {
-  border-color: var(--martyrs-ink);
-  background: var(--martyrs-ink);
-  color: var(--martyrs-bone);
-  box-shadow: inset 3px 0 var(--martyrs-proof);
+  background: transparent;
+  color: var(--martyrs-ink);
+  box-shadow: none;
 }
 
 .martyrs-controls button:disabled {
@@ -5627,8 +5628,8 @@ html[data-locale="ja"] .case-study-section h2 {
   }
 
   .martyrs-back {
-    min-height: 2.55rem;
-    padding: 0.45rem 0.64rem;
+    min-height: 2.75rem;
+    padding: 0 0.1rem;
     font-size: 0.52rem;
   }
 
@@ -5642,7 +5643,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-title__index {
     margin-bottom: 1.3rem;
     font-size: 0.42rem;
-    transform: translateY(0.45rem);
+    transform: translateY(0.72rem);
   }
 
   .martyrs-lockup {

@@ -25,6 +25,9 @@ test("MART¥RS remains silent until its visible sound gesture", () => {
   assert.match(component, /className="martyrs-sound-control"/);
   assert.match(component, /className="martyrs-sound-icon"/);
   assert.doesNotMatch(component, />\s*Sound\s*\//);
+  assert.doesNotMatch(component, /←/);
+  assert.match(styles, /\.martyrs-back span:last-child \{ color: #d7b900; \}/);
+  assert.match(styles, /\.martyrs-controls button \{[\s\S]*?border: 0;[\s\S]*?background: transparent;/);
   assert.match(component, /<audio ref=\{audioRef\} loop preload="none"/);
   assert.doesNotMatch(component, /\bautoPlay\b|\bautoplay\b/);
   assert.match(component, /await audio\.play\(\)/);
