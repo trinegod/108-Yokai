@@ -73,6 +73,7 @@ test("MART¥RS editorials preserve breakpoint masters and reduced motion", () =>
   assert.match(styles, /\.martyrs-editorial__kicker \{[\s\S]*?margin-right: auto;[\s\S]*?margin-left: auto;[\s\S]*?text-align: center;/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)[\s\S]*?\.martyrs-editorial__aperture \{ display: none; \}/);
   assert.match(styles, /Didot, "Bodoni 72", "Bodoni MT"/);
+  assert.match(styles, /@media \(max-width: 699px\) \{[\s\S]*?\.martyrs-editorial__title-block,[\s\S]*?padding: 2\.7rem 1\.1rem 2\.5rem;[\s\S]*?\.martyrs-editorial__issue \{ margin-bottom: 1\.35rem; \}/);
 });
 
 test("MART¥RS editorial navigation uses reliable browser links", () => {

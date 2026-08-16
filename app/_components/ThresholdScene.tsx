@@ -278,9 +278,17 @@ export function ThresholdScene() {
 
       <div className="threshold__controls">
         <LanguageToggle compact />
-        <button type="button" className="sound-control" onClick={toggleSound} aria-pressed={soundEnabled}>
-          <span aria-hidden="true">{soundEnabled ? "◈" : "◇"}</span>
-          {soundEnabled ? dictionary.soundOn : dictionary.soundOff}
+        <button
+          type="button"
+          className="sound-control"
+          onClick={toggleSound}
+          aria-label={soundEnabled ? dictionary.soundOff : dictionary.soundOn}
+          aria-pressed={soundEnabled}
+        >
+          <span className="martyrs-sound-icon" aria-hidden="true">
+            <span className="martyrs-sound-icon__speaker" />
+            <span className="martyrs-sound-icon__signal" />
+          </span>
         </button>
         {ascending ? (
           <button type="button" className="skip-transition" onClick={() => commitEntry(true)}>

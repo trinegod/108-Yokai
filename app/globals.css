@@ -2064,7 +2064,6 @@ a {
   gap: 0.65rem;
 }
 
-.sound-control,
 .skip-transition {
   min-height: 2.4rem;
   padding: 0.48rem 0.68rem;
@@ -2079,14 +2078,44 @@ a {
   backdrop-filter: blur(8px);
 }
 
-.sound-control span {
-  margin-right: 0.45rem;
-  color: var(--ember-bright);
+.sound-control {
+  display: inline-grid;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgba(231, 221, 200, 0.78);
+  cursor: pointer;
+  transition: color 170ms ease, opacity 170ms ease;
+}
+
+.sound-control > span {
+  margin: 0;
+  color: inherit;
+}
+
+.sound-control[aria-pressed="false"] .martyrs-sound-icon__signal {
+  top: 0.45rem;
+  right: -0.02rem;
+  width: 1.2rem;
+  height: 1.5px;
+  border: 0;
+  border-radius: 0;
+  background: var(--ember-bright);
+  transform: rotate(-45deg);
 }
 
 .sound-control[aria-pressed="true"] {
-  border-color: rgba(200, 146, 72, 0.55);
   color: var(--bone);
+}
+
+.sound-control:hover,
+.sound-control:focus-visible {
+  color: var(--bone);
+  opacity: 0.72;
 }
 
 .language-switch {
@@ -4199,7 +4228,6 @@ html[data-locale="ja"] .case-study-section h2 {
     display: none;
   }
 
-  .sound-control,
   .skip-transition {
     min-height: 2.65rem;
     padding: 0.5rem 0.6rem;
@@ -5997,7 +6025,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-editorial--image-right .martyrs-editorial__title-block {
     order: 1;
     width: 100%;
-    padding: 3.6rem 1.1rem 1.8rem;
+    padding: 2.7rem 1.1rem 2.5rem;
     transform: none;
   }
 
@@ -6014,7 +6042,7 @@ html[data-locale="ja"] .case-study-section h2 {
     padding: 2.7rem 1.35rem 3.6rem;
   }
 
-  .martyrs-editorial__issue { margin-bottom: 2.1rem; }
+  .martyrs-editorial__issue { margin-bottom: 1.35rem; }
 
   .martyrs-editorial__title-block h1 {
     max-width: 100%;
@@ -6022,7 +6050,7 @@ html[data-locale="ja"] .case-study-section h2 {
     line-height: 0.8;
   }
 
-  .martyrs-editorial__kicker { margin-top: 1.7rem; }
+  .martyrs-editorial__kicker { margin-top: 1.35rem; }
 
   .martyrs-editorial__statement > p {
     max-width: 32rem;

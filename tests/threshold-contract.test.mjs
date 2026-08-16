@@ -26,6 +26,9 @@ test("threshold preserves locked responsive masters and required controls", asyn
   assert.doesNotMatch(component, /HŌJU · RELIC FOCUS/);
   assert.match(component, /data-relic-active/);
   assert.match(component, /new AudioContext\(\)/);
+  assert.match(component, /className="sound-control"[\s\S]*?className="martyrs-sound-icon"/);
+  assert.match(component, /aria-label=\{soundEnabled \? dictionary\.soundOff : dictionary\.soundOn\}/);
+  assert.doesNotMatch(component, /\{soundEnabled \? "◈" : "◇"\}/);
   assert.doesNotMatch(component, /autoplay/i);
 });
 
