@@ -74,15 +74,15 @@ export function MartyrsEditorial({ editorial }: { editorial: MartyrsEditorialRec
             <i />
             <span>MART¥RS</span>
           </div>
-        </section>
 
-        <nav className="martyrs-editorial__next" aria-label="Next MART¥RS editorial">
-          <p>Next editorial</p>
-          <a href={`/martyrs/${editorial.nextSlug}`}>
-            <span>{editorial.nextTitle}</span>
-            <i aria-hidden="true">↗</i>
-          </a>
-        </nav>
+          <nav className="martyrs-editorial__next" aria-label="Next MART¥RS editorial">
+            <p>Next editorial</p>
+            <a href={`/martyrs/${editorial.nextSlug}`}>
+              <span>{editorial.nextTitle}</span>
+              <i aria-hidden="true">↗</i>
+            </a>
+          </nav>
+        </section>
       </article>
     </main>
   );
