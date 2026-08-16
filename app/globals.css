@@ -5652,13 +5652,13 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-contents {
     top: auto;
     right: 4vw;
-    bottom: max(4.4rem, calc(env(safe-area-inset-bottom) + 4rem));
+    bottom: max(3.75rem, calc(env(safe-area-inset-bottom) + 3.3rem));
     left: 4vw;
     width: auto;
   }
 
   .martyrs-contents > p {
-    margin-bottom: 0.42rem;
+    margin-bottom: 0.55rem;
     font-size: 0.36rem;
   }
 

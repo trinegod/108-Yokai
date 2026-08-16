@@ -2,7 +2,7 @@
 
 An interactive, source-conscious folklore archive presented through the title screen of a lost 32-bit Japanese action game.
 
-[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated global-portal study and an evolving Gate 02 direction now exist alongside it. The global portal uses independent monochrome desktop and mobile compositions; Gate 02 is now **MART¥RS**, an aggressive fashion-editorial threshold with a generated modular magazine masthead, a strong static blur bloom, one rare fluorescent failure, and gesture-only dark-techno sound. The earlier **LEFT / RIGHT** study remains preserved locally. Neither study replaces the approved Gate 01 entrance.
+[`108-Yokai`](https://github.com/trinegod/108-Yokai) is the owner-created repository and planned umbrella collection. **ASHIGARA — The Living Archive** is Gate 01. An isolated global-portal study and an evolving Gate 02 direction now exist alongside it. The global portal uses independent monochrome desktop and mobile compositions; Gate 02 is now **MART¥RS**, an aggressive fashion-editorial issue with a generated modular magazine masthead, a strong static blur bloom, one rare fluorescent failure, gesture-only dark-techno sound, and three responsive editorial features. The earlier **LEFT / RIGHT** study remains preserved locally. Neither study replaces the approved Gate 01 entrance.
 
 > Status: The current Phase One vertical slice contains the expanded illustrated archive and bilingual interface described below. The owner-authorized [public preview](https://ashigara-living-archive.thescale.chatgpt.site) includes `/portal-lab` and the evolving `/martyrs` Gate 02 threshold for review while the approved Gate 01 threshold remains the site entrance. Broader device/assistive-technology sign-off, layered production art, Japanese editorial review, and final public license language remain open.
 
@@ -107,8 +107,10 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 - The approved 28.656708-second stereo 48 kHz WAV remains preserved byte-for-byte. Playback uses a separate 56.113417-second two-pass derivative with a 1.2-second circular crossfade, remains silent by default, uses `preload="none"`, and starts only after the visible Sound control is pressed.
 - Reduced motion removes the rare flicker without removing navigation, the static wordmark bloom, or sound control.
 - The independent 1440 × 3120 mobile composition is selected below 700px. Its ceiling lights receive their own rare flicker map without loading the desktop art. The desktop editorial inset frame is removed on phones, and an owner-approved static 0.2% bleed prevents sub-pixel edge seams without perceptible distortion.
-- The threshold now behaves as the issue cover. Two high-contrast serif cover lines printed into the asylum wall open `Persona` and `Unfinished` as independent editorial routes rather than extending the room into a conventional scrolling gallery.
-- Each editorial uses an uncropped owner-supplied 2400 × 3000 desktop master and a separately supplied 2400 × 3000 mobile alternate. Persona runs image-left on desktop, Unfinished runs image-right, and phones stack title, complete artwork, statement, and next-story navigation.
+- The threshold now behaves as the issue cover. Three high-contrast serif cover lines printed into the asylum wall open `Persona`, `Unfinished`, and `Below` as independent editorial routes rather than extending the room into a conventional scrolling gallery.
+- The desktop cover uses a two-column magazine index: Persona and Below share the first row, Unfinished sits below Persona, and the fourth slot remains available for the next feature. Phones retain one stacked contents column with a fixed safe-area-aware speaker control.
+- Each editorial uses an uncropped owner-supplied 2400 × 3000 desktop master and a separately supplied 2400 × 3000 mobile alternate. Persona and Below run image-left on desktop, Unfinished runs image-right, and phones stack title, complete artwork, statement, and next-story navigation.
+- Persona has its own 30-second minimal industrial loop. Unfinished and Below currently inherit the gesture-only MART¥RS issue soundtrack until their individual masters are supplied.
 - A one-time black aperture closes over each artwork and reopens on entry. It never loops, leaves the settled artwork clear, and is absent when reduced motion is requested.
 
 ### Preserved LEFT / RIGHT study
@@ -131,10 +133,19 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 | `/chronicles` | Finite curated exhibitions | First chronicle implemented and browser-tested at desktop and phone sizes |
 | `/about` | Gate 01 creative direction, system, method, and status | Implemented and browser-tested at desktop and phone sizes |
 | `/portal-lab` | Isolated global 108 Yōkai analog-street typography and gate-system study | Published review study using owner-approved art; not linked from the Gate 01 experience or approved as the final collection entrance |
-| `/martyrs` | Gate 02 cover, editorial contents, and gesture-only dark-techno loop | Published owner-review route with wall links to two features |
+| `/martyrs` | Gate 02 cover, responsive editorial index, and gesture-only dark-techno loop | Published owner-review route with links to three features |
 | `/martyrs/persona` | MART¥RS 02.01 fashion-editorial feature | Responsive split spread with uncropped desktop/mobile Persona masters |
 | `/martyrs/unfinished` | MART¥RS 02.02 fashion-editorial feature | Responsive mirrored spread with uncropped desktop/mobile Unfinished masters |
+| `/martyrs/below` | MART¥RS 02.03 fashion-editorial feature | Responsive split spread with uncropped desktop/mobile Below masters |
 | `/left-right` | Preserved prior Gate 02 typography, rain, direction, and sound study | Implemented and browser-tested locally; retained as a legacy study and no longer linked from the portal index |
+
+## What this demonstrates
+
+- Product and art direction translated into responsive production systems without repainting, cropping, or overwriting the supplied visual authorities.
+- Content-driven folklore records, editorial features, route metadata, source registries, relationships, and asset manifests instead of page-specific data duplication.
+- A progressively enhanced interaction model in which motion, depth, WebGL rain, and audio add atmosphere while semantic navigation remains complete without them.
+- Independent desktop and mobile art direction, responsive AVIF/WebP delivery, route-scoped loading, reduced-motion behavior, keyboard/touch access, and gesture-only audio.
+- A documented iteration trail that separates approved work, superseded experiments, AI-assisted derivatives, project adaptation, and external factual sources.
 
 ## Architecture
 
@@ -142,7 +153,7 @@ The threshold is Gate 01's permanent signature, not a disposable landing page. N
 app/
 ├── page.tsx                    permanent threshold
 ├── portal-lab/page.tsx         isolated future collection study
-├── martyrs/                    Gate 02 cover plus Persona and Unfinished features
+├── martyrs/                    Gate 02 cover plus Persona, Unfinished, and Below features
 ├── left-right/page.tsx         preserved prior Gate 02 interaction study
 ├── archive/page.tsx            searchable record index
 ├── atlas/page.tsx              narrative spatial view
@@ -247,9 +258,9 @@ Final automated results:
 
 - TypeScript: passed.
 - ESLint: passed with zero warnings/errors.
-- Node tests: 20/20 passed.
+- Node tests: 27/27 passed.
 - Content integrity: 4/4 passed.
-- Production build: passed; eight routes emitted.
+- Production build: passed; eleven routes emitted.
 - Production dependency audit: zero vulnerabilities reported.
 - Full development/build dependency audit: 11 remaining advisories after non-breaking fixes (1 low, 10 high), all in the Vinext/Vite/Cloudflare toolchain; breaking force-fixes were not applied.
 
@@ -276,8 +287,8 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 - Japanese is available across all routes as a visibly provisional draft and still awaits fluent editorial review before it can be described as reviewed or authoritative.
 - Desktop and 390 × 844 browser acceptance are complete for all routes and the expanded Yamauba chamber; broader phone/tablet hardware coverage remains open.
 - Full development-toolchain audit still has 11 advisories requiring coordinated breaking upgrades.
-- MART¥RS is an atmospheric landing study rather than a completed destination; its interior purpose and content architecture are intentionally undecided.
-- MART¥RS now uses separate desktop and portrait authorities; broader device and owner-acceptance tuning remains open.
+- MART¥RS is an evolving editorial issue rather than a completed collection; the current published sequence contains Persona, Unfinished, and Below, with space reserved for a fourth feature.
+- MART¥RS uses separate desktop and portrait authorities; broader device and owner-acceptance tuning remains open.
 
 ## Roadmap
 
@@ -286,7 +297,7 @@ These are build/file measurements, not Lighthouse or Core Web Vitals claims. See
 3. Replace still/composite masks with layered threshold art and approved transparent idle frames.
 4. Complete fluent editorial review of the provisional Japanese layer, then expand records in reviewed batches and add production character art.
 5. Complete Gate 01's artwork, records, atlas, chronicles, and interactive-scene foundation.
-6. Complete the separate 108 Yōkai portal hub, finish MART¥RS desktop/mobile acceptance tuning, and define the gate's content architecture beyond its implemented atmospheric threshold.
+6. Complete the separate 108 Yōkai portal hub, finish MART¥RS device acceptance tuning, add the planned fourth editorial, and produce individual sound masters for Unfinished and Below.
 7. Introduce richer atlas relationships and optional future gate collections without claiming a fixed folklore canon.
 8. Evaluate an isolated GPU Hōju model only if owner-approved layered/model assets arrive and profiling demonstrates a material visual benefit over the current interactive 2.5D planes.
 9. Resolve compatible Sites/Vinext toolchain upgrades, then run Lighthouse/mobile hardware tests.

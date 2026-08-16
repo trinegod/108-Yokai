@@ -106,7 +106,7 @@ test("MART¥RS uses an independent portrait master on phones", () => {
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-scene img \{ object-fit: contain; \}/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-route-shell:has\(> \.martyrs-gate\) \{[\s\S]*?height: 100dvh;[\s\S]*?overflow: hidden;/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-title \{[\s\S]*?top: 16%;/);
-  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-contents \{[\s\S]*?bottom: max\(4\.4rem,/);
+  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-contents \{[\s\S]*?bottom: max\(3\.75rem,[\s\S]*?env\(safe-area-inset-bottom\) \+ 3\.3rem/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-controls \{[\s\S]*?position: fixed;[\s\S]*?z-index: 120;/);
 });
 

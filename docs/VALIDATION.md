@@ -1,6 +1,6 @@
 # Validation record
 
-Validation dates: 2026-08-11, 2026-08-13, and 2026-08-14
+Validation dates: 2026-08-11, 2026-08-13, 2026-08-14, and 2026-08-15
 
 ## Automated checks
 
@@ -9,8 +9,8 @@ Validation dates: 2026-08-11, 2026-08-13, and 2026-08-14
 | `npm run typecheck` | Passed |
 | `npm run lint` | Passed with zero warnings/errors |
 | `npm run test:content` | Passed, 4/4 |
-| `npm test` | Passed, 20/20, including a fresh production build |
-| `npm run build` | Passed; all eight app routes emitted |
+| `npm test` | Passed, 27/27, including a fresh production build |
+| `npm run build` | Passed; all eleven app routes emitted |
 | `npm audit --omit=dev --audit-level=high` | Passed; zero production dependency vulnerabilities reported |
 
 The full dependency tree audit initially reported 17 vulnerabilities. A non-breaking `npm audit fix` reduced that to 11 (1 low, 10 high), all in the Vinext/Vite/Cloudflare development and build toolchain. The remaining suggested fixes require breaking/out-of-range changes; they were not force-applied. Re-evaluate the bundled Sites stack before publication.
@@ -125,7 +125,7 @@ An earlier controlled tab was replaced by the browser's own connection-error pag
 - `/martyrs` returned HTTP 200 from the running local development server and exposed the complete `MART¥RS` heading, generated image masthead, one compact visible Sound control, and `preload="none"` audio source in rendered HTML. The redundant top-right `Gate 02` label and visible Motion control are absent.
 - Contract tests verify that no autoplay attribute exists, playback is initiated only inside the visible sound control handler, the desktop sources are guarded by a 700px minimum-width media condition, and the mobile fallback cannot request the desktop art.
 - Motion-on CSS produces one fluorescent failure around the eighth second of a 10.8-second cycle. The image-slice glitch layers, moving grain, pointer response, wordmark animation, and visible motion switch are absent; the strong static blur bloom remains part of the title in every state. Reduced-motion CSS removes the rare flicker automatically.
-- `npm run lint`, `npm run typecheck`, `npm run test:content`, `npm run build`, and `npm test` all passed. The complete suite reports 20/20 passing tests and emits eight routes including `/martyrs`.
+- `npm run lint`, `npm run typecheck`, `npm run test:content`, `npm run build`, and `npm test` all passed. The complete suite reports 27/27 passing tests and emits eleven routes including the MART¥RS cover and all three editorial routes.
 - Browser acceptance at 1440 × 900 selected the 1440-pixel desktop AVIF; 390 × 844 and 430 × 932 selected the 480-pixel mobile AVIF. All three viewports reported zero horizontal and vertical overflow.
 - At 390 × 844 the wordmark ended above the subject zone, the compact speaker control remained inside the lower safe area, and the full independent portrait composition remained visible without substituting the desktop image.
 - The mobile-only editorial inset frame is absent. The portrait master renders proportionally with `contain` behavior plus a static 0.2% centered bleed. On shorter or wider phone viewports, the intentionally retained bone-colored side borders keep the complete portrait composition visible without enlarging or softening the artwork; the source master remains untouched and the page retains zero horizontal overflow.
@@ -142,8 +142,10 @@ An earlier controlled tab was replaced by the browser's own connection-error pag
 
 - `Desktop Master 2.png` and `Mobile Master 1.png` are preserved byte-for-byte as the Persona masters. Their SHA-256 values are `566fe7d0303e9647942434982b04f7c556baeaeae18961f63625571ce3e580a3` and `369c51c7e35e432d76259e200501e4b40de40845953eced6a2a2297f76612a68`.
 - `Desktop Master 1.png` and `Mobile Master 2 .png` are preserved byte-for-byte as the Unfinished masters. Their SHA-256 values are `6c2810288e233624a72dbab4d85aba2addfc01d12c12dceb906fe96ae76fe4b9` and `f7fa29bc7dce3e4cf4af3c8355168e75838b0181d9a8a623e164dab7fad61133`.
-- All four files are opaque 2400 × 3000 PNGs. The derivative pipeline emits separate Persona and Unfinished desktop widths of 960, 1440, and 1920 pixels and mobile widths of 480, 720, 1080, and 1440 pixels in AVIF and WebP without cropping.
-- The `/martyrs` cover exposes 44-pixel-or-larger direct links for `02.01 / Persona` and `02.02 / Unfinished`. Each article route provides a complete semantic heading, alt text, editorial statement, next-story navigation, route-specific metadata, and the shared gesture-only sound control.
-- Browser acceptance at 1280 × 720 and 390 × 844 confirmed zero horizontal overflow on `/martyrs`, `/martyrs/persona`, and `/martyrs/unfinished`. The Persona and Unfinished art frames measured the complete 4:5 ratio at phone size, and the final settled state retained no aperture layer over the image.
+- `below-desktop-master.png` and `below-mobile-master.png` are preserved byte-for-byte as the Below masters. Their SHA-256 values are `f4aa90e39f6253f01adee669417e57924c6324d21051dc4ea50430a288e8e459` and `b60f27cb3754da1ab2cc3c2fb2b4098af92f35c776ed32d7f4c3bbd9023688c6`.
+- All six files are opaque 2400 × 3000 PNGs. The derivative pipeline emits separate Persona, Unfinished, and Below desktop widths of 960, 1440, and 1920 pixels and mobile widths of 480, 720, 1080, and 1440 pixels in AVIF and WebP without cropping.
+- The `/martyrs` cover exposes 44-pixel-or-larger direct links for `02.01 / Persona`, `02.02 / Unfinished`, and `02.03 / Below`. Desktop uses a two-column editorial index with Below beside Persona; mobile preserves one stacked column with a safe-area-aware fixed speaker.
+- Each article route provides a complete semantic heading, alt text, two-paragraph editorial statement, next-story navigation, route-specific metadata, and the shared gesture-only sound control. Persona selects its own 30-second source master; the other features currently inherit the MART¥RS issue soundtrack.
+- Browser acceptance confirmed zero horizontal overflow on `/martyrs`, `/martyrs/persona`, `/martyrs/unfinished`, and `/martyrs/below`. All three art frames preserve the complete 4:5 ratio at phone size, and the final settled state retains no aperture layer over the image.
 - A timed browser check captured the two opaque aperture panels meeting over the artwork and reopening. Reduced-motion CSS removes both panels and the delayed type entrance while retaining the complete image, prose, navigation, and audio control.
-- `npm run lint`, `npm run typecheck`, `npm run test:content`, `npm run build`, and `npm test` pass. The complete suite reports 25/25 passing tests and the build emits ten routes including both editorial features.
+- `npm run lint`, `npm run typecheck`, `npm run test:content`, `npm run build`, and `npm test` pass. The complete suite reports 27/27 passing tests and the build emits eleven routes including all three editorial features.
