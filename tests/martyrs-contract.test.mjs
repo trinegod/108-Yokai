@@ -61,7 +61,7 @@ test("MART¥RS cover exposes three modular editorial entrances", () => {
   assert.match(component, /<a href=\{`\/martyrs\/\$\{editorial\.slug\}`\}/);
   assert.doesNotMatch(component, /<Link href=\{`\/martyrs\/\$\{editorial\.slug\}`\}/);
   assert.match(styles, /@media \(min-width: 700px\) \{[\s\S]*?\.martyrs-contents \{[\s\S]*?top: 37%;[\s\S]*?grid-template-columns: repeat\(2, minmax\(0, 1fr\)\);/);
-  assert.match(styles, /\.martyrs-contents a:nth-of-type\(3\) \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 2;/);
+  assert.match(styles, /\.martyrs-contents a:nth-of-type\(3\) \{[\s\S]*?grid-column: 2;[\s\S]*?grid-row: 2;[\s\S]*?transform: translateX\(clamp\(0\.35rem, 0\.7vw, 0\.65rem\)\);/);
   assert.match(editorialContent, /issue: "02\.01"[\s\S]*?title: "Persona"/);
   assert.match(editorialContent, /issue: "02\.02"[\s\S]*?title: "Unfinished"/);
   assert.match(editorialContent, /issue: "02\.03"[\s\S]*?title: "Below"[\s\S]*?kicker: "Pattern against user"/);
@@ -106,8 +106,8 @@ test("MART¥RS uses an independent portrait master on phones", () => {
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-scene img \{ object-fit: contain; \}/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-route-shell:has\(> \.martyrs-gate\) \{[\s\S]*?height: 100dvh;[\s\S]*?overflow: hidden;/);
   assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-title \{[\s\S]*?top: 16%;/);
-  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-contents \{[\s\S]*?bottom: max\(3\.75rem,[\s\S]*?env\(safe-area-inset-bottom\) \+ 3\.3rem/);
-  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-controls \{[\s\S]*?position: fixed;[\s\S]*?z-index: 120;/);
+  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-contents \{[\s\S]*?bottom: max\(3\.3rem,[\s\S]*?env\(safe-area-inset-bottom\) \+ 2\.85rem/);
+  assert.match(styles, /@media \(max-width: 699px\)[\s\S]*?\.martyrs-controls \{[\s\S]*?position: fixed;[\s\S]*?z-index: 120;[\s\S]*?bottom: max\(0\.35rem,[\s\S]*?env\(safe-area-inset-bottom\) \+ 0\.05rem/);
 });
 
 test("MART¥RS motion is optional and reduced-motion safe", () => {

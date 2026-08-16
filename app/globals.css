@@ -5439,6 +5439,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-contents a:nth-of-type(3) {
     grid-column: 2;
     grid-row: 2;
+    transform: translateX(clamp(0.35rem, 0.7vw, 0.65rem));
   }
 }
 
@@ -5652,7 +5653,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-contents {
     top: auto;
     right: 4vw;
-    bottom: max(3.75rem, calc(env(safe-area-inset-bottom) + 3.3rem));
+    bottom: max(3.3rem, calc(env(safe-area-inset-bottom) + 2.85rem));
     left: 4vw;
     width: auto;
   }
@@ -5674,7 +5675,7 @@ html[data-locale="ja"] .case-study-section h2 {
   .martyrs-controls {
     position: fixed;
     z-index: 120;
-    bottom: max(0.7rem, calc(env(safe-area-inset-bottom) + 0.35rem));
+    bottom: max(0.35rem, calc(env(safe-area-inset-bottom) + 0.05rem));
     left: max(0.7rem, env(safe-area-inset-left));
     display: block;
     transform: translateZ(0);
