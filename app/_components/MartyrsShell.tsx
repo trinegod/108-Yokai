@@ -2,9 +2,29 @@
 
 import type { ReactNode } from "react";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { martyrsGate } from "@/content/martyrs";
+import { martyrsEditorials } from "@/content/martyrs-editorials";
 
 export function MartyrsShell({ children }: { children: ReactNode }) {
+  const pathname = usePathname();
+  const editorialAudio = martyrsEditorials.find((editorial) => pathname === `/martyrs/${editorial.slug}`)?.audio;
+  const activeAudio = editorialAudio ?? martyrsGate.audio;
+
+  return (
+    <MartyrsAudioShell key={activeAudio.source} activeAudio={activeAudio}>
+      {children}
+    </MartyrsAudioShell>
+  );
+}
+
+function MartyrsAudioShell({
+  children,
+  activeAudio,
+}: {
+  children: ReactNode;
+  activeAudio: { source: string; label: string };
+}) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const audioFadeRef = useRef(0);
   const [soundEnabled, setSoundEnabled] = useState(false);
@@ -90,8 +110,8 @@ export function MartyrsShell({ children }: { children: ReactNode }) {
 
       {/* Instrumental loop contains no speech or lyrical content to caption. */}
       {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio ref={audioRef} loop preload="none" aria-label={martyrsGate.audio.label}>
-        <source src={martyrsGate.audio.source} type="audio/wav" />
+      <audio ref={audioRef} loop preload="none" aria-label={activeAudio.label}>
+        <source src={activeAudio.source} type="audio/wav" />
       </audio>
     </div>
   );

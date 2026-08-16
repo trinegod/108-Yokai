@@ -36,6 +36,7 @@ const routes = [
   ["/martyrs", /MART¥RS/, /Sound control/],
   ["/martyrs/persona", /Persona/, /Every face arrives with a replacement/],
   ["/martyrs/unfinished", /Unfinished/, /She has become monumental and imprisoned/],
+  ["/martyrs/below", /Below/, /The room does not feel unfamiliar/],
 ];
 
 for (const [pathname, heading, content] of routes) {

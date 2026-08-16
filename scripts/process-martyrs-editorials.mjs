@@ -8,7 +8,7 @@ const outputDirectory = path.join(root, "public", "assets", "editorials", "marty
 
 await mkdir(outputDirectory, { recursive: true });
 
-const editorials = ["persona", "unfinished"];
+const editorials = ["persona", "unfinished", "below"];
 const breakpoints = {
   desktop: [960, 1440, 1920],
   mobile: [480, 720, 1080, 1440],
@@ -43,4 +43,4 @@ for (const editorial of editorials) {
 
 await Promise.all(jobs);
 
-console.log(`Generated ${jobs.length} responsive MART¥RS editorial derivatives without cropping the four masters.`);
+console.log(`Generated ${jobs.length} responsive MART¥RS editorial derivatives without cropping the ${editorials.length * 2} masters.`);

@@ -50,9 +50,12 @@ test("MART¥RS remains silent until its visible sound gesture", () => {
   assert.match(shell, /await audio\.play\(\)/);
   assert.match(martyrsContent, /martyrs-extended-loop\.wav/);
   assert.match(martyrsContent, /durationSeconds: 56\.113417/);
+  assert.match(shell, /editorialAudio \?\? martyrsGate\.audio/);
+  assert.match(shell, /<MartyrsAudioShell key=\{activeAudio\.source\}/);
+  assert.match(editorialContent, /source: "\/assets\/audio\/persona-master\.wav"/);
 });
 
-test("MART¥RS cover exposes two modular editorial entrances", () => {
+test("MART¥RS cover exposes three modular editorial entrances", () => {
   assert.match(component, /aria-label="MART¥RS editorial contents"/);
   assert.match(component, /martyrsEditorials\.map/);
   assert.match(component, /<a href=\{`\/martyrs\/\$\{editorial\.slug\}`\}/);
@@ -60,6 +63,9 @@ test("MART¥RS cover exposes two modular editorial entrances", () => {
   assert.match(styles, /@media \(min-width: 700px\) \{[\s\S]*?\.martyrs-contents \{[\s\S]*?top: 37%;/);
   assert.match(editorialContent, /issue: "02\.01"[\s\S]*?title: "Persona"/);
   assert.match(editorialContent, /issue: "02\.02"[\s\S]*?title: "Unfinished"/);
+  assert.match(editorialContent, /issue: "02\.03"[\s\S]*?title: "Below"[\s\S]*?kicker: "Pattern against user"/);
+  assert.match(editorialContent, /slug: "unfinished"[\s\S]*?nextSlug: "below"/);
+  assert.match(editorialContent, /slug: "below"[\s\S]*?nextSlug: "persona"/);
   assert.doesNotMatch(editorialContent, /—| - /);
 });
 
