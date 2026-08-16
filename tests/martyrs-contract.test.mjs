@@ -80,6 +80,10 @@ test("MART¥RS editorial navigation uses reliable browser links", () => {
   assert.match(editorial, /<a href="\/portal-lab" className="martyrs-editorial__portal"/);
   assert.match(editorial, /<a href=\{`\/martyrs\/\$\{editorial\.nextSlug\}`\}/);
   assert.doesNotMatch(editorial, /import Link from "next\/link"/);
+  assert.match(styles, /\.martyrs-editorial__next \{[\s\S]*?background: var\(--martyrs-ink\);/);
+  assert.match(styles, /\.martyrs-editorial__next a \{[\s\S]*?border: 0;[\s\S]*?background: transparent;/);
+  assert.match(styles, /\.martyrs-editorial__title-block \{[\s\S]*?text-align: center;/);
+  assert.match(styles, /\.martyrs-editorial__statement > p \{[\s\S]*?max-width: 25rem;[\s\S]*?margin: 0 auto;/);
 });
 
 test("MART¥RS uses an independent portrait master on phones", () => {
