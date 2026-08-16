@@ -80,7 +80,7 @@ test("MART¥RS editorial navigation uses reliable browser links", () => {
   assert.match(editorial, /<a href="\/portal-lab" className="martyrs-editorial__portal"/);
   assert.match(editorial, /<a href=\{`\/martyrs\/\$\{editorial\.nextSlug\}`\}/);
   assert.doesNotMatch(editorial, /import Link from "next\/link"/);
-  assert.match(editorial, /className="martyrs-editorial__statement"[\s\S]*?className="martyrs-editorial__next"/);
+  assert.match(editorial, /<\/section>[\s\S]*?<nav className="martyrs-editorial__next"/);
   assert.match(styles, /\.martyrs-editorial__next \{[\s\S]*?background: transparent;/);
   assert.match(styles, /\.martyrs-editorial__next a \{[\s\S]*?border: 0;[\s\S]*?background: transparent;/);
   assert.match(styles, /\.martyrs-editorial__title-block \{[\s\S]*?text-align: center;/);
